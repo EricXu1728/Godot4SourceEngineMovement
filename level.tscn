@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://snx4qbqgrkux"]
+
+[ext_resource type="PackedScene" uid="uid://c1gjwwxrr0uc5" path="res://PhysicsBlock.tscn" id="1_dahai"]
+[ext_resource type="PackedScene" uid="uid://xv6wrbcw6n47" path="res://player.tscn" id="2_8wevy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_huisk"]
+sky_material = SubResource("ProceduralSkyMaterial_jym6u")
+
+[sub_resource type="Environment" id="Environment_mkgyb"]
+background_mode = 2
+sky = SubResource("Sky_huisk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_k83rx"]
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8a2re"]
+size = Vector3(20, 0.5, 20)
+
+[node name="Level" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mkgyb")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.989119, 0.147119, 0, -0.147119, 0.989119, 0, 3.46173, 7.68161)
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183313, 0.221533, 0.0822086)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_k83rx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+transform = Transform3D(1, 2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -1.04308e-07, -1, 2.68221e-07)
+shape = SubResource("BoxShape3D_8a2re")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.80995, 0.479456, 0.337793, 0, -0.575947, 0.817487, 0.5865, -0.662123, -0.466488, 0, 3.92634, 0)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_8wevy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43949, 0)
+
+[node name="blocks" type="Node3D" parent="."]
+
+[node name="PhysicsBlock" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(0.930718, -0.348354, 0.111415, 0.365738, 0.886481, -0.283526, 0, 0.304632, 0.95247, 0.403301, 2.71167, 2.16828)
+
+[node name="PhysicsBlock2" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(0.738829, -0.599089, 0.308584, 0.664618, 0.572071, -0.480642, 0.111415, 0.560203, 0.820829, 1.03891, 4.31058, 1.96303)
+
+[node name="PhysicsBlock3" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(0.149421, -0.988746, -0.00740784, 0.8278, 0.129189, -0.545946, 0.540758, 0.0754435, 0.837788, -0.922336, 1.38831, 1.32625)
+
+[node name="PhysicsBlock4" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(0.182084, -0.612476, 0.769232, 0.817698, -0.340157, -0.464396, 0.546091, 0.713559, 0.438884, 0.8422, 5.22946, 3.28245)
+
+[node name="PhysicsBlock5" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(-0.054537, -0.372045, 0.92661, 0.636638, -0.727861, -0.254776, 0.769233, 0.576022, 0.276554, -0.495826, 8.4888, -0.91511)
+
+[node name="PhysicsBlock6" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(-0.18683, -0.0285382, 0.981978, 0.326324, -0.944624, 0.0346326, 0.926611, 0.326913, 0.185797, -1.51727, 8.55997, 0.482824)
+
+[node name="PhysicsBlock7" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(-0.0638321, -0.201126, 0.977483, -0.410527, -0.887476, -0.209415, 0.909612, -0.414651, -0.0259184, -0.574395, 8.24602, -2.95288)
+
+[node name="PhysicsBlock8" parent="blocks" instance=ExtResource("1_dahai")]
+transform = Transform3D(-0.0475952, 0.645708, 0.7621, -0.382858, -0.716488, 0.583151, 0.922581, -0.26402, 0.281316, -1.10094, 7.47383, 1.61015)
