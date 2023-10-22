@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://snx4qbqgrkux"]
+[gd_scene load_steps=11 format=3 uid="uid://snx4qbqgrkux"]
 
 [ext_resource type="PackedScene" uid="uid://c1gjwwxrr0uc5" path="res://PhysicsBlock.tscn" id="1_dahai"]
 [ext_resource type="PackedScene" uid="uid://xv6wrbcw6n47" path="res://player.tscn" id="2_8wevy"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="3_t56jt"]
 [ext_resource type="Script" path="res://Sprite3D.gd" id="4_s2re1"]
+[ext_resource type="PackedScene" uid="uid://2p2df66l6ixn" path="res://world_setup.tscn" id="5_qm8ay"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -81,3 +82,5 @@ transform = Transform3D(-0.0475952, 0.645708, 0.7621, -0.382858, -0.716488, 0.58
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)
 texture = ExtResource("3_t56jt")
 script = ExtResource("4_s2re1")
+
+[node name="WorldSetup" parent="." instance=ExtResource("5_qm8ay")]

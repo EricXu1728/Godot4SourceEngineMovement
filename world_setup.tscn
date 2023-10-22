@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://2p2df66l6ixn"]
+
+[ext_resource type="Script" path="res://WindowController.gd" id="1_cfv3v"]
+
+[node name="WorldSetup" type="Node3D"]
+
+[node name="WindowController" type="Node3D" parent="."]
+script = ExtResource("1_cfv3v")
