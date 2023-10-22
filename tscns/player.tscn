@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://xv6wrbcw6n47"]
+[gd_scene load_steps=4 format=3 uid="uid://c6alt2y40vhp8"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_2x0as"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
 
@@ -8,7 +8,7 @@
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127466, 0)
-script = ExtResource("1_2x0as")
+script = ExtResource("1_ctaje")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -16,3 +16,5 @@ mesh = SubResource("BoxMesh_4qo32")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1pn1m")
+
+[node name="view" type="Camera3D" parent="."]
