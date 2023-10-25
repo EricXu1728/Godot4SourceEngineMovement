@@ -1,18 +1,13 @@
-extends "res://Scripts/player_vars.gd"
+extends "res://Scripts/player_inputs.gd"
 
-# Onready
-@onready var camera = $view
 
-func _input(event):
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		InputMouse(event)
-		
-	if event.is_action_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		
-	if event.is_action_pressed("click"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+func _ready():
+	camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
+	print("AMONGUS")
+	print(camera)
+	
+	if(camera == null):
+		print("BRUH")
 	
 
 # warning-ignore:unused_argument
@@ -21,9 +16,9 @@ func _process(delta):
 		InputKeys()
 		
 		ViewAngles(delta)
+		#print("working")
 		
-		
-		
+			
 	Move(delta)
 	CrouchCamera()
 	wasOnFloor = is_on_floor()
@@ -32,39 +27,7 @@ func _process(delta):
 	move_and_slide()
 	vel = velocity
 	
-func InputMouse(event):
-	xlook += -event.relative.y * ply_xlookspeed 
-	ylook += -event.relative.x * ply_ylookspeed
-	xlook = clamp(xlook, ply_maxlookangle_down, ply_maxlookangle_up)
-	
-func ViewAngles(delta):
-	$view.rotation_degrees.x = xlook
-	$view.rotation_degrees.y = ylook
-	
-func InputKeys():
-	sidemove += int(ply_sidespeed) * (int(Input.get_action_strength("move_left") * 50))
-	sidemove -= int(ply_sidespeed) * (int(Input.get_action_strength("move_right") * 50))
-	print(Input.get_action_strength("move_left"))
-	
-	forwardmove += int(ply_forwardspeed) * (int(Input.get_action_strength("move_forward") * 50))
-	forwardmove -= int(ply_backspeed) * (int(Input.get_action_strength("move_back") * 50))
-	
-	# Clamp that shit so it doesn't go too high
-	if Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right"):
-		sidemove = 0
-	else:
-		sidemove = clamp(sidemove, -4096, 4096)
-		
-	if Input.is_action_just_released("move_forward") or Input.is_action_just_released("move_back"):
-		upmove = 0
-	else:
-		upmove = clamp(upmove, -4096, 4096)
-	if Input.is_action_just_released("move_forward") or Input.is_action_just_released("move_back"):
-		forwardmove = 0
-	else:
-		forwardmove = clamp(forwardmove, -4096, 4096)
-		
-	print(forwardmove)
+
 
 	
 func CheckVelocity():
@@ -91,7 +54,7 @@ func Move(delta):
 		
 	CheckVelocity()
 	
-	print("wow1" + str(vel))
+	#print("wow1" + str(vel))
 	
 	
 func CrouchCamera():
@@ -115,7 +78,7 @@ func WalkMove(delta):
 	
 	snap = -get_floor_normal()
 	
-	print("wow2"+ str(forwardmove))
+	#print("wow2"+ str(forwardmove))
 	var fmove = forwardmove
 	var smove = sidemove
 	
@@ -132,7 +95,7 @@ func WalkMove(delta):
 	var wishspeed = wishvel.length()
 	
 	
-	print("wow3: "+str(wishspeed))
+	#print("wow3: "+str(wishspeed))
 	# clamp to game defined max speed
 	if wishspeed != 0.0 and wishspeed > ply_maxspeed:
 		#print("wishvel")
@@ -141,7 +104,7 @@ func WalkMove(delta):
 		wishspeed = ply_maxspeed
 		#print(wishvel)
 		
-	print("wow4: "+str(wishspeed))
+	#print("wow4: "+str(wishspeed))
 	
 	Accelerate(wishdir, wishspeed, ply_accelerate, delta)
 	

@@ -50,10 +50,8 @@ shadow_enabled = true
 [node name="player" parent="." instance=ExtResource("1_rsegt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43949, 0)
 
-[node name="Block" parent="." instance=ExtResource("1_jv655")]
-transform = Transform3D(1, 0, 0, 0, -0.690933, -0.722919, 0, 0.722919, -0.690933, 3.66007, 0.421119, 13.1622)
-
 [node name="blocks" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56655, 0)
 
 [node name="PhysicsBlock" parent="blocks" instance=ExtResource("2_5e8jj")]
 transform = Transform3D(0.930718, -0.348354, 0.111415, 0.365738, 0.886481, -0.283526, 0, 0.304632, 0.95247, 0.403301, 2.71167, 2.16828)
@@ -87,6 +85,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4556, 4.80276, -12.5046)
 
 [node name="Block3" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 0.27013, -0.962824, 0, 0.962824, 0.27013, -29.8978, -3.73212, -13.0913)
+
+[node name="Block4" parent="blocks" instance=ExtResource("1_jv655")]
+transform = Transform3D(1, 0, 0, 0, -0.690933, -0.722919, 0, 0.722919, -0.690933, 3.66007, -2.14543, 13.1622)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)

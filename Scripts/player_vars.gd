@@ -48,4 +48,6 @@ var forwardmove : float
 var ylook : float
 var xlook : float
 
+var camera : Node3D
+
 
