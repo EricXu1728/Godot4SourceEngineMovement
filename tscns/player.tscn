@@ -29,3 +29,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 4)
 
 [node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
+fov = 100.0

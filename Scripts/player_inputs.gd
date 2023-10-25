@@ -1,10 +1,10 @@
 extends "res://Scripts/player_vars.gd"
 #CODE THAT PARSES USER INPUT
 #just organized like this for organization's sake
-# Onready
 
 
-
+func _ready():
+	assert("You should not be seeing this (player_inputs.gd is being initiated)")
 	
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -52,8 +52,5 @@ func InputKeys():
 	#print(forwardmove)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-		
+	
 

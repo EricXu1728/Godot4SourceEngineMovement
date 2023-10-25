@@ -1,13 +1,14 @@
 extends "res://Scripts/player_inputs.gd"
-
-
+#THE BONES OF THE PLAYER CODE STRUCTURE
+#FEEL FREE TO MAKE NEW INTERFACES FOR MOVE() and such
+@onready var movement : Node3D
 func _ready():
 	camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
 	print("AMONGUS")
 	print(camera)
 	
 	if(camera == null):
-		print("BRUH")
+		assert("Missing a camera node")
 	
 
 # warning-ignore:unused_argument
@@ -20,24 +21,13 @@ func _process(delta):
 		
 			
 	Move(delta)
-	CrouchCamera()
+
 	wasOnFloor = is_on_floor()
 	
 	velocity = vel
 	move_and_slide()
 	vel = velocity
 	
-
-
-	
-func CheckVelocity():
-	# bound velocity
-	# Bound it.
-	if vel.length() > ply_maxvelocity:
-		vel = ply_maxvelocity
-			
-	elif vel.length() < -ply_maxvelocity:
-		vel = -ply_maxvelocity
 
 func Move(delta):
 	if noclip == true:
@@ -53,7 +43,7 @@ func Move(delta):
 		CheckJumpButton()
 		
 	CheckVelocity()
-	
+	return vel
 	#print("wow1" + str(vel))
 	
 	
@@ -178,9 +168,6 @@ func NoclipMove(delta):
 	Friction(delta)
 	
 	Accelerate(wishdir, wishspeed, ply_maxacceleration, delta)
-
-	$top.set_disabled(true)
-	$bottom.set_disabled(true)
 	
 func Accelerate(wishdir, wishspeed, accel, delta):
 # See if we are changing direction a bit
@@ -227,39 +214,6 @@ func AirAccelerate(wishdir, wishspeed, accel, delta):
 		# Adjust velocity.
 		vel += accelspeed * wishdir
 	
-func Friction(delta):
-	# If we are in water jump cycle, don't apply friction
-	#if (player->m_flWaterJumpTime)
-	#	return
-
-	# Calculate speed
-	var speed = vel.length()
-	
-	# If too slow, return
-	if speed < 0:
-		return
-
-	var drop = 0
-
-	# apply ground friction
-	var friction = ply_friction
-
-	# Bleed off some speed, but if we have less than the bleed
-	#  threshold, bleed the threshold amount.
-	var control = ply_stopspeed if speed < ply_stopspeed else speed
-	# Add the amount to the drop amount.
-	drop += control * friction * delta
-
-	# scale the velocity
-	var newspeed = speed - drop
-	if newspeed < 0:
-		newspeed = 0
-
-	if newspeed != speed:
-		# Determine proportion of old speed we are using.
-		newspeed /= speed
-		# Adjust velocity according to proportion.
-		vel *= newspeed
 
 func CheckJumpButton():
 	snap = Vector3.ZERO
@@ -273,4 +227,7 @@ func CheckJumpButton():
 	var flMul = sqrt(2 * ply_gravity * ply_jumpheight)
 	vel.y = flGroundFactor * flMul  + max(0, vel.y)# 2 * gravity * height
 	
+	
+
+
 	
