@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbjuw3wkfv7q4"]
+[gd_scene load_steps=7 format=3 uid="uid://dbjuw3wkfv7q4"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
+[ext_resource type="Resource" uid="uid://6hd2hay50u1b" path="res://player_vars.tres" id="2_obrsc"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="2_q0ix1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
@@ -13,6 +14,7 @@ albedo_texture = ExtResource("2_q0ix1")
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127466, 0)
 script = ExtResource("1_ctaje")
+stats = ExtResource("2_obrsc")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -29,4 +31,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 4)
 
 [node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
-fov = 100.0
+fov = 110.0

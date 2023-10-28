@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="1_56tk1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfaso"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lri33"]
 albedo_texture = ExtResource("1_56tk1")
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig4a3"]
-material = SubResource("StandardMaterial3D_mfaso")
+material = SubResource("StandardMaterial3D_lri33")
 size = Vector3(10, 10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yluhr"]

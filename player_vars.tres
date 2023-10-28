@@ -1,0 +1,40 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://6hd2hay50u1b"]
+
+[ext_resource type="Script" path="res://Scripts/player_vars.gd" id="1_nuo1m"]
+
+[resource]
+script = ExtResource("1_nuo1m")
+vel = Vector3(0, 0, 0)
+snap = Vector3(0, -1, 0)
+ply_mousesensitivity = 1.5
+ply_maxlookangle_down = -90
+ply_maxlookangle_up = 90
+ply_ylookspeed = 0.3
+ply_xlookspeed = 0.3
+ply_sidespeed = 20
+ply_upspeed = 20
+ply_forwardspeed = 20
+ply_backspeed = 20
+ply_accelerate = 3
+ply_airaccelerate = 2
+ply_maxacceleration = 30
+ply_airspeedcap = 10
+ply_friction = 1
+ply_stopspeed = 100
+ply_gravity = 50
+ply_maxslopeangle = 0.785398
+ply_maxvelocity = 35000
+ply_jumpheight = 4
+ply_stepsize = 8
+ply_maxspeed = 15
+noclip = false
+crouching = false
+crouched = false
+sprinting = false
+canJump = false
+wasOnFloor = false
+sidemove = 0.0
+upmove = 0.0
+forwardmove = 0.0
+ylook = 0.0
+xlook = 0.0
