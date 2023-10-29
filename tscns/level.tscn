@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ct74qjyy3nwye"]
 
 [ext_resource type="PackedScene" uid="uid://c24fe8wk43e08" path="res://tscns/block.tscn" id="1_jv655"]
-[ext_resource type="PackedScene" uid="uid://dbjuw3wkfv7q4" path="res://tscns/player.tscn" id="1_rsegt"]
+[ext_resource type="PackedScene" uid="uid://c8cl30mf2nfb" path="res://tscns/player.tscn" id="1_rsegt"]
 [ext_resource type="PackedScene" uid="uid://c1gjwwxrr0uc5" path="res://tscns/PhysicsBlock.tscn" id="2_5e8jj"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="3_0utd8"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
@@ -87,7 +87,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4556, 4.80276, -12.5046)
 transform = Transform3D(1, 0, 0, 0, 0.27013, -0.962824, 0, 0.962824, 0.27013, -29.8978, -3.73212, -13.0913)
 
 [node name="Block4" parent="blocks" instance=ExtResource("1_jv655")]
-transform = Transform3D(1, 0, 0, 0, -0.690933, -0.722919, 0, 0.722919, -0.690933, 3.66007, -2.14543, 13.1622)
+transform = Transform3D(1, 0, 0, 0, -1.38187, -0.722919, 0, 1.44584, -0.690933, 3.66007, -2.14543, 13.1622)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)

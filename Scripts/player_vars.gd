@@ -1,4 +1,5 @@
 extends Resource
+class_name playerVariables
 #STORES VARIABLES TO BE USED BY ALL PLAYER PARTS
 #Also stores very commonly used functions (such as friction) by most player related interfaces and parts
 
@@ -35,12 +36,14 @@ extends Resource
 @export var ply_maxspeed = 15
 
 # Bools
-@export var noclip : bool
+@export var noclip = false
 @export var crouching : bool
 @export var crouched : bool
 @export var sprinting : bool
 @export var canJump : bool
 @export var wasOnFloor = false
+@export var on_floor = false
+
 
 
 # Floats

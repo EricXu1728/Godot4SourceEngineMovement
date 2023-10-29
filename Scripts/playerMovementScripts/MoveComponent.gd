@@ -1,24 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8cl30mf2nfb"]
-
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
-[ext_resource type="Resource" uid="uid://6hd2hay50u1b" path="res://player_vars.tres" id="2_obrsc"]
-[ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="2_q0ix1"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjqvd"]
-albedo_texture = ExtResource("2_q0ix1")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1pn1m"]
-
-[sub_resource type="GDScript" id="GDScript_ggv3r"]
-script/source = "extends Node3D
+extends Node3D
 
 class_name MoveComponent
 @export var stats : playerVariables
 
 func _ready():
-	print(\"AMONGUS\")
+	print("AMONGUS")
 	
 
 func CheckVelocity():
@@ -40,13 +26,13 @@ func Move(delta):
 	else:
 		AirMove(delta)
 
-	if Input.is_action_pressed(\"jump\"):
+	if Input.is_action_pressed("jump"):
 
 		CheckJumpButton()
 
 	CheckVelocity()
 
-	#print(\"wow1\" + str(vel))
+	#print("wow1" + str(vel))
 
 
 func CrouchCamera():
@@ -70,7 +56,7 @@ func WalkMove(delta):
 
 
 
-	#print(\"wow2\"+ str(forwardmove))
+	#print("wow2"+ str(forwardmove))
 	var fmove = stats.forwardmove
 	var smove = stats.sidemove
 
@@ -87,16 +73,16 @@ func WalkMove(delta):
 	var wishspeed = wishvel.length()
 
 
-	#print(\"wow3: \"+str(wishspeed))
+	#print("wow3: "+str(wishspeed))
 	# clamp to game defined max speed
 	if wishspeed != 0.0 and wishspeed > stats.ply_maxspeed:
-		#print(\"wishvel\")
+		#print("wishvel")
 		#print(wishvel)
 		wishvel *= stats.ply_maxspeed / wishspeed
 		wishspeed = stats.ply_maxspeed
 		#print(wishvel)
 
-	#print(\"wow4: \"+str(wishspeed))
+	#print("wow4: "+str(wishspeed))
 
 	Accelerate(wishdir, wishspeed, stats.ply_accelerate, delta)
 
@@ -252,39 +238,13 @@ func Friction(delta):
 
 func CheckJumpButton():
 	stats.snap = Vector3.ZERO
-	#print(\"STEP\")
-	#print(\"should have stopped: \" +str(!coyote_timer.is_stopped()))
+	#print("STEP")
+	#print("should have stopped: " +str(!coyote_timer.is_stopped()))
 	if not (stats.on_floor):
 			return
-	#print(\"I JUMPED\")
+	#print("I JUMPED")
 
 	var flGroundFactor = 1.0
 	var flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight)
 	stats.vel.y = flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
 
-"
-
-[node name="player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127466, 0)
-script = ExtResource("1_ctaje")
-stats = ExtResource("2_obrsc")
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_4qo32")
-surface_material_override/0 = SubResource("StandardMaterial3D_sjqvd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_1pn1m")
-
-[node name="TwistPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 4)
-
-[node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
-fov = 110.0
-
-[node name="MoveComponent" type="Node3D" parent="."]
-script = SubResource("GDScript_ggv3r")

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 #CODE THAT PARSES USER INPUT
 #just organized like this for organization's sake
-@export var stats: Resource
+@export var stats: playerVariables
 
 func _ready():
 	assert("You should not be seeing this (player_inputs.gd is being initiated)")

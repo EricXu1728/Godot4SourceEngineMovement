@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://6hd2hay50u1b"]
+[gd_resource type="Resource" script_class="playerVariables" load_steps=2 format=3 uid="uid://6hd2hay50u1b"]
 
 [ext_resource type="Script" path="res://Scripts/player_vars.gd" id="1_nuo1m"]
 
@@ -33,6 +33,7 @@ crouched = false
 sprinting = false
 canJump = false
 wasOnFloor = false
+on_floor = false
 sidemove = 0.0
 upmove = 0.0
 forwardmove = 0.0
