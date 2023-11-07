@@ -2,4 +2,17 @@ My attempt at putting [OakleyCyclop's ](https://github.com/OakleyCyclops/GodotSo
 
 Did my best to try to clean everything up.
 
-Still working on features such as crouching
+This branch is not entirely to source movement. The goal of this branch is to continue work on the project that has been mostly abandoned, as well as add some modern features to make gameplay smoother. I want to use this as a starting point for my own game and will make a sperate branch/fork for something like that
+
+# To-Do List
+- [x] Airstrafing
+- [x] Bunnyhopping
+- [x] Wallstrafing
+- [x] Zig-Zagging
+- [ ] Accelerated Back Hopping (WIP)
+- [ ] Sprinting
+- [ ] Crouching
+- [ ] Collision modifying when crouching
+- [ ] Crouch-Jumping
+- [x] Gravity
+- [x] Ground Friction

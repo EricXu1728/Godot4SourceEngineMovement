@@ -1,6 +1,5 @@
 extends "res://Scripts/player_inputs.gd"
-
-@export var moveComponent : MoveComponent
+class_name Player
 
 func _ready():
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
@@ -21,12 +20,62 @@ func _process(delta):
 	
 	stats.snap = -get_floor_normal()
 	stats.on_floor = is_on_floor()
-	moveComponent.Move(delta)
+	#Move(delta)
 	
 	velocity = stats.vel
 	move_and_slide()
 	stats.vel = velocity
 	
 
+func CheckVelocity():
+	# bound velocity
+	# Bound it.
+	if stats.vel.length() > stats.ply_maxvelocity:
+		stats.vel = stats.ply_maxvelocity
 
-	
+	elif stats.vel.length() < -stats.ply_maxvelocity:
+		stats.vel = -stats.ply_maxvelocity
+
+
+func CrouchCamera():
+
+	# Crouching
+	if stats.crouching:
+		stats.crouched = true
+	if !stats.crouching:
+		stats.crouched = false
+
+
+func Friction(delta):
+	# If we are in water jump cycle, don't apply friction
+	#if (player->m_flWaterJumpTime)
+	#	return
+
+	# Calculate speed
+	var speed = stats.vel.length()
+
+	# If too slow, return
+	if speed < 0:
+		return
+
+	var drop = 0
+
+	# apply ground friction
+	var friction = stats.ply_friction
+
+	# Bleed off some speed, but if we have less than the bleed
+	#  threshold, bleed the threshold amount.
+	var control = stats.ply_stopspeed if speed < stats.ply_stopspeed else speed
+	# Add the amount to the drop amount.
+	drop += control * friction * delta
+
+	# scale the velocity
+	var newspeed = speed - drop
+	if newspeed < 0:
+		newspeed = 0
+
+	if newspeed != speed:
+		# Determine proportion of old speed we are using.
+		newspeed /= speed
+		# Adjust velocity according to proportion.
+		stats.vel *= newspeed

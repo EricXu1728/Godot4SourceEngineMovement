@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8cl30mf2nfb"]
+[gd_scene load_steps=10 format=3 uid="uid://c8cl30mf2nfb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
 [ext_resource type="Resource" uid="uid://6hd2hay50u1b" path="res://player_vars.tres" id="2_obrsc"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="2_q0ix1"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/MoveComponent.gd" id="4_frigg"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/stateMachine.gd" id="4_aniew"]
+[ext_resource type="Script" path="res://tscns/Run.gd" id="5_k2ehx"]
+[ext_resource type="Script" path="res://tscns/Air.gd" id="6_l6jsv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
 
@@ -12,10 +14,9 @@ albedo_texture = ExtResource("2_q0ix1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1pn1m"]
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("moveComponent")]
+[node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127466, 0)
 script = ExtResource("1_ctaje")
-moveComponent = NodePath("MoveComponent")
 stats = ExtResource("2_obrsc")
 metadata/_edit_group_ = true
 
@@ -35,6 +36,12 @@ transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 
 [node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
 fov = 110.0
 
-[node name="MoveComponent" type="Node3D" parent="."]
-script = ExtResource("4_frigg")
-stats = ExtResource("2_obrsc")
+[node name="stateMachine" type="Node" parent="."]
+script = ExtResource("4_aniew")
+initial_state = NodePath("Run")
+
+[node name="Run" type="Node" parent="stateMachine"]
+script = ExtResource("5_k2ehx")
+
+[node name="Air" type="Node" parent="stateMachine"]
+script = ExtResource("6_l6jsv")
