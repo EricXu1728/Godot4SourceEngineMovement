@@ -11,8 +11,8 @@ This branch is not entirely to source movement. The goal of this branch is to co
 - [x] Zig-Zagging
 - [ ] Accelerated Back Hopping (WIP)
 - [ ] Sprinting
-- [ ] Crouching
-- [ ] Collision modifying when crouching
-- [ ] Crouch-Jumping
+- [x] Crouching
+- [x] Collision modifying when crouching
+- [x] Crouch-Jumping
 - [x] Gravity
 - [x] Ground Friction
