@@ -91,7 +91,9 @@ func CheckJumpButton():
 	
 	var flMul : float
 	if player.stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
-		flMul = sqrt(2 * (player.stats.ply_gravity*1.1) * player.stats.ply_jumpheight)
+		flMul = sqrt(2 * (player.stats.ply_gravity*1.2) * player.stats.ply_jumpheight)
+		var a = Vector3(0,1.2, 0)
+		player.move_and_collide(a)
 	else:
 		flMul = sqrt(2 * player.stats.ply_gravity * player.stats.ply_jumpheight)
 	
