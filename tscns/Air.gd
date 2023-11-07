@@ -87,5 +87,15 @@ func CheckJumpButton():
 	#print("I JUMPED")
 
 	var flGroundFactor = 1.0
-	var flMul = sqrt(2 * player.stats.ply_gravity * player.stats.ply_jumpheight)
+	
+	
+	var flMul : float
+	if player.stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
+		flMul = sqrt(2 * (player.stats.ply_gravity*1.1) * player.stats.ply_jumpheight)
+	else:
+		flMul = sqrt(2 * player.stats.ply_gravity * player.stats.ply_jumpheight)
+	
+	
+	#print(player.stats.ply_gravity)
 	player.stats.vel.y = flGroundFactor * flMul  + max(0, player.stats.vel.y)# 2 * gravity * height
+	print(player.stats.vel.y)

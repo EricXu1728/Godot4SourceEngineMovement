@@ -1,6 +1,11 @@
 extends "res://Scripts/player_inputs.gd"
 class_name Player
 
+@onready var myShape = $CollisionShape3D
+@onready var mySkin = $MeshInstance3D
+@onready var bonker = $Headbonk
+var height = 2 #the model is 2 meter tall
+
 func _ready():
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
 	print("AMONGUS")
@@ -17,6 +22,35 @@ func _process(delta):
 		
 		ViewAngles(delta)
 		#print("working")
+		
+	if Input.is_action_pressed("crouch"):
+		myShape.scale.y =0.5
+
+		mySkin.scale.y =0.5
+		stats.crouching = true
+		
+		if Input.is_action_just_pressed("crouch"):
+			if (stats.on_floor):
+				print("was on floor")
+				var a = Vector3(0,-10, 0)
+				move_and_collide(a)
+			else:
+				print("woah")
+				var a = Vector3(0,1, 0)
+				move_and_collide(a)
+
+				stats.camera.position.y = 1
+	else:
+		if(bonker.is_colliding() == false):
+			myShape.scale.y =1
+			#stats.camera.position.y += 1
+			mySkin.scale.y =1
+			stats.camera.position.y =2
+			stats.crouching = false
+		
+	
+		
+		
 	
 	stats.snap = -get_floor_normal()
 	stats.on_floor = is_on_floor()

@@ -8,14 +8,16 @@
 [ext_resource type="Script" path="res://tscns/Air.gd" id="6_l6jsv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
+size = Vector3(1, 2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sjqvd"]
 albedo_texture = ExtResource("2_q0ix1")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1pn1m"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
+size = Vector3(1, 2, 1)
 
 [node name="player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127466, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ctaje")
 stats = ExtResource("2_obrsc")
 metadata/_edit_group_ = true
@@ -25,7 +27,7 @@ mesh = SubResource("BoxMesh_4qo32")
 surface_material_override/0 = SubResource("StandardMaterial3D_sjqvd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_1pn1m")
+shape = SubResource("BoxShape3D_e6d52")
 
 [node name="TwistPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
@@ -45,3 +47,7 @@ script = ExtResource("5_k2ehx")
 
 [node name="Air" type="Node" parent="stateMachine"]
 script = ExtResource("6_l6jsv")
+
+[node name="Headbonk" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0, -1.1, 0)
