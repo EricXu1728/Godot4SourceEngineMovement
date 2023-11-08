@@ -5,6 +5,7 @@ class_name Player
 @onready var mySkin = $MeshInstance3D
 @onready var bonker = $Headbonk
 var height = 2 #the model is 2 meter tall
+@onready var speed = stats.ply_maxspeed
 
 func _ready():
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
@@ -28,6 +29,7 @@ func _process(delta):
 
 		mySkin.scale.y =0.5
 		stats.crouching = true
+		speed = stats.ply_crouchspeed
 		
 		if Input.is_action_just_pressed("crouch"):
 			if (stats.on_floor):
@@ -47,6 +49,7 @@ func _process(delta):
 			mySkin.scale.y =1
 			stats.camera.position.y =2
 			stats.crouching = false
+			speed = stats.ply_maxspeed
 		
 	
 		

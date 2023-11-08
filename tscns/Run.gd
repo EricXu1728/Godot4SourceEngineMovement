@@ -53,11 +53,11 @@ func WalkMove(delta):
 
 	#print("wow3: "+str(wishspeed))
 	# clamp to game defined max speed
-	if wishspeed != 0.0 and wishspeed > player.stats.ply_maxspeed:
+	if wishspeed != 0.0 and wishspeed > player.speed:
 		#print("wishvel")
 		#print(wishvel)
-		wishvel *= player.stats.ply_maxspeed / wishspeed
-		wishspeed = player.stats.ply_maxspeed
+		wishvel *= player.speed / wishspeed
+		wishspeed = player.speed
 		#print(wishvel)
 
 	#print("wow4: "+str(wishspeed))

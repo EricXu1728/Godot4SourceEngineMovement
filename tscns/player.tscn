@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8cl30mf2nfb"]
+[gd_scene load_steps=11 format=3 uid="uid://c8cl30mf2nfb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
 [ext_resource type="Resource" uid="uid://6hd2hay50u1b" path="res://player_vars.tres" id="2_obrsc"]
@@ -15,6 +15,8 @@ albedo_texture = ExtResource("2_q0ix1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4pade"]
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -48,6 +50,6 @@ script = ExtResource("5_k2ehx")
 [node name="Air" type="Node" parent="stateMachine"]
 script = ExtResource("6_l6jsv")
 
-[node name="Headbonk" type="RayCast3D" parent="."]
+[node name="Headbonk" type="ShapeCast3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
-target_position = Vector3(0, -1.1, 0)
+shape = SubResource("BoxShape3D_4pade")
