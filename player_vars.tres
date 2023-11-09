@@ -27,6 +27,7 @@ ply_maxvelocity = 35000
 ply_jumpheight = 4
 ply_stepsize = 8
 ply_maxspeed = 15
+ply_crouchspeed = 10
 noclip = false
 crouching = false
 crouched = false

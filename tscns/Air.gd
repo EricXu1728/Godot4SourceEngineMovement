@@ -10,7 +10,9 @@ func enter(msg := {}) -> void:
 
 func physics_update(delta: float) -> void:
 	AirMove(delta)
-	if player.is_on_floor():
+	#print(player.velocity.y)
+	if player.is_on_floor() && player.velocity.y<15:
+		
 		#print("huh?")
 		#state_machine.transition_to("Idle")
 	
@@ -92,7 +94,7 @@ func CheckJumpButton():
 	var flMul : float
 	if player.stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
 		flMul = sqrt(2 * (player.stats.ply_gravity*1.2) * player.stats.ply_jumpheight)
-		var a = Vector3(0,1.2, 0)
+		var a = Vector3(0,1, 0)
 		player.move_and_collide(a)
 	else:
 		flMul = sqrt(2 * player.stats.ply_gravity * player.stats.ply_jumpheight)

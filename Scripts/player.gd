@@ -36,18 +36,24 @@ func _process(delta):
 				print("was on floor")
 				var a = Vector3(0,-10, 0)
 				move_and_collide(a)
+				#stats.camera.position.y = 2.5
 			else:
 				print("woah")
-				var a = Vector3(0,1, 0)
+				var a = Vector3(0,0.5, 0)#how high it moves depends on the height and pivot point and I hate it
 				move_and_collide(a)
 
-				stats.camera.position.y = 1
+				stats.camera.position.y = 1.5
 	else:
+		if Input.is_action_just_released("crouch"):
+			var a = Vector3(0,-0.5, 0)#how high it moves depends on the height and pivot point and I hate it
+			move_and_collide(a)
+			stats.camera.position.y =2
+		
 		if(bonker.is_colliding() == false):
 			myShape.scale.y =1
 			#stats.camera.position.y += 1
 			mySkin.scale.y =1
-			stats.camera.position.y =2
+			
 			stats.crouching = false
 			speed = stats.ply_maxspeed
 		

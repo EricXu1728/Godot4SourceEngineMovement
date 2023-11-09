@@ -83,6 +83,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1833, 6.22153, -11.9178)
 [node name="Block2" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4556, 4.22769, -12.5046)
 
+[node name="Block2" parent="blocks/Block2" instance=ExtResource("1_jv655")]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -1.73648, 0, 0.173648, 9.84808, -21.8811, 3, -15.505)
+
 [node name="Block3" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 0.27013, -0.962824, 0, 0.962824, 0.27013, -29.8978, -3.73212, -13.0913)
 

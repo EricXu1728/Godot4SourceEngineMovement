@@ -9,7 +9,7 @@ func physics_update(delta: float) -> void:
 
 
 func Move(delta):
-
+	#you would normaly have a check to see if velocity is too high and set to "air" to mimic source, but this feels better
 	if player.stats.on_floor and player.stats.noclip == false:
 		WalkMove(delta)
 	else:
