@@ -28,6 +28,7 @@ ply_jumpheight = 4
 ply_stepsize = 8
 ply_maxspeed = 15
 ply_crouchspeed = 10
+speed = 16
 noclip = false
 crouching = false
 crouched = false

@@ -24,38 +24,7 @@ func _process(delta):
 		ViewAngles(delta)
 		#print("working")
 		
-	if Input.is_action_pressed("crouch"):
-		myShape.scale.y =0.5
 
-		mySkin.scale.y =0.5
-		stats.crouching = true
-		speed = stats.ply_crouchspeed
-		
-		if Input.is_action_just_pressed("crouch"):
-			if (stats.on_floor):
-				print("was on floor")
-				var a = Vector3(0,-10, 0)
-				move_and_collide(a)
-				#stats.camera.position.y = 2.5
-			else:
-				print("woah")
-				var a = Vector3(0,0.5, 0)#how high it moves depends on the height and pivot point and I hate it
-				move_and_collide(a)
-
-				stats.camera.position.y = 1.5
-	else:
-		if Input.is_action_just_released("crouch"):
-			var a = Vector3(0,-0.5, 0)#how high it moves depends on the height and pivot point and I hate it
-			move_and_collide(a)
-			stats.camera.position.y =2
-		
-		if(bonker.is_colliding() == false):
-			myShape.scale.y =1
-			#stats.camera.position.y += 1
-			mySkin.scale.y =1
-			
-			stats.crouching = false
-			speed = stats.ply_maxspeed
 		
 	
 		

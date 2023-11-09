@@ -10,12 +10,12 @@ func physics_update(delta: float) -> void:
 
 func Move(delta):
 	#you would normaly have a check to see if velocity is too high and set to "air" to mimic source, but this feels better
-	if player.stats.on_floor and player.stats.noclip == false:
+	if stats.on_floor and stats.noclip == false:
 		WalkMove(delta)
 	else:
 		state_machine.transition_to("Air")
 
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_pressed("jump") && (not stats.crouched):
 
 		state_machine.transition_to("Air", {do_jump = true})
 
@@ -26,8 +26,8 @@ func WalkMove(delta):
 	var forward = Vector3.FORWARD
 	var side = Vector3.LEFT
 
-	forward = forward.rotated(Vector3.UP, player.stats.camera.rotation.y)
-	side = side.rotated(Vector3.UP, player.stats.camera.rotation.y)
+	forward = forward.rotated(Vector3.UP, stats.camera.rotation.y)
+	side = side.rotated(Vector3.UP, stats.camera.rotation.y)
 
 	forward = forward.normalized()
 	side = side.normalized()
@@ -35,8 +35,8 @@ func WalkMove(delta):
 
 
 	#print("wow2"+ str(forwardmove))
-	var fmove = player.stats.forwardmove
-	var smove = player.stats.sidemove
+	var fmove = stats.forwardmove
+	var smove = stats.sidemove
 
 	var wishvel = side * smove + forward * fmove
 
@@ -53,21 +53,21 @@ func WalkMove(delta):
 
 	#print("wow3: "+str(wishspeed))
 	# clamp to game defined max speed
-	if wishspeed != 0.0 and wishspeed > player.speed:
+	if wishspeed != 0.0 and wishspeed > stats.speed:
 		#print("wishvel")
 		#print(wishvel)
-		wishvel *= player.speed / wishspeed
-		wishspeed = player.speed
+		wishvel *= stats.speed / wishspeed
+		wishspeed = stats.speed
 		#print(wishvel)
 
 	#print("wow4: "+str(wishspeed))
 
-	Accelerate(wishdir, wishspeed, player.stats.ply_accelerate, delta)
+	Accelerate(wishdir, wishspeed, stats.ply_accelerate, delta)
 
 
 func Accelerate(wishdir, wishspeed, accel, delta):
 # See if we are changing direction a bit
-	var currentspeed = player.stats.vel.dot(wishdir)
+	var currentspeed = stats.vel.dot(wishdir)
 	# Reduce wishspeed by the amount of veer.
 	var addspeed = wishspeed - currentspeed
 
@@ -82,7 +82,7 @@ func Accelerate(wishdir, wishspeed, accel, delta):
 
 	for i in range(3):
 		# Adjust velocity.
-		player.stats.vel += accelspeed * wishdir
+		stats.vel += accelspeed * wishdir
 
 	#reduce straifing on ground
 
@@ -93,7 +93,7 @@ func Friction(delta):
 	#	return
 
 	# Calculate speed
-	var speed = player.stats.vel.length()
+	var speed = stats.vel.length()
 
 	# If too slow, return
 	if speed < 0:
@@ -102,11 +102,11 @@ func Friction(delta):
 	var drop = 0
 
 	# apply ground friction
-	var friction = player.stats.ply_friction
+	var friction = stats.ply_friction
 
 	# Bleed off some speed, but if we have less than the bleed
 	#  threshold, bleed the threshold amount.
-	var control = player.stats.ply_stopspeed if speed < player.stats.ply_stopspeed else speed
+	var control = stats.ply_stopspeed if speed < stats.ply_stopspeed else speed
 	# Add the amount to the drop amount.
 	drop += control * friction * delta
 
@@ -119,7 +119,7 @@ func Friction(delta):
 		# Determine proportion of old speed we are using.
 		newspeed /= speed
 		# Adjust velocity according to proportion.
-		player.stats.vel *= newspeed
+		stats.vel *= newspeed
 
 
 

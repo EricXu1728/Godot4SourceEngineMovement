@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8cl30mf2nfb"]
+[gd_scene load_steps=14 format=3 uid="uid://c8cl30mf2nfb"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
 [ext_resource type="Resource" uid="uid://6hd2hay50u1b" path="res://player_vars.tres" id="2_obrsc"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/stateMachine.gd" id="4_aniew"]
 [ext_resource type="Script" path="res://tscns/Run.gd" id="5_k2ehx"]
 [ext_resource type="Script" path="res://tscns/Air.gd" id="6_l6jsv"]
+[ext_resource type="Script" path="res://tscns/Standing.gd" id="7_nihcb"]
+[ext_resource type="Script" path="res://tscns/Crouching.gd" id="8_akh6i"]
+[ext_resource type="Script" path="res://tscns/Crouched.gd" id="9_5wgvn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
 size = Vector3(1, 2, 1)
@@ -19,16 +22,17 @@ size = Vector3(1, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pade"]
 
 [node name="player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ctaje")
 stats = ExtResource("2_obrsc")
-metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 257
 mesh = SubResource("BoxMesh_4qo32")
 surface_material_override/0 = SubResource("StandardMaterial3D_sjqvd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_e6d52")
 
 [node name="TwistPivot" type="Node3D" parent="."]
@@ -40,16 +44,30 @@ transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 
 [node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
 fov = 110.0
 
-[node name="stateMachine" type="Node" parent="."]
+[node name="activityMachine" type="Node" parent="."]
 script = ExtResource("4_aniew")
 initial_state = NodePath("Run")
 
-[node name="Run" type="Node" parent="stateMachine"]
+[node name="Run" type="Node" parent="activityMachine"]
 script = ExtResource("5_k2ehx")
 
-[node name="Air" type="Node" parent="stateMachine"]
+[node name="Air" type="Node" parent="activityMachine"]
 script = ExtResource("6_l6jsv")
 
+[node name="standingMachine" type="Node" parent="."]
+script = ExtResource("4_aniew")
+initial_state = NodePath("Standing")
+
+[node name="Standing" type="Node" parent="standingMachine"]
+script = ExtResource("7_nihcb")
+
+[node name="Crouching" type="Node" parent="standingMachine"]
+script = ExtResource("8_akh6i")
+
+[node name="Crouched" type="Node" parent="standingMachine"]
+script = ExtResource("9_5wgvn")
+
 [node name="Headbonk" type="ShapeCast3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_4pade")
+target_position = Vector3(0, -1.1, 0)

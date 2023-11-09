@@ -35,6 +35,7 @@ class_name playerVariables
 
 @export var ply_maxspeed = 16
 @export var ply_crouchspeed = 10
+@export var speed = 16
 
 # Bools
 @export var noclip = false
