@@ -16,3 +16,4 @@ This branch is not entirely to source movement. The goal of this branch is to co
 - [x] Crouch-Jumping
 - [x] Gravity
 - [x] Ground Friction
+- [ ] Clean up code: possibly indefinite
