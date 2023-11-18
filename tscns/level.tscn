@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct74qjyy3nwye"]
+[gd_scene load_steps=14 format=3 uid="uid://crat2kydcc1em"]
 
 [ext_resource type="PackedScene" uid="uid://c24fe8wk43e08" path="res://tscns/block.tscn" id="1_jv655"]
-[ext_resource type="PackedScene" uid="uid://c8cl30mf2nfb" path="res://tscns/player.tscn" id="1_rsegt"]
+[ext_resource type="PackedScene" uid="uid://cn4n03x6jlpyo" path="res://tscns/player.tscn" id="1_rsegt"]
 [ext_resource type="PackedScene" uid="uid://c1gjwwxrr0uc5" path="res://tscns/PhysicsBlock.tscn" id="2_5e8jj"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="3_0utd8"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
+[ext_resource type="Script" path="res://Scripts/RenameThisLater.gd" id="7_dqsuf"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://player_vars.tres" id="8_u0wfb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,10 +23,10 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_k83rx"]
-size = Vector3(200, 0.5, 200)
+size = Vector3(2000, 0.5, 2000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8a2re"]
-size = Vector3(200, 0.5, 200)
+size = Vector3(2000, 0.5, 2000)
 
 [node name="Level" type="Node3D"]
 
@@ -33,7 +35,6 @@ environment = SubResource("Environment_mkgyb")
 
 [node name="floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183313, 0.221533, 0.0822086)
-metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -48,7 +49,7 @@ transform = Transform3D(0.80995, 0.479456, 0.337793, 0, -0.575947, 0.817487, 0.5
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_rsegt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43949, 0)
+transform = Transform3D(0.99998, 0, -0.00635296, 0, 1, 0, 0.00635296, 0, 0.99998, 0, 2.43949, 0)
 
 [node name="blocks" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56655, 0)
@@ -83,9 +84,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1833, 6.22153, -11.9178)
 [node name="Block2" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4556, 4.22769, -12.5046)
 
-[node name="Block2" parent="blocks/Block2" instance=ExtResource("1_jv655")]
-transform = Transform3D(1, 0, 0, 0, 0.984808, -1.73648, 0, 0.173648, 9.84808, -21.8811, 3, -15.505)
-
 [node name="Block3" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 0.27013, -0.962824, 0, 0.962824, 0.27013, -29.8978, -3.73212, -13.0913)
 
@@ -107,9 +105,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.144, -2, 33.988)
 [node name="Block9" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.746, -1.61, 35.686)
 
+[node name="Block10" parent="blocks" instance=ExtResource("1_jv655")]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -1.73648, 0, 0.173648, 9.84808, -85.3367, 7.22769, -28.0096)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)
 texture = ExtResource("3_0utd8")
 script = ExtResource("4_ivjvi")
 
 [node name="WorldSetup" parent="." instance=ExtResource("5_1fjn0")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RenameThisLater" type="RichTextLabel" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 625.0
+offset_bottom = 187.0
+theme_override_font_sizes/normal_font_size = 50
+text = "HEllo bozo
+"
+tab_size = 7
+context_menu_enabled = true
+script = ExtResource("7_dqsuf")
+stats = ExtResource("8_u0wfb")
+player = NodePath("../../player")
+
+[node name="pilars" type="Node3D" parent="."]
+
+[node name="Block" parent="pilars" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 23.6891, 3.32451, -27.6161)
+
+[node name="Block2" parent="pilars" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.0999365, 0.0356146, -0.0001309, -0.00356146, 0.999366, 0, 0.000130817, 4.66194e-05, 0.0999999, 27.4458, 3.21068, -40.4253)
+
+[node name="Block3" parent="pilars" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 27.9244, 3.05284, -55.1432)
+
+[node name="Block4" parent="pilars" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 27.4458, 3.21068, -90.533)
+
+[node name="Block5" parent="pilars" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 27.4458, 3.21068, -72.2687)

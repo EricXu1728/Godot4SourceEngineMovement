@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="playerVariables" load_steps=2 format=3 uid="uid://6hd2hay50u1b"]
+[gd_resource type="Resource" script_class="playerVariables" load_steps=2 format=3 uid="uid://dljcnxkua4rf"]
 
-[ext_resource type="Script" path="res://Scripts/player_vars.gd" id="1_nuo1m"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/player_vars.gd" id="1_nuo1m"]
 
 [resource]
 script = ExtResource("1_nuo1m")
@@ -16,7 +16,7 @@ ply_upspeed = 20
 ply_forwardspeed = 20
 ply_backspeed = 20
 ply_accelerate = 3
-ply_airaccelerate = 2
+ply_airaccelerate = 1.5
 ply_maxacceleration = 30
 ply_airspeedcap = 10
 ply_friction = 1

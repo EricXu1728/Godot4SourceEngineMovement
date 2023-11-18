@@ -1,7 +1,9 @@
 extends CharacterBody3D
+class_name Player_Inputs
 #CODE THAT PARSES USER INPUT
 #just organized like this for organization's sake
 @export var stats: playerVariables
+
 
 
 func _ready():

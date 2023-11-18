@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://c8cl30mf2nfb"]
+[gd_scene load_steps=14 format=3 uid="uid://cn4n03x6jlpyo"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ctaje"]
-[ext_resource type="Resource" uid="uid://6hd2hay50u1b" path="res://player_vars.tres" id="2_obrsc"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://player_vars.tres" id="2_obrsc"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="2_q0ix1"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/stateMachine.gd" id="4_aniew"]
-[ext_resource type="Script" path="res://tscns/Run.gd" id="5_k2ehx"]
-[ext_resource type="Script" path="res://tscns/Air.gd" id="6_l6jsv"]
-[ext_resource type="Script" path="res://tscns/Standing.gd" id="7_nihcb"]
-[ext_resource type="Script" path="res://tscns/Crouching.gd" id="8_akh6i"]
-[ext_resource type="Script" path="res://tscns/Crouched.gd" id="9_5wgvn"]
+[ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="4_oxk7l"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.gd" id="5_mty1n"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.gd" id="6_vmmom"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Standing.gd" id="7_jr32t"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.gd" id="8_uw634"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.gd" id="9_1hcmd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qo32"]
 size = Vector3(1, 2, 1)
@@ -22,7 +22,7 @@ size = Vector3(1, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pade"]
 
 [node name="player" type="CharacterBody3D"]
-script = ExtResource("1_ctaje")
+script = ExtResource("1_a7j60")
 stats = ExtResource("2_obrsc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -45,29 +45,29 @@ transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 
 fov = 110.0
 
 [node name="activityMachine" type="Node" parent="."]
-script = ExtResource("4_aniew")
+script = ExtResource("4_oxk7l")
 initial_state = NodePath("Run")
 
 [node name="Run" type="Node" parent="activityMachine"]
-script = ExtResource("5_k2ehx")
+script = ExtResource("5_mty1n")
 
 [node name="Air" type="Node" parent="activityMachine"]
-script = ExtResource("6_l6jsv")
+script = ExtResource("6_vmmom")
 
 [node name="standingMachine" type="Node" parent="."]
-script = ExtResource("4_aniew")
+script = ExtResource("4_oxk7l")
 initial_state = NodePath("Standing")
 
 [node name="Standing" type="Node" parent="standingMachine"]
-script = ExtResource("7_nihcb")
+script = ExtResource("7_jr32t")
 
 [node name="Crouching" type="Node" parent="standingMachine"]
-script = ExtResource("8_akh6i")
+script = ExtResource("8_uw634")
 
 [node name="Crouched" type="Node" parent="standingMachine"]
-script = ExtResource("9_5wgvn")
+script = ExtResource("9_1hcmd")
 
 [node name="Headbonk" type="ShapeCast3D" parent="."]
 transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_4pade")
-target_position = Vector3(0, -1.1, 0)
+target_position = Vector3(0, -1.05, 0)

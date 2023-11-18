@@ -1,4 +1,4 @@
-extends "res://Scripts/player_inputs.gd"
+extends Player_Inputs
 class_name Player
 
 @onready var myShape = $CollisionShape3D
@@ -31,13 +31,13 @@ func _process(delta):
 		
 	
 	stats.snap = -get_floor_normal()
-	stats.on_floor = is_on_floor()
+	stats.wasOnFloor = stats.on_floor
 	#Move(delta)
 	
 	velocity = stats.vel
 	move_and_slide()
 	stats.vel = velocity
-	
+	stats.on_floor = is_on_floor()
 
 func CheckVelocity():
 	# bound velocity
