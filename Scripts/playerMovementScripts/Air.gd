@@ -45,17 +45,15 @@ func AirMove(delta):
 	# VectorNormalize in the original source code doesn't actually return the length of the normalized vector
 	# It returns the length of the vector before it was normalized
 	var wishspeed = wishvel.length()
+	
 
 	# clamp to game defined max speed
 	if wishspeed != 0.0 and wishspeed > stats.ply_maxspeed:
 		wishvel *= stats.ply_maxspeed / wishspeed
 		wishspeed = stats.ply_maxspeed
-
+	#print(stats.ply_airaccelerate, " ", stats.ply_airspeedcap)
 	AirAccelerate(wishdir, wishspeed, stats.ply_airaccelerate, delta)
 	player.CheckVelocity()
-
-
-
 
 func AirAccelerate(wishdir, wishspeed, accel, delta):
 	# cap speed
@@ -71,13 +69,14 @@ func AirAccelerate(wishdir, wishspeed, accel, delta):
 
 	# Determine amount of accleration.
 	var accelspeed = accel * wishspeed * delta 
-
 	# Cap at addspeed
 	accelspeed = min(accelspeed, addspeed)
+	
 
 	for i in range(3):
 		# Adjust velocity.
 		stats.vel += accelspeed * wishdir
+
 
 
 func CheckJumpButton():
