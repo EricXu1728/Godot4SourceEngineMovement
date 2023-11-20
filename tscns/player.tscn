@@ -38,10 +38,12 @@ shape = SubResource("BoxShape3D_e6d52")
 [node name="TwistPivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
-[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, 4)
+[node name="PitchPivot" type="SpringArm3D" parent="TwistPivot"]
+spring_length = 6.0
+margin = 0.5
 
 [node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, -0.5)
 fov = 110.0
 
 [node name="activityMachine" type="Node" parent="."]

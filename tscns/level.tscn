@@ -134,7 +134,7 @@ player = NodePath("../../player")
 [node name="pilars" type="Node3D" parent="."]
 
 [node name="Block" parent="pilars" instance=ExtResource("1_jv655")]
-transform = Transform3D(0.6, 0, 0, 0, 6, 0, 0, 0, 0.6, 23.6891, 3.32451, -27.6161)
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 23.6891, 3.32451, -27.6161)
 
 [node name="Block2" parent="pilars" instance=ExtResource("1_jv655")]
 transform = Transform3D(0.499682, 0.178073, -0.0006545, -0.0178073, 4.99683, 7.84378e-11, 0.000654085, 0.000233097, 0.5, 27.4458, 3.21068, -52.6242)

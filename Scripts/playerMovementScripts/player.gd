@@ -4,6 +4,8 @@ class_name Player
 @onready var myShape = $CollisionShape3D
 @onready var mySkin = $MeshInstance3D
 @onready var bonker = $Headbonk
+@onready var spring = $TwistPivot/PitchPivot
+
 var height = 2 #the model is 2 meter tall
 @onready var speed = stats.ply_maxspeed
 
@@ -11,6 +13,7 @@ func _ready():
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
 	print("AMONGUS")
 	print(stats.camera)
+	spring.add_excluded_object(self.get_rid())
 	
 	if(stats.camera == null):
 		print("BRUH")

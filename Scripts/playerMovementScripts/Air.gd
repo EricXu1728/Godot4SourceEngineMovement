@@ -94,8 +94,7 @@ func CheckJumpButton():
 	if stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
 		flMul = sqrt(2 * (stats.ply_gravity*1.1) * stats.ply_jumpheight)
 		print(1-player.myShape.scale.y)
-		var a = Vector3(0, 2-player.myShape.scale.y, 0)
-		print(player.move_and_collide(a))
+		player.move_and_collide(Vector3(0, 2-player.myShape.scale.y, 0))
 		
 		
 		
@@ -104,5 +103,5 @@ func CheckJumpButton():
 	
 	
 	#print(stats.ply_gravity)
-	stats.vel.y = flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
+	stats.vel.y += flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
 	print(stats.vel.y)
