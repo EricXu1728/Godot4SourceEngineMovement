@@ -33,6 +33,7 @@ func WalkMove(delta):
 	side = side.normalized()
 
 
+	
 
 	#print("wow2"+ str(forwardmove))
 	var fmove = stats.forwardmove

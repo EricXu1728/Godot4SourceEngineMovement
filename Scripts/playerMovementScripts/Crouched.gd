@@ -17,3 +17,6 @@ func physics_update(delta: float) -> void:
 	if(try_uncrouch == true && player.bonker.is_colliding() == false):
 
 		state_machine.transition_to("Standing")
+		
+	if(player.bonker.is_colliding()):
+		print("bonking")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7ilc88edt76w"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h6ki4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tkg0w"]
+
+[node name="Slope" type="Node3D"]
+
+[node name="floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183313, 0.221533, 0.0822086)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_h6ki4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
+transform = Transform3D(1, 2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, -1.04308e-07, -1, 2.68221e-07)
+shape = SubResource("CylinderShape3D_tkg0w")

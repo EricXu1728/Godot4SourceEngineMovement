@@ -11,7 +11,7 @@ func enter(msg := {}) -> void:
 func physics_update(delta: float) -> void:
 	AirMove(delta)
 	#print(player.velocity.y)
-	if stats.on_floor && player.velocity.y<15:
+	if stats.on_floor:# && abs(player.velocity.y)<15:
 		
 		#print("huh?")
 		#state_machine.transition_to("Idle")

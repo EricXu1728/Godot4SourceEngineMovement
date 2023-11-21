@@ -16,6 +16,9 @@ func physics_update(delta: float) -> void:
 
 		state_machine.transition_to("Standing")
 		
+	if(player.bonker.is_colliding()):
+		print("bonking")
+		
 	player.myShape.scale.y -= 0.1
 	player.mySkin.scale.y -= 0.1
 	

@@ -20,6 +20,7 @@ albedo_texture = ExtResource("2_q0ix1")
 size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pade"]
+size = Vector3(1, 0.8, 1)
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_a7j60")
@@ -36,14 +37,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_e6d52")
 
 [node name="TwistPivot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="PitchPivot" type="SpringArm3D" parent="TwistPivot"]
-spring_length = 6.0
+spring_length = 10.0
 margin = 0.5
 
 [node name="view" type="Camera3D" parent="TwistPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.990268, 0.139173, 0, -0.139173, 0.990268, 0, 0, -0.5)
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, -1)
 fov = 110.0
 
 [node name="activityMachine" type="Node" parent="."]
@@ -72,4 +73,4 @@ script = ExtResource("9_1hcmd")
 [node name="Headbonk" type="ShapeCast3D" parent="."]
 transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_4pade")
-target_position = Vector3(0, -1.05, 0)
+target_position = Vector3(0, -1.1, 0)
