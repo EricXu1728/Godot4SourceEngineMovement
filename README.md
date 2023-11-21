@@ -11,6 +11,7 @@ This branch is not entirely to source movement. The goal of this branch is to co
 - [x] Zig-Zagging
 - [ ] Accelerated Back Hopping (WIP)
 - [ ] Sprinting
+- [ ] Surfing (broke in transition to Godot 4)
 - [x] Crouching
 - [x] Collision modifying when crouching
 - [x] Crouch-Jumping
