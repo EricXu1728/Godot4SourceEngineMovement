@@ -17,6 +17,7 @@ size = Vector3(1, 2, 1)
 albedo_texture = ExtResource("2_q0ix1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
+margin = 0.001
 size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pade"]

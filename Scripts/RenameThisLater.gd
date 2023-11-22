@@ -25,7 +25,7 @@ func _process(delta):
 	speed = speedVec.length()
 	var mestring  = str(speed)
 	
-	text = str(player.position.y)# + mestring
+	text = str(stats.on_floor) + mestring 
 	queue_redraw()
 
 func _draw():

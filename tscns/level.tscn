@@ -35,7 +35,6 @@ size = Vector3(2000, 0.5, 2000)
 environment = SubResource("Environment_mkgyb")
 
 [node name="floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183313, 0.221533, 0.0822086)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor"]
 mesh = SubResource("BoxMesh_k83rx")
@@ -49,7 +48,7 @@ transform = Transform3D(0.80995, 0.479456, 0.337793, 0, -0.575947, 0.817487, 0.5
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_rsegt")]
-transform = Transform3D(0.99998, 0, -0.00635296, 0.000104888, 0.999864, 0.0165097, 0.00635209, -0.0165101, 0.999844, 55.9541, 121.058, 49.558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 121.058, 49.558)
 
 [node name="blocks" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56655, 0)
@@ -108,7 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.4556, 4.22769, -12.5046)
 transform = Transform3D(1, 0, 0, 0, 0.27013, -0.962824, 0, 0.962824, 0.27013, -29.8978, -3.73212, -13.0913)
 
 [node name="Block4" parent="blocks/cubes" instance=ExtResource("1_jv655")]
-transform = Transform3D(1, 0, 0, 0, -1.38187, -0.722919, 0, 1.44584, -0.690933, 3.66007, -2.14543, 13.1622)
+transform = Transform3D(1, 0, 0, 0, -0.961706, -0.876802, 0, 1.75361, -0.480851, 3.66007, -5.85131, 17.6905)
 
 [node name="Block5" parent="blocks/cubes" instance=ExtResource("1_jv655")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.456, -9, 6.048)
@@ -130,6 +129,12 @@ transform = Transform3D(1, 0, 0, 0, 0.984808, -1.73648, 0, 0.173648, 9.84808, -8
 
 [node name="Block11" parent="blocks/cubes" instance=ExtResource("1_jv655")]
 transform = Transform3D(0.718685, 0.695336, 0, -0.695336, 0.718685, 0, 0, 0, 10, 19.1833, -3.72398, 66.8765)
+
+[node name="Block12" parent="blocks/cubes" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.883512, 1.40522, 0, -0.468408, 2.65054, 0, 0, 0, 10, -4.80429, -3.37126, 163.857)
+
+[node name="Block13" parent="blocks/cubes" instance=ExtResource("1_jv655")]
+transform = Transform3D(0.9032, -1.28766, 0, 0.429219, 2.7096, 0, 0, 0, 10, -27.0181, -3.37126, 246.032)
 
 [node name="Slope" parent="blocks" instance=ExtResource("4_hnn3q")]
 transform = Transform3D(8.74179, -24.2802, 0, 4.85603, 43.709, 0, 0, 0, 10, -100.957, 23.0615, -89.3319)
@@ -162,3 +167,5 @@ context_menu_enabled = true
 script = ExtResource("7_dqsuf")
 stats = ExtResource("8_u0wfb")
 player = NodePath("../../player")
+
+[node name="Node3D" type="Node3D" parent="."]

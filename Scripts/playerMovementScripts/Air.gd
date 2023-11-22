@@ -4,17 +4,15 @@ extends PlayerState
 
 # If we get a message asking us to jump, we jump.
 func enter(msg := {}) -> void:
-	print("air")
+	print("AIR")
 	if msg.has("do_jump"):
 		CheckJumpButton()
 
 func physics_update(delta: float) -> void:
 	AirMove(delta)
 	#print(player.velocity.y)
-	if stats.on_floor:# && abs(player.velocity.y)<15:
+	if stats.on_floor && abs(player.velocity.y)<15:
 		
-		#print("huh?")
-		#state_machine.transition_to("Idle")
 	
 		state_machine.transition_to("Run")
 
@@ -34,7 +32,6 @@ func AirMove(delta):
 	var smove = stats.sidemove
 
 	stats.snap = Vector3.ZERO
-	stats.vel.y -= stats.ply_gravity * delta
 
 	var wishvel = side * smove + forward * fmove
 

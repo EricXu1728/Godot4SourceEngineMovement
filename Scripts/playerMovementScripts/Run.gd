@@ -2,7 +2,8 @@
 extends PlayerState
 
 func enter(_msg := {}) -> void:
-	print("run")
+
+	print("RUN")
 	
 func physics_update(delta: float) -> void:
 	Move(delta)
@@ -31,11 +32,10 @@ func WalkMove(delta):
 
 	forward = forward.normalized()
 	side = side.normalized()
-
-
+	
+	#stats.vel.y -= stats.ply_gravity * delta
 	
 
-	#print("wow2"+ str(forwardmove))
 	var fmove = stats.forwardmove
 	var smove = stats.sidemove
 
@@ -52,16 +52,11 @@ func WalkMove(delta):
 	var wishspeed = wishvel.length()
 
 
-	#print("wow3: "+str(wishspeed))
 	# clamp to game defined max speed
 	if wishspeed != 0.0 and wishspeed > stats.speed:
-		#print("wishvel")
-		#print(wishvel)
 		wishvel *= stats.speed / wishspeed
 		wishspeed = stats.speed
-		#print(wishvel)
-
-	#print("wow4: "+str(wishspeed))
+		
 
 	Accelerate(wishdir, wishspeed, stats.ply_accelerate, delta)
 
