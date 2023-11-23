@@ -10,6 +10,7 @@ func enter(msg := {}) -> void:
 	player.mySkin.scale.y = 1
 	player.myShape.scale.y = 1
 	
+	
 func physics_update(delta: float) -> void:
 	if(Input.is_action_just_pressed("crouch")):
 		state_machine.transition_to("Crouching")

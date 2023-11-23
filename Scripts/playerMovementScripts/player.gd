@@ -140,7 +140,7 @@ func move_and_slide_own() -> bool:
 		# Check for the floor
 		
 	
-		if normal.angle_to(up_direction) < floor_max_angle:
+		if normal.angle_to(up_direction) < stats.ply_maxslopeangle:
 			stats.on_floor = true
 	
 
