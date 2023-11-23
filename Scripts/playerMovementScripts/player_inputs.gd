@@ -19,6 +19,10 @@ func _input(event):
 	if event.is_action_pressed("click"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			
+	if event.is_action_pressed("restart"):
+		stats.vel = Vector3(0,0,0)
+		get_tree().reload_current_scene()
 
 func InputMouse(event):
 	stats.xlook += -event.relative.y * stats.ply_xlookspeed 

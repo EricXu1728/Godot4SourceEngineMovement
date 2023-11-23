@@ -20,10 +20,10 @@ class_name playerVariables
 @export var ply_forwardspeed = 20
 @export var ply_backspeed = 20
 
-@export var ply_accelerate = 3 #ground accerleration
-@export var ply_airaccelerate = 2 #Turn up for faster air straifing and control
-@export var ply_maxacceleration = 30
-@export var ply_airspeedcap = 10
+@export var ply_accelerate = 6 #ground accerleration
+@export var ply_airaccelerate = 60 #effects control and surfing
+@export var ply_maxacceleration = 20
+@export var ply_airspeedcap = 3 #turn up for faster air straifing
 @export var ply_friction = 1
 @export var ply_stopspeed = 100
 @export var ply_gravity = 50
@@ -35,7 +35,7 @@ class_name playerVariables
 
 @export var ply_maxspeed = 16
 @export var ply_crouchspeed = 10
-@export var speed = 16
+var speed = ply_maxspeed
 
 # Bools
 @export var noclip = false
