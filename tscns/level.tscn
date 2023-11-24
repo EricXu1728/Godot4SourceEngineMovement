@@ -48,7 +48,7 @@ transform = Transform3D(0.80995, 0.479456, 0.337793, 0, -0.575947, 0.817487, 0.5
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_rsegt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 121.058, 49.558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 377.717, 210.786)
 
 [node name="blocks" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56655, 0)
@@ -137,16 +137,22 @@ transform = Transform3D(0.793841, 1.82437, 0, -0.608124, 2.38153, 0, 0, 0, 10, -
 transform = Transform3D(0.713323, -2.10251, 0, 0.700834, 2.13997, 0, 0, 0, 10, -21.1746, -3.37126, 246.032)
 
 [node name="Block14" parent="blocks/cubes" instance=ExtResource("1_jv655")]
-transform = Transform3D(1.41421, -1.41421, 0, 1.28571, 1.28571, -4.16503, 0.589024, 0.589024, 9.09134, 58.6432, 47.917, -191.513)
+transform = Transform3D(1.41421, -1.41421, 0, 1.28571, 1.28571, -4.16503, 0.589024, 0.589024, 9.09134, 82.6336, 47.917, -191.513)
+
+[node name="Block15" parent="blocks/cubes" instance=ExtResource("1_jv655")]
+transform = Transform3D(1.73205, -1, 0, 1, 1.73205, 0, 0, 0, 40, 24.6836, 29.0013, -347.384)
+
+[node name="Block16" parent="blocks/cubes" instance=ExtResource("1_jv655")]
+transform = Transform3D(2.58819, -1.93185, 0, 9.65926, 0.517638, 0, 0, 0, 40, 51.455, 13.7368, -505.285)
 
 [node name="Slope" parent="blocks" instance=ExtResource("4_hnn3q")]
 transform = Transform3D(8.74179, -24.2802, 0, 4.85603, 43.709, 0, 0, 0, 10, -100.957, 23.0615, -89.3319)
 
 [node name="Block10" parent="blocks" instance=ExtResource("1_jv655")]
-transform = Transform3D(1, 0, 0, 0, 16.4916, -0.565746, 0, 11.3149, 0.824579, 59.6003, 50.4571, 19.7621)
+transform = Transform3D(1, 0, 0, 0, 41.229, -0.565745, 0, 28.2873, 0.82458, 59.6003, 268.756, 189.929)
 
 [node name="Block" parent="blocks" instance=ExtResource("1_jv655")]
-transform = Transform3D(1, 0, 0, 0, 0.771036, 6.36792, 0, -0.636792, 7.71036, 58.6432, 60.5936, 11.8426)
+transform = Transform3D(1, 0, 0, 0, 0.915628, 4.02028, 0, -0.402028, 9.15628, 58.6432, 60.5936, 17.2041)
 
 [node name="Block2" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1.41421, -1.41421, 0, 1.41421, 1.41421, 0, 0, 0, 20, 58.6432, 43.1862, -84.1979)

@@ -21,9 +21,9 @@ class_name playerVariables
 @export var ply_backspeed = 20
 
 @export var ply_accelerate = 10 #ground accerleration
-@export var ply_airaccelerate = 15 #effects control and surfing
+@export var ply_airaccelerate = 12 #effects control and surfing
 @export var ply_maxacceleration = 10
-@export var ply_airspeedcap = 7.5 #turn up for faster air straifing
+@export var ply_airspeedcap = 7 #turn up for faster air straifing and surfing 
 @export var ply_friction = 2
 @export var ply_stopspeed = 50
 @export var ply_gravity = 70
@@ -60,4 +60,4 @@ var speed = ply_maxspeed
 
 
 func _ready():
-	assert("You should not be seeing this (player_vars.gd is being initiated)")
+	push_warning("You should not be seeing this (player_vars.gd is being initiated)")

@@ -1,7 +1,7 @@
 extends PlayerState
 
 var try_uncrouch = false
-# If we get a message asking us to jump, we jump.
+
 func enter(msg := {}) -> void:
 	print("crouched")
 	stats.crouched = true

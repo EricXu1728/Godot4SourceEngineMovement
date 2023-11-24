@@ -1,7 +1,7 @@
 extends PlayerState
 
 var try_uncrouch = false
-# If we get a message asking us to jump, we jump.
+
 func enter(msg := {}) -> void:
 	print("crouching")
 	stats.crouching = true
@@ -16,8 +16,6 @@ func physics_update(delta: float) -> void:
 
 		state_machine.transition_to("Standing")
 		
-	if(player.bonker.is_colliding()):
-		print("bonking")
 		
 	player.myShape.scale.y -= 0.1
 	player.mySkin.scale.y -= 0.1

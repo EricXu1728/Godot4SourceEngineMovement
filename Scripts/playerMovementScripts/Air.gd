@@ -10,7 +10,8 @@ func enter(msg := {}) -> void:
 
 func physics_update(delta: float) -> void:
 	AirMove(delta)
-	#print(player.velocity.y)
+
+
 	if stats.on_floor && abs(player.velocity.y)<15:
 		
 	
@@ -78,19 +79,18 @@ func AirAccelerate(wishdir, wishspeed, accel, delta):
 
 func CheckJumpButton():
 	stats.snap = Vector3.ZERO
-	#print("STEP")
-	#print("should have stopped: " +str(!coyote_timer.is_stopped()))
+
 	if not (stats.on_floor) ||  player.velocity.y>15:
 			return
-	#print("I JUMPED")
 
 	var flGroundFactor = 1.0
 	
 	
 	var flMul : float
+	
 	if stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
 		flMul = sqrt(2 * (stats.ply_gravity*1.1) * stats.ply_jumpheight)
-		print(1-player.myShape.scale.y)
+		
 		player.move_and_collide(Vector3(0, 2-player.myShape.scale.y, 0))
 		
 		
@@ -99,6 +99,5 @@ func CheckJumpButton():
 		flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight)
 	
 	
-	#print(stats.ply_gravity)
 	stats.vel.y += flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
-	print(stats.vel.y)
+	#print(stats.vel.y)

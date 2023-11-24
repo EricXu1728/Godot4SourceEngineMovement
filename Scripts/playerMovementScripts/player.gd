@@ -7,18 +7,14 @@ class_name Player
 @onready var spring = $TwistPivot/PitchPivot
 
 
+
 var height = 2 #the model is 2 meter tall
-@onready var speed = stats.ply_maxspeed
+
 
 func _ready():
 	stats.on_floor = false
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
-	print("AMONGUS")
-	print(stats.camera)
 	spring.add_excluded_object(self.get_rid())
-	
-	if(stats.camera == null):
-		print("BRUH")
 	
 
 # warning-ignore:unused_argument
@@ -114,13 +110,6 @@ func move_and_slide_own() -> bool:
 	for step in max_slides:
 		
 		var collision := move_and_collide(motion)
-		
-		
-		#test stuff
-		
-		
-		#end test stuff
-		
 		
 		
 		if not collision:

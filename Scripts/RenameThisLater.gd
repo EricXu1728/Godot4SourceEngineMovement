@@ -15,7 +15,6 @@ func _ready():
 	stateMachine.connect("transitioned", method_name)
 	font = FontFile.new()
 	font.font_data = load("res://Helvetica Regular/Helvetica Regular.otf")
-	#font.size = 20
 	show()
 
 func _process(delta):

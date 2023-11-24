@@ -7,7 +7,7 @@ class_name Player_Inputs
 
 
 func _ready():
-	assert("You should not be seeing this (player_inputs.gd is being initiated)")
+	push_warning("You should not be seeing this (player_inputs.gd is being initiated)")
 	
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
@@ -36,7 +36,6 @@ func ViewAngles(delta):
 func InputKeys():
 	stats.sidemove += int(stats.ply_sidespeed) * (int(Input.get_action_strength("move_left") * 50))
 	stats.sidemove -= int(stats.ply_sidespeed) * (int(Input.get_action_strength("move_right") * 50))
-	#print(Input.get_action_strength("move_left"))
 	
 	stats.forwardmove += int(stats.ply_forwardspeed) * (int(Input.get_action_strength("move_forward") * 50))
 	stats.forwardmove -= int(stats.ply_backspeed) * (int(Input.get_action_strength("move_back") * 50))
@@ -55,8 +54,6 @@ func InputKeys():
 		stats.forwardmove = 0
 	else:
 		stats.forwardmove = clamp(stats.forwardmove, -4096, 4096)
-		
-	#print(forwardmove)
 	
 
 
