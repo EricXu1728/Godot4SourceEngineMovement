@@ -5,6 +5,7 @@ class_name Player
 @onready var mySkin = $MeshInstance3D
 @onready var bonker = $Headbonk
 @onready var spring = $TwistPivot/PitchPivot
+@onready var coyoteTimer = $CoyoteTime
 
 
 
@@ -35,6 +36,19 @@ func _process(delta):
 	stats.vel = velocity
 	
 	
+	
+	if(stats.on_floor):
+		stats.shouldJump = true
+	else:
+		if coyoteTimer.is_stopped():
+			#stats.shouldJump = false
+			pass
+	
+	if stats.wasOnFloor && !stats.on_floor:
+		print("start timer")
+		coyoteTimer.start()
+		
+
 
 func CheckVelocity():
 	# bound velocity

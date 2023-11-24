@@ -143,7 +143,7 @@ transform = Transform3D(1.41421, -1.41421, 0, 1.28571, 1.28571, -4.16503, 0.5890
 transform = Transform3D(1.73205, -1, 0, 1, 1.73205, 0, 0, 0, 40, 24.6836, 29.0013, -347.384)
 
 [node name="Block16" parent="blocks/cubes" instance=ExtResource("1_jv655")]
-transform = Transform3D(2.58819, -1.93185, 0, 9.65926, 0.517638, 0, 0, 0, 40, 51.455, 13.7368, -505.285)
+transform = Transform3D(3.4202, -1.87938, 0, 9.39693, 0.68404, 0, 0, 0, 40, 51.455, 13.7368, -505.285)
 
 [node name="Slope" parent="blocks" instance=ExtResource("4_hnn3q")]
 transform = Transform3D(8.74179, -24.2802, 0, 4.85603, 43.709, 0, 0, 0, 10, -100.957, 23.0615, -89.3319)

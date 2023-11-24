@@ -45,6 +45,7 @@ var speed = ply_maxspeed
 @export var canJump : bool
 @export var wasOnFloor = false
 @export var on_floor = false
+@export var shouldJump = false
 
 
 
