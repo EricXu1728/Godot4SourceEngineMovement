@@ -9,12 +9,16 @@ This branch is not entirely to source movement. The goal of this branch is to co
 - [x] Bunnyhopping
 - [x] Wallstrafing
 - [x] Zig-Zagging
-- [ ] Accelerated Back Hopping (WIP)
-- [ ] Sprinting
 - [x] Surfing (broke in transition to Godot 4)
 - [x] Crouching
 - [x] Collision modifying when crouching
 - [x] Crouch-Jumping
 - [x] Gravity
 - [x] Ground Friction
+- [ ] Coyote time
+- [ ] Wall climb
+- [ ] Running Sprite
+- [ ] standing Sprites
+- [ ] jumping Sprites
+- [ ] Surfing sprites
 - [ ] Clean up code: possibly indefinite

@@ -5,17 +5,22 @@ extends PlayerState
 # If we get a message asking us to jump, we jump.
 func enter(msg := {}) -> void:
 	print("AIR")
+	stats.on_floor = false
 	if msg.has("do_jump"):
 		CheckJumpButton()
 
 func physics_update(delta: float) -> void:
 	AirMove(delta)
+	
 
+	
 
 	if stats.on_floor && abs(player.velocity.y)<15:
 		
-	
 		state_machine.transition_to("Run")
+	else:
+		if(Input.is_action_pressed("jump")):
+			CheckJumpButton()
 
 
 func AirMove(delta):
@@ -29,7 +34,9 @@ func AirMove(delta):
 	forward = forward.normalized()
 	side = side.normalized()
 	
+
 	stats.vel.y -= stats.ply_gravity * delta
+
 
 	var fmove = stats.forwardmove
 	var smove = stats.sidemove
@@ -80,26 +87,25 @@ func AirAccelerate(wishdir, wishspeed, accel, delta):
 
 
 func CheckJumpButton():
+	
+	
 	stats.snap = Vector3.ZERO
 
-	if not (stats.on_floor) ||  player.velocity.y>15:
-			return
+	if not (stats.shouldJump) ||  player.velocity.y>15:
+		return
 
+	stats.shouldJump = false
+	
+	
 	var flGroundFactor = 1.0
 	
 	
 	var flMul : float
 	
-	if stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
-		flMul = sqrt(2 * (stats.ply_gravity*1.1) * stats.ply_jumpheight)
-		
-		player.move_and_collide(Vector3(0, 2-player.myShape.scale.y, 0))
-		
-		
-		
-	else:
-		flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight)
 	
+	flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight)
 	
-	stats.vel.y += flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
-	#print(stats.vel.y)
+	var jumpvel =  flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
+	
+	stats.vel.y = max(jumpvel, jumpvel + stats.vel.y)
+	print("Coyote jump: ",stats.vel.y)

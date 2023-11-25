@@ -5,6 +5,7 @@ class_name Player
 @onready var mySkin = $MeshInstance3D
 @onready var bonker = $Headbonk
 @onready var spring = $TwistPivot/PitchPivot
+@onready var coyoteTimer = $CoyoteTime
 
 
 
@@ -29,12 +30,26 @@ func _process(delta):
 	stats.wasOnFloor = stats.on_floor
 
 
-	
 	velocity = stats.vel
 	move_and_slide_own()
 	stats.vel = velocity
 	
 	
+	if stats.wasOnFloor && !stats.on_floor:
+		print("start timer")
+		coyoteTimer.start()
+	
+	if(stats.on_floor):
+		stats.shouldJump = true
+	else:
+		if coyoteTimer.is_stopped():
+			stats.shouldJump = false
+			#print("timer stopped")
+			pass
+	
+	
+		
+
 
 func CheckVelocity():
 	# bound velocity
@@ -46,49 +61,7 @@ func CheckVelocity():
 		stats.vel = -stats.ply_maxvelocity
 
 
-func CrouchCamera():
 
-	# Crouching
-	if stats.crouching:
-		stats.crouched = true
-	if !stats.crouching:
-		stats.crouched = false
-
-
-func Friction(delta):
-	# If we are in water jump cycle, don't apply friction
-	#if (player->m_flWaterJumpTime)
-	#	return
-
-	# Calculate speed
-	var speed = stats.vel.length()
-
-	# If too slow, return
-	if speed < 0:
-		return
-
-	var drop = 0
-
-	# apply ground friction
-	var friction = stats.ply_friction
-
-	# Bleed off some speed, but if we have less than the bleed
-	#  threshold, bleed the threshold amount.
-	var control = stats.ply_stopspeed if speed < stats.ply_stopspeed else speed
-	# Add the amount to the drop amount.
-	drop += control * friction * delta
-
-	# scale the velocity
-	var newspeed = speed - drop
-	if newspeed < 0:
-		newspeed = 0
-
-	if newspeed != speed:
-		# Determine proportion of old speed we are using.
-		newspeed /= speed
-		# Adjust velocity according to proportion.
-		stats.vel *= newspeed
-		
 		
 
 ## Perform a move-and-slide along the set velocity vector. If the body collides

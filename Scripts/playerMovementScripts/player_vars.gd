@@ -24,13 +24,13 @@ class_name playerVariables
 @export var ply_airaccelerate = 12 #effects control and surfing
 @export var ply_maxacceleration = 10
 @export var ply_airspeedcap = 7 #turn up for faster air straifing and surfing 
-@export var ply_friction = 2
+@export var ply_friction = 3
 @export var ply_stopspeed = 50
-@export var ply_gravity = 70
+@export var ply_gravity = 60
 @export var ply_maxslopeangle = deg_to_rad(45)
 @export var ply_maxvelocity = 35000
 
-@export var ply_jumpheight = 6#4
+@export var ply_jumpheight = 4#4
 @export var ply_stepsize = 8
 
 @export var ply_maxspeed = 16
@@ -45,6 +45,7 @@ var speed = ply_maxspeed
 @export var canJump : bool
 @export var wasOnFloor = false
 @export var on_floor = false
+@export var shouldJump = false
 
 
 

@@ -75,3 +75,7 @@ script = ExtResource("9_1hcmd")
 transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_4pade")
 target_position = Vector3(0, -1.1, 0)
+
+[node name="CoyoteTime" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

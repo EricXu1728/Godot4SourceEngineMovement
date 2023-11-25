@@ -11,13 +11,17 @@ func physics_update(delta: float) -> void:
 
 func Move(delta):
 	#you would normaly have a check to see if velocity is too high and set to "air" to mimic source, but this feels better
-	if stats.on_floor and stats.noclip == false:
+	if stats.on_floor:
 		WalkMove(delta)
 	else:
+		print("oh")
+		
 		state_machine.transition_to("Air")
 
-	if Input.is_action_pressed("jump") && (not stats.crouched):
-
+	if Input.is_action_pressed("jump") && (not stats.crouched) && stats.shouldJump:
+		CheckJumpButton()
+		
+		stats.on_floor = false
 		state_machine.transition_to("Air", {do_jump = true})
 
 	player.CheckVelocity()
@@ -92,8 +96,10 @@ func Friction(delta):
 	var speed = stats.vel.length()
 
 	# If too slow, return
+	#
 	if speed < 0:
 		return
+		
 
 	var drop = 0
 
@@ -116,9 +122,36 @@ func Friction(delta):
 		newspeed /= speed
 		# Adjust velocity according to proportion.
 		stats.vel *= newspeed
+		
 
 
 
+func CheckJumpButton():
+	
+	stats.snap = Vector3.ZERO
 
+	if not (stats.shouldJump) ||  player.velocity.y>15:
+			return
 
+	stats.shouldJump = false
+	var flGroundFactor = 1.0
+	
+	
+	var flMul : float
+	
+	if stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
+		flMul = sqrt(2 * (stats.ply_gravity*1.1) * stats.ply_jumpheight)
+		
+		player.move_and_collide(Vector3(0, 2-player.myShape.scale.y, 0))
+		
+		
+		
+	else:
+		flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight)
+	
+	
+	var jumpvel =  flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
+	
+	stats.vel.y = max(jumpvel, jumpvel + stats.vel.y)
+	print("nomral jump: ",stats.vel.y)
 	
