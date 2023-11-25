@@ -48,7 +48,7 @@ transform = Transform3D(0.80995, 0.479456, 0.337793, 0, -0.575947, 0.817487, 0.5
 shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("1_rsegt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 377.717, 210.786)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 382.892, 210.786)
 
 [node name="blocks" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56655, 0)
@@ -182,5 +182,3 @@ context_menu_enabled = true
 script = ExtResource("7_dqsuf")
 stats = ExtResource("8_u0wfb")
 player = NodePath("../../player")
-
-[node name="Node3D" type="Node3D" parent="."]

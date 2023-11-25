@@ -7,6 +7,7 @@ func enter(msg := {}) -> void:
 	print("AIR")
 	stats.on_floor = false
 	if msg.has("do_jump"):
+		player.clearCoyote()
 		CheckJumpButton()
 
 func physics_update(delta: float) -> void:
@@ -33,6 +34,8 @@ func AirMove(delta):
 
 	forward = forward.normalized()
 	side = side.normalized()
+	
+	stats.vel.y -= stats.ply_gravity * delta
 	
 
 	var fmove = stats.forwardmove
@@ -91,7 +94,7 @@ func CheckJumpButton():
 	if not (stats.shouldJump) ||  player.velocity.y>15:
 		return
 
-	stats.shouldJump = false
+	player.clearCoyote()
 	
 	
 	var flGroundFactor = 1.0

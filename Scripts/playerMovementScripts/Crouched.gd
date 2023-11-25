@@ -8,6 +8,7 @@ func enter(msg := {}) -> void:
 	stats.speed = stats.ply_crouchspeed 
 	try_uncrouch = false
 	
+	
 func physics_update(delta: float) -> void:
 
 	if(Input.is_action_just_released("crouch")):

@@ -29,8 +29,6 @@ func _process(delta):
 
 	stats.wasOnFloor = stats.on_floor
 
-
-	stats.vel.y -= stats.ply_gravity * delta
 	
 	velocity = stats.vel
 	move_and_slide_own()
@@ -51,7 +49,10 @@ func _process(delta):
 	
 	
 		
-
+func clearCoyote():
+	coyoteTimer.stop()
+	stats.shouldJump = false
+	stats.on_floor = false
 
 func CheckVelocity():
 	# bound velocity
@@ -76,11 +77,20 @@ func move_and_slide_own() -> bool:
 	stats.on_floor  = false
 
 
-	# Loop performing the move
+	#check floor
+	var checkMotion := velocity * get_delta_time()
+	checkMotion.y  -= stats.ply_gravity * get_delta_time() * get_delta_time()
+		
+	var testcol := move_and_collide(checkMotion, true)
 
-	
+	if testcol:
+		var testNormal = testcol.get_normal()
+		if testNormal.angle_to(up_direction) < stats.ply_maxslopeangle:
+			stats.on_floor = true
+
+	# Loop performing the move
 	var motion := velocity * get_delta_time()
-	#print(motion)
+	
 	
 	for step in max_slides:
 		
@@ -93,27 +103,19 @@ func move_and_slide_own() -> bool:
 			break
 
 		# Calculate velocity to slide along the surface
-		
+	
 		var normal = collision.get_normal()
 		
 		motion = collision.get_remainder().slide(normal)
-		#print("motion ", motion)
 		velocity = velocity.slide(normal)
-		
-		
-		# Check for the floor
-		
-	
-		if normal.angle_to(up_direction) < stats.ply_maxslopeangle:
-			stats.on_floor = true
-	
+
 
 		# Collision has occurred
 		collided = true
 
 
 	return collided
-
+	
 func get_delta_time() -> float:
 	if Engine.is_in_physics_frame():
 		return get_physics_process_delta_time()

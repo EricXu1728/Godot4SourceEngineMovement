@@ -133,7 +133,8 @@ func CheckJumpButton():
 	if not (stats.shouldJump) ||  player.velocity.y>15:
 			return
 
-	stats.shouldJump = false
+	player.clearCoyote()
+	print("ywah")
 	var flGroundFactor = 1.0
 	
 	
