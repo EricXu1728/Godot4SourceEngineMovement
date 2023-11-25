@@ -29,7 +29,7 @@ func _process(delta):
 	stats.wasOnFloor = stats.on_floor
 
 
-	stats.vel.y -= stats.ply_gravity * delta
+	
 	velocity = stats.vel
 	move_and_slide_own()
 	stats.vel = velocity
@@ -99,13 +99,25 @@ func move_and_slide_own() -> bool:
 
 	# Reset previously detected floor
 	stats.on_floor  = false
+	
+	
+	#check for floor
+	var checkMotion := velocity * get_delta_time()
+	checkMotion.y  -= stats.ply_gravity * get_delta_time()
+	
+	var testcol := move_and_collide(checkMotion, true)
+	if testcol:
+#		print(testcol)
+		var normal = testcol.get_normal()
+		if normal.angle_to(up_direction) < stats.ply_maxslopeangle:
+			stats.on_floor = true
+		pass
+
 
 
 	# Loop performing the move
-
-	
 	var motion := velocity * get_delta_time()
-	#print(motion)
+	
 	
 	for step in max_slides:
 		
@@ -118,19 +130,11 @@ func move_and_slide_own() -> bool:
 			break
 
 		# Calculate velocity to slide along the surface
-		
+	
 		var normal = collision.get_normal()
 		
 		motion = collision.get_remainder().slide(normal)
-		#print("motion ", motion)
 		velocity = velocity.slide(normal)
-		
-		
-		# Check for the floor
-		
-	
-		if normal.angle_to(up_direction) < stats.ply_maxslopeangle:
-			stats.on_floor = true
 	
 
 		# Collision has occurred
