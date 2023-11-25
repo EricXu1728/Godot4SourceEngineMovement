@@ -72,21 +72,18 @@ func move_and_slide_own() -> bool:
 
 	# Reset previously detected floor
 	stats.on_floor  = false
-	
-	
-	#check for floor
+
+
+	#check floor
 	var checkMotion := velocity * get_delta_time()
-	checkMotion.y  -= stats.ply_gravity * get_delta_time()
-	
+	checkMotion.y  -= stats.ply_gravity * get_delta_time() * get_delta_time()
+		
 	var testcol := move_and_collide(checkMotion, true)
+	print(testcol)
 	if testcol:
-#		print(testcol)
-		var normal = testcol.get_normal()
-		if normal.angle_to(up_direction) < stats.ply_maxslopeangle:
+		var testNormal = testcol.get_normal()
+		if testNormal.angle_to(up_direction) < stats.ply_maxslopeangle:
 			stats.on_floor = true
-		pass
-
-
 
 	# Loop performing the move
 	var motion := velocity * get_delta_time()
@@ -108,7 +105,7 @@ func move_and_slide_own() -> bool:
 		
 		motion = collision.get_remainder().slide(normal)
 		velocity = velocity.slide(normal)
-	
+
 
 		# Collision has occurred
 		collided = true
