@@ -33,6 +33,7 @@ func AirMove(delta):
 
 	forward = forward.normalized()
 	side = side.normalized()
+	
 
 	var fmove = stats.forwardmove
 	var smove = stats.sidemove
@@ -88,11 +89,11 @@ func CheckJumpButton():
 	stats.snap = Vector3.ZERO
 
 	if not (stats.shouldJump) ||  player.velocity.y>15:
-			return
+		return
 
-	print("Coyote jump")
-	
 	stats.shouldJump = false
+	
+	
 	var flGroundFactor = 1.0
 	
 	
@@ -104,4 +105,4 @@ func CheckJumpButton():
 	var jumpvel =  flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
 	
 	stats.vel.y = max(jumpvel, jumpvel + stats.vel.y)
-	#print(stats.vel.y)
+	print("Coyote jump: ",stats.vel.y)

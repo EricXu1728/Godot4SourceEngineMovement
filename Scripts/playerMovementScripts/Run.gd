@@ -20,7 +20,7 @@ func Move(delta):
 
 	if Input.is_action_pressed("jump") && (not stats.crouched) && stats.shouldJump:
 		CheckJumpButton()
-		stats.shouldJump = false
+		
 		stats.on_floor = false
 		state_machine.transition_to("Air", {do_jump = true})
 
@@ -96,8 +96,10 @@ func Friction(delta):
 	var speed = stats.vel.length()
 
 	# If too slow, return
+	#
 	if speed < 0:
 		return
+		
 
 	var drop = 0
 
@@ -120,7 +122,7 @@ func Friction(delta):
 		newspeed /= speed
 		# Adjust velocity according to proportion.
 		stats.vel *= newspeed
-
+		
 
 
 
@@ -151,4 +153,5 @@ func CheckJumpButton():
 	var jumpvel =  flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
 	
 	stats.vel.y = max(jumpvel, jumpvel + stats.vel.y)
+	print("nomral jump: ",stats.vel.y)
 	

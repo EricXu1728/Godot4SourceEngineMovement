@@ -157,6 +157,9 @@ transform = Transform3D(1, 0, 0, 0, 0.915628, 4.02028, 0, -0.402028, 9.15628, 58
 [node name="Block2" parent="blocks" instance=ExtResource("1_jv655")]
 transform = Transform3D(1.41421, -1.41421, 0, 1.41421, 1.41421, 0, 0, 0, 20, 58.6432, 43.1862, -84.1979)
 
+[node name="Block3" parent="blocks" instance=ExtResource("1_jv655")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 369.561, 210.786)
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)
 texture = ExtResource("3_0utd8")
