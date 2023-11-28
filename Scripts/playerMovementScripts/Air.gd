@@ -91,7 +91,7 @@ func CheckJumpButton():
 	
 	stats.snap = Vector3.ZERO
 
-	if not (stats.shouldJump) ||  player.velocity.y>15:
+	if not (stats.shouldJump) :#||  player.velocity.y>15:
 		return
 
 	player.clearCoyote()

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctxc3he15wpi6"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ewjs7"]
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+linear_accel_min = -10.0
+linear_accel_max = -10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at2vr"]
+shading_mode = 0
+
+[sub_resource type="SphereMesh" id="SphereMesh_usjsf"]
+material = SubResource("StandardMaterial3D_at2vr")
+
+[node name="fireball" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+process_material = SubResource("ParticleProcessMaterial_ewjs7")
+draw_pass_1 = SubResource("SphereMesh_usjsf")

@@ -20,12 +20,12 @@ func physics_update(delta: float) -> void:
 	player.myShape.scale.y -= 0.1
 	player.mySkin.scale.y -= 0.1
 	
-	player.myShape.scale.y = clamp(player.myShape.scale.y, 0.5, 1)
-	player.mySkin.scale.y = clamp(player.mySkin.scale.y, 0.5, 1)
+	player.myShape.scale.y = clamp(player.myShape.scale.y, 0.1, 1)
+	player.mySkin.scale.y = clamp(player.mySkin.scale.y, 0.1, 1)
 	if(stats.on_floor):
 		player.move_and_collide(Vector3(0,-0.1, 0))
 	else:
 		player.move_and_collide(Vector3(0,0.1, 0))
 	
-	if(player.myShape.scale.y ==0.5):
+	if(player.myShape.scale.y <=0.5 ):
 		state_machine.transition_to("Crouched")

@@ -2,11 +2,9 @@ extends Resource
 class_name playerVariables
 #STORES VARIABLES TO BE USED BY ALL PLAYER PARTS
 #Also stores very commonly used functions (such as friction) by most player related interfaces and parts
-
 # Vectors
 @export var vel = Vector3.ZERO
 @export var snap = Vector3.DOWN
-
 
 
 # ConVars

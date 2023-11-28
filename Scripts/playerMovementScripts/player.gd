@@ -2,10 +2,13 @@ extends Player_Inputs
 class_name Player
 
 @onready var myShape = $CollisionShape3D
-@onready var mySkin = $MeshInstance3D
+@onready var mySkin = $Sprite3D
 @onready var bonker = $Headbonk
 @onready var spring = $TwistPivot/PitchPivot
 @onready var coyoteTimer = $CoyoteTime
+@onready var view = $TwistPivot/PitchPivot/view
+@onready var shadowspring = $Shadowarm
+
 
 
 
@@ -13,13 +16,63 @@ var height = 2 #the model is 2 meter tall
 
 
 func _ready():
+	print(stats.vel)
+	
 	stats.on_floor = false
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
 	spring.add_excluded_object(self.get_rid())
+	shadowspring.add_excluded_object(self.get_rid())
 	
 
-# warning-ignore:unused_argument
+var frame = 0
+var nextEmit = 0
+
 func _process(delta):
+	
+	view.fov = clamp(70+sqrt(stats.vel.length()*10),90, 180)
+	spring.spring_length = clamp(3+sqrt(stats.vel.length()),8, 100)
+	
+	if frame>=11:
+		mySkin.frame = 0
+		frame = 0
+	mySkin.frame = round(frame)
+	#print(mySkin.frame)
+	frame+= stats.vel.length() * 0.01
+	
+		
+	mySkin.rotation.y = stats.camera.rotation.y
+	mySkin.rotation.x = (stats.camera.rotation.x)/2
+
+#
+#	fireball.rotation.y = atan2(stats.vel.x, stats.vel.z)
+#	var speedVec = Vector2(stats.vel.x, stats.vel.z)
+#
+#	fireball.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
+#
+#
+	if stats.vel.length()>40:
+		nextEmit += pow(stats.vel.length(),1.6)
+
+	if(nextEmit>20000):
+		nextEmit-=20000
+		var scene_trs =load("res://customParticle.tscn")
+		var scene=scene_trs.instantiate()
+		
+		scene.position = self.position + (stats.vel*delta)
+		scene.position.y +=1
+		
+		scene.rotation.y = atan2(stats.vel.x, stats.vel.z)
+		var speedVec = Vector2(stats.vel.x, stats.vel.z)
+
+		scene.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
+		
+		get_parent().add_child(scene)
+		
+#		#fireballPart.emitting = true
+#		fireballPart.emit_particle(fireballPart.xform, fireballPart.velocity, fireballPart.color, fireballPart.custom, fireballPart.flags)
+#		#emit_particle(xform: Transform3D, velocity: Vector3, color: Color, custom: Color, flags: int)
+#
+			
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		InputKeys()
 		

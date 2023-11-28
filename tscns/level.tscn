@@ -1,25 +1,29 @@
-[gd_scene load_steps=15 format=3 uid="uid://crat2kydcc1em"]
+[gd_scene load_steps=20 format=3 uid="uid://crat2kydcc1em"]
 
 [ext_resource type="PackedScene" uid="uid://c24fe8wk43e08" path="res://tscns/block.tscn" id="1_jv655"]
 [ext_resource type="PackedScene" uid="uid://cn4n03x6jlpyo" path="res://tscns/player.tscn" id="1_rsegt"]
 [ext_resource type="PackedScene" uid="uid://c1gjwwxrr0uc5" path="res://tscns/PhysicsBlock.tscn" id="2_5e8jj"]
-[ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="3_0utd8"]
 [ext_resource type="PackedScene" uid="uid://b7ilc88edt76w" path="res://tscns/slope.tscn" id="4_hnn3q"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
+[ext_resource type="Texture2D" uid="uid://cvueg3f24a3ox" path="res://Drawing-1.sketchpad (1).png" id="5_615tb"]
 [ext_resource type="Script" path="res://Scripts/RenameThisLater.gd" id="7_dqsuf"]
+[ext_resource type="Script" path="res://tscns/CanvasLayer.gd" id="8_olrrk"]
 [ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://player_vars.tres" id="8_u0wfb"]
+[ext_resource type="Shader" path="res://speedLine.gdshader" id="10_2hke5"]
+[ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://noiseTexture.png" id="11_04hva"]
+[ext_resource type="Script" path="res://tscns/ColorRect.gd" id="12_bebkk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_huisk"]
+[sub_resource type="Sky" id="Sky_mdvn2"]
 sky_material = SubResource("ProceduralSkyMaterial_jym6u")
 
 [sub_resource type="Environment" id="Environment_mkgyb"]
 background_mode = 2
-sky = SubResource("Sky_huisk")
+sky = SubResource("Sky_mdvn2")
 tonemap_mode = 2
 glow_enabled = true
 
@@ -28,6 +32,17 @@ size = Vector3(2000, 0.5, 2000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8a2re"]
 size = Vector3(2000, 0.5, 2000)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x35o4"]
+shader = ExtResource("10_2hke5")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 2.0
+shader_parameter/line_density = 0.15
+shader_parameter/line_faloff = 0.15
+shader_parameter/mask_size = 0.0
+shader_parameter/mask_edge = 0.172
+shader_parameter/animation_speed = 10.0
+shader_parameter/noise = ExtResource("11_04hva")
 
 [node name="Level" type="Node3D"]
 
@@ -162,12 +177,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 369.561, 210.786)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)
-texture = ExtResource("3_0utd8")
+texture = ExtResource("5_615tb")
 script = ExtResource("4_ivjvi")
 
 [node name="WorldSetup" parent="." instance=ExtResource("5_1fjn0")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 0.001
+script = ExtResource("8_olrrk")
 
 [node name="RenameThisLater" type="RichTextLabel" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 offset_left = 11.0
@@ -182,3 +199,11 @@ context_menu_enabled = true
 script = ExtResource("7_dqsuf")
 stats = ExtResource("8_u0wfb")
 player = NodePath("../../player")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visibility_layer = 17
+material = SubResource("ShaderMaterial_x35o4")
+offset_right = 1157.0
+offset_bottom = 654.0
+script = ExtResource("12_bebkk")
+stats = ExtResource("8_u0wfb")

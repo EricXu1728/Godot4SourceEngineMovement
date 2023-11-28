@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck7v5ihyguecx"]
+
+[ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://Drawing-2.sketchpad.jpeg" id="1_hqd5a"]
+
+[node name="FrameTest" type="Node3D"]
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.99585)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 10)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 13.948)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 17.1889)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 3.01992e-07, 0, 1, 0, -3.01992e-07, 0, 1, -1.50996e-06, 0, 20.1106)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 22.0885)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 6.03983e-07, 0, 1, 0, -6.03983e-07, 0, 1, -3.01992e-06, 0, -15.4891)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -4.52987e-07, 0, 1, 0, 4.52987e-07, 0, -1, 1.50996e-06, 0, 1.99212)
+texture = ExtResource("1_hqd5a")
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 3.01992e-07, 0, 1, 0, -3.01992e-07, 0, 1, -1.50996e-06, 0, 6.51986)
+texture = ExtResource("1_hqd5a")

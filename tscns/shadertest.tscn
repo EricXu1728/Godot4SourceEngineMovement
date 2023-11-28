@@ -1,0 +1,62 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhh7ou71kmqgh"]
+
+[ext_resource type="Shader" path="res://distanceField.gdshader" id="1_grudr"]
+[ext_resource type="Texture2D" uid="uid://chssoy8c7bjhu" path="res://distancehex.png" id="2_1otpf"]
+[ext_resource type="Texture2D" uid="uid://cyb36fe8j6w1o" path="res://player.png" id="3_ld024"]
+[ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://Drawing-2.sketchpad.jpeg" id="4_rsbbl"]
+[ext_resource type="Shader" path="res://speedLine.gdshader" id="5_kp2kp"]
+[ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://noiseTexture.png" id="6_wqqhs"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4sjfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft4tl"]
+albedo_texture = ExtResource("2_1otpf")
+
+[sub_resource type="SphereMesh" id="SphereMesh_acr2q"]
+material = SubResource("StandardMaterial3D_ft4tl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xggy"]
+render_priority = 0
+shader = ExtResource("1_grudr")
+shader_parameter/thickness = 0.5
+shader_parameter/softness = 0.0
+shader_parameter/colour = Color(1, 1, 1, 1)
+shader_parameter/outline_colour = Color(1, 1, 1, 1)
+shader_parameter/outline_thickness = 0.0
+shader_parameter/outline_softness = 0.1
+shader_parameter/sdf_texture = ExtResource("3_ld024")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fh0r5"]
+shader = ExtResource("5_kp2kp")
+shader_parameter/line_color = null
+shader_parameter/line_count = 0.5
+shader_parameter/line_density = 0.5
+shader_parameter/line_faloff = 0.25
+shader_parameter/mask_size = 0.1
+shader_parameter/mask_edge = 0.5
+shader_parameter/animation_speed = 0.5
+shader_parameter/noise = ExtResource("6_wqqhs")
+
+[node name="shadertest" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.421145, 0, 0)
+mesh = SubResource("SphereMesh_4sjfh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("SphereMesh_acr2q")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.999726, 0, 0.0234026, 0, 1, 0, -0.0234026, 0, -0.999726, -0.0603711, 2.88511, 0.00783777)
+material_override = SubResource("ShaderMaterial_0xggy")
+texture = ExtResource("2_1otpf")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 2.99355, 2.90659, 0)
+texture = ExtResource("4_rsbbl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fh0r5")
+offset_right = 127.0
+offset_bottom = 83.0

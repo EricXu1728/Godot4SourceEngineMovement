@@ -11,7 +11,7 @@ var speedVec
 var speed = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	stateMachine = player.get_child(3)#hopefully gets statemachine
+	stateMachine = player.get_child(2)#hopefully gets statemachine
 	stateMachine.connect("transitioned", method_name)
 	font = FontFile.new()
 	font.font_data = load("res://Helvetica Regular/Helvetica Regular.otf")

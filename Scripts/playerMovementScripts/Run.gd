@@ -134,7 +134,7 @@ func CheckJumpButton():
 			return
 
 	player.clearCoyote()
-	print("ywah")
+
 	var flGroundFactor = 1.0
 	
 	
