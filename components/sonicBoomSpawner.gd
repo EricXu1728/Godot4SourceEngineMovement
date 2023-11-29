@@ -21,8 +21,11 @@ func _process(delta):
 	if(nextEmit>20000):
 		nextEmit-=20000
 		
-		var pitch = clamp((stats.vel.length()/50)-1.5, 0.5, 5)
+		var pitch = pow(clamp((stats.vel.length()/30)-2, 0.5, 10),2)
+		
+		print(pitch)
 		$AudioStreamPlayer.pitch_scale = pitch
+		$AudioStreamPlayer.volume_db = -pow(pitch, 0.95)
 		$AudioStreamPlayer.play()
 		
 		var scene_trs =load("res://components/customParticle.tscn")
