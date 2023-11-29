@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://cn4n03x6jlpyo"]
+[gd_scene load_steps=16 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
-[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://player_vars.tres" id="2_obrsc"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/player_vars.tres" id="2_obrsc"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="4_oxk7l"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.gd" id="5_mty1n"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.gd" id="6_vmmom"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Standing.gd" id="7_jr32t"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.gd" id="8_uw634"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.gd" id="9_1hcmd"]
-[ext_resource type="Shader" path="res://distanceField.gdshader" id="9_bjwny"]
-[ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://playerstrip.png" id="10_j246r"]
-[ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://icon.svg" id="11_oyceg"]
+[ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
+[ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
+[ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
+[ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/sonicBoomSpawner.tscn" id="12_v7iwn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 margin = 0.001
@@ -21,14 +22,14 @@ size = Vector3(1, 0.8, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ln4rn"]
 render_priority = 0
-shader = ExtResource("9_bjwny")
+shader = ExtResource("9_y1ap3")
 shader_parameter/thickness = 0.5
 shader_parameter/softness = 0.0
 shader_parameter/colour = Color(0, 0, 0, 1)
 shader_parameter/outline_colour = Color(1, 1, 1, 1)
 shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_softness = 0.1
-shader_parameter/sdf_texture = ExtResource("10_j246r")
+shader_parameter/sdf_texture = ExtResource("10_ki5xb")
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_a7j60")
@@ -84,15 +85,11 @@ one_shot = true
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 material_override = SubResource("ShaderMaterial_ln4rn")
-texture = ExtResource("10_j246r")
+texture = ExtResource("10_ki5xb")
 hframes = 11
 
-[node name="Shadowarm" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, 0)
-spring_length = 100.0
+[node name="sonicBoomSpawner" parent="." node_paths=PackedStringArray("point") instance=ExtResource("12_v7iwn")]
+point = NodePath("..")
 
-[node name="Node3D" type="Node3D" parent="Shadowarm"]
-
-[node name="Sprite3D" type="Sprite3D" parent="Shadowarm/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-texture = ExtResource("11_oyceg")
+[node name="shadow" parent="." node_paths=PackedStringArray("ignore") instance=ExtResource("11_6rufm")]
+ignore = NodePath("..")

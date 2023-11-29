@@ -3,12 +3,12 @@ shader_type canvas_item;
 
 uniform sampler2D noise: repeat_enable;
 uniform vec4 line_color: source_color;
-uniform float line_count: hint_range(0.0, 2.0, 0.05) = 0.5;
+uniform float line_count: hint_range(0.0, 10.0, 0.05) = 0.5;
 uniform float line_density: hint_range(0.0, 1.0) = 0.5;
 uniform float line_faloff: hint_range(0.0, 1.0) = 0.25;
 uniform float mask_size: hint_range(0.0, 1.0) = 0.1;
 uniform float mask_edge: hint_range(0.0, 1.0) = 0.5;
-uniform float animation_speed: hint_range(1.0, 20.0) = 0.5;
+uniform float animation_speed: hint_range(1.0, 100.0) = 0.5;
 
 
 

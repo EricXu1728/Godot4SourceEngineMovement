@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck7v5ihyguecx"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://Drawing-2.sketchpad.jpeg" id="1_hqd5a"]
+[ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://images/Drawing-2.sketchpad.jpeg" id="1_hqd5a"]
 
 [node name="FrameTest" type="Node3D"]
 

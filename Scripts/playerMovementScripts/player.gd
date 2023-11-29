@@ -7,7 +7,6 @@ class_name Player
 @onready var spring = $TwistPivot/PitchPivot
 @onready var coyoteTimer = $CoyoteTime
 @onready var view = $TwistPivot/PitchPivot/view
-@onready var shadowspring = $Shadowarm
 
 
 
@@ -21,7 +20,7 @@ func _ready():
 	stats.on_floor = false
 	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
 	spring.add_excluded_object(self.get_rid())
-	shadowspring.add_excluded_object(self.get_rid())
+	
 	
 
 var frame = 0
@@ -29,8 +28,8 @@ var nextEmit = 0
 
 func _process(delta):
 	
-	view.fov = clamp(70+sqrt(stats.vel.length()*10),90, 180)
-	spring.spring_length = clamp(3+sqrt(stats.vel.length()),8, 100)
+	view.fov = clamp(70+sqrt(stats.vel.length()*7),90, 180)
+	spring.spring_length = clamp(4+(sqrt(stats.vel.length())/2),8, 100)
 	
 	if frame>=11:
 		mySkin.frame = 0
@@ -50,23 +49,7 @@ func _process(delta):
 #	fireball.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
 #
 #
-	if stats.vel.length()>40:
-		nextEmit += pow(stats.vel.length(),1.6)
-
-	if(nextEmit>20000):
-		nextEmit-=20000
-		var scene_trs =load("res://customParticle.tscn")
-		var scene=scene_trs.instantiate()
-		
-		scene.position = self.position + (stats.vel*delta)
-		scene.position.y +=1
-		
-		scene.rotation.y = atan2(stats.vel.x, stats.vel.z)
-		var speedVec = Vector2(stats.vel.x, stats.vel.z)
-
-		scene.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
-		
-		get_parent().add_child(scene)
+	
 		
 #		#fireballPart.emitting = true
 #		fireballPart.emit_particle(fireballPart.xform, fireballPart.velocity, fireballPart.color, fireballPart.custom, fireballPart.flags)

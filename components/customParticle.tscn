@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi8ecayruogjf"]
+
+[ext_resource type="Script" path="res://components/particleSprite.gd" id="1_3wham"]
+[ext_resource type="Texture2D" uid="uid://ds71pyn5su8tk" path="res://images/sonicBurst.png" id="2_8akml"]
+
+[node name="particle" type="Node3D"]
+script = ExtResource("1_3wham")
+
+[node name="particleSprite" type="Sprite3D" parent="."]
+texture = ExtResource("2_8akml")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true

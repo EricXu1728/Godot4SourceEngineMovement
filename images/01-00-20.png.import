@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi8u1ev52eduy"
-path.s3tc="res://.godot/imported/playerstrip.png-b4e5e413c7dd763ebe0e55360f0eba07.s3tc.ctex"
+uid="uid://d3sjjdtlmbu1i"
+path.s3tc="res://.godot/imported/01-00-20.png-d2dc849931d0211c82b684d514a92848.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://playerstrip.png"
-dest_files=["res://.godot/imported/playerstrip.png-b4e5e413c7dd763ebe0e55360f0eba07.s3tc.ctex"]
+source_file="res://images/01-00-20.png"
+dest_files=["res://.godot/imported/01-00-20.png-d2dc849931d0211c82b684d514a92848.s3tc.ctex"]
 
 [params]
 

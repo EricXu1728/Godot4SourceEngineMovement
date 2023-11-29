@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds71pyn5su8tk"
-path.s3tc="res://.godot/imported/c727907b-5983-429b-9cfd-5772a061bcdb.png-d4d26b816bf6b02579ada4031f0bcaa8.s3tc.ctex"
+uid="uid://cvueg3f24a3ox"
+path.s3tc="res://.godot/imported/Drawing-1.sketchpad (1).png-464913b6fae883de63a4d4ab7f6acc28.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://c727907b-5983-429b-9cfd-5772a061bcdb.png"
-dest_files=["res://.godot/imported/c727907b-5983-429b-9cfd-5772a061bcdb.png-d4d26b816bf6b02579ada4031f0bcaa8.s3tc.ctex"]
+source_file="res://images/Drawing-1.sketchpad (1).png"
+dest_files=["res://.godot/imported/Drawing-1.sketchpad (1).png-464913b6fae883de63a4d4ab7f6acc28.s3tc.ctex"]
 
 [params]
 

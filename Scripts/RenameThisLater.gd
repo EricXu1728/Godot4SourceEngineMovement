@@ -24,7 +24,7 @@ func _process(delta):
 	speed = speedVec.length()
 	var mestring  = str(speed)
 	
-	text = str(stats.shouldJump) + mestring 
+	text = str(stats.shouldJump) + mestring + "\n" + str(Engine.get_frames_per_second() ) + "\n" + str(stats.vel.length()*delta)
 	queue_redraw()
 
 func _draw():
