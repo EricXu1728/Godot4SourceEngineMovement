@@ -4,6 +4,8 @@ extends Node3D
 var nextEmit = 0
 var base : Node3D
 @export var point : Node3D
+var rng = RandomNumberGenerator.new()
+var sound = "res://337788__robinhood76__06391-fast-air-impact.wav"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,14 +20,21 @@ func _process(delta):
 
 	if(nextEmit>20000):
 		nextEmit-=20000
+		
+		var pitch = clamp((stats.vel.length()/50)-1.5, 0.5, 5)
+		$AudioStreamPlayer.pitch_scale = pitch
+		$AudioStreamPlayer.play()
+		
 		var scene_trs =load("res://components/customParticle.tscn")
 		var scene=scene_trs.instantiate()
 		
-		scene.position = point.position + (stats.vel*delta)
+		scene.position = point.position + (stats.vel*delta * 1)
 		scene.position.y +=1
 		
 		scene.rotation.y = atan2(stats.vel.x, stats.vel.z)
 		var speedVec = Vector2(stats.vel.x, stats.vel.z)
+		var my_random_number = rng.randf_range(0.0, 360.0)
+		scene.rotation.z = my_random_number
 
 		scene.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
 		
