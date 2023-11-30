@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=21 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" path="res://tscns/block.tscn" id="1_jv655"]
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://tscns/player.tscn" id="1_rsegt"]
@@ -12,6 +12,7 @@
 [ext_resource type="Shader" path="res://shaders/speedLine.gdshader" id="11_2lsuk"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="12_5r21d"]
 [ext_resource type="Script" path="res://ColorRect.gd" id="13_chubs"]
+[ext_resource type="PackedScene" uid="uid://yhbg026i5ocg" path="res://tscns/shadertest.tscn" id="14_83tra"]
 [ext_resource type="Script" path="res://tscns/Speedometer.gd" id="14_k8f7j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
@@ -202,3 +203,6 @@ offset_bottom = 592.0
 text = "SPEED"
 script = ExtResource("14_k8f7j")
 stats = ExtResource("10_p5cny")
+
+[node name="shadertest" parent="." instance=ExtResource("14_83tra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78033, 1.90995, 0)

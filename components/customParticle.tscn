@@ -7,6 +7,7 @@
 script = ExtResource("1_3wham")
 
 [node name="particleSprite" type="Sprite3D" parent="."]
+cast_shadow = 0
 texture = ExtResource("2_8akml")
 
 [node name="Timer" type="Timer" parent="."]

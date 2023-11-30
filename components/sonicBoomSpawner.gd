@@ -23,7 +23,7 @@ func _process(delta):
 		
 		var pitch = pow(clamp((stats.vel.length()/30)-2, 0.5, 10),2)
 		
-		print(pitch)
+		#print(pitch)
 		$AudioStreamPlayer.pitch_scale = pitch
 		$AudioStreamPlayer.volume_db = -pow(pitch, 0.95)
 		$AudioStreamPlayer.play()

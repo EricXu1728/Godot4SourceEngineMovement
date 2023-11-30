@@ -1,12 +1,55 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=21 format=3 uid="uid://yhbg026i5ocg"]
 
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="1_grudr"]
 [ext_resource type="Texture2D" uid="uid://chssoy8c7bjhu" path="res://images/distancehex.png" id="2_1otpf"]
 [ext_resource type="Texture2D" uid="uid://cyb36fe8j6w1o" path="res://images/player.png" id="3_ld024"]
+[ext_resource type="Shader" path="res://shaders/fire.gdshader" id="4_eatw8"]
 [ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://images/Drawing-2.sketchpad.jpeg" id="4_rsbbl"]
 [ext_resource type="Script" path="res://Label.gd" id="5_ap3ok"]
+[ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="5_uic8j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5c4p"]
+render_priority = 0
+shader = ExtResource("4_eatw8")
+shader_parameter/line_color = Color(0.85098, 0.447059, 0.156863, 0.752941)
+shader_parameter/line_count = 2.4
+shader_parameter/line_density = 0.138
+shader_parameter/line_faloff = 0.0
+shader_parameter/mask_size = 0.569
+shader_parameter/mask_edge = 0.502
+shader_parameter/animation_speed = 10.0
+shader_parameter/noise = ExtResource("5_uic8j")
 
 [sub_resource type="SphereMesh" id="SphereMesh_4sjfh"]
+material = SubResource("ShaderMaterial_y5c4p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ng31h"]
+render_priority = 0
+shader = ExtResource("4_eatw8")
+shader_parameter/line_color = Color(1, 0.823529, 0, 0.752941)
+shader_parameter/line_count = 1.1
+shader_parameter/line_density = 0.5
+shader_parameter/line_faloff = 0.0
+shader_parameter/mask_size = 0.438
+shader_parameter/mask_edge = 0.238
+shader_parameter/animation_speed = 10.0
+shader_parameter/noise = ExtResource("5_uic8j")
+
+[sub_resource type="SphereMesh" id="SphereMesh_xvtbr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_803sx"]
+render_priority = 0
+shader = ExtResource("4_eatw8")
+shader_parameter/line_color = Color(1, 1, 1, 0.752941)
+shader_parameter/line_count = 1.0
+shader_parameter/line_density = 0.186
+shader_parameter/line_faloff = 0.0
+shader_parameter/mask_size = 0.149
+shader_parameter/mask_edge = 0.125
+shader_parameter/animation_speed = 10.0
+shader_parameter/noise = ExtResource("5_uic8j")
+
+[sub_resource type="SphereMesh" id="SphereMesh_rb4k4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft4tl"]
 albedo_texture = ExtResource("2_1otpf")
@@ -25,11 +68,61 @@ shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_softness = 0.1
 shader_parameter/sdf_texture = ExtResource("3_ld024")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tv6vm"]
+render_priority = 0
+shader = ExtResource("4_eatw8")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 5.15
+shader_parameter/line_density = 1.0
+shader_parameter/line_faloff = 0.157
+shader_parameter/mask_size = 0.0
+shader_parameter/mask_edge = 0.451
+shader_parameter/animation_speed = 10.0
+shader_parameter/noise = ExtResource("5_uic8j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qt6hu"]
+render_priority = 0
+shader = ExtResource("4_eatw8")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 0.5
+shader_parameter/line_density = 0.5
+shader_parameter/line_faloff = 0.25
+shader_parameter/mask_size = 0.1
+shader_parameter/mask_edge = 0.5
+shader_parameter/animation_speed = 57.286
+shader_parameter/noise = ExtResource("5_uic8j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4qta1"]
+render_priority = 0
+shader = ExtResource("4_eatw8")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 2.45
+shader_parameter/line_density = 0.5
+shader_parameter/line_faloff = 0.25
+shader_parameter/mask_size = 0.386
+shader_parameter/mask_edge = 0.31
+shader_parameter/animation_speed = 10.0
+shader_parameter/noise = ExtResource("5_uic8j")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_x2h50"]
+
 [node name="shadertest" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.421145, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.276605, 0, 0)
 mesh = SubResource("SphereMesh_4sjfh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0176598)
+material_override = SubResource("ShaderMaterial_ng31h")
+mesh = SubResource("SphereMesh_xvtbr")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0251699)
+material_override = SubResource("ShaderMaterial_803sx")
+mesh = SubResource("SphereMesh_rb4k4")
+skeleton = NodePath("../../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -42,6 +135,7 @@ texture = ExtResource("2_1otpf")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 2.99355, 2.90659, 0)
+material_override = SubResource("ShaderMaterial_tv6vm")
 texture = ExtResource("4_rsbbl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -51,3 +145,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.4212)
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("5_ap3ok")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_qt6hu")
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.994278, 0.103888, -0.0248531, 0.00776748, -0.302364, -0.953161, -0.106537, 0.947514, -0.301441, -1.62983, -0.0876884, 0.520838)
+material_override = SubResource("ShaderMaterial_4qta1")
+mesh = SubResource("CapsuleMesh_x2h50")

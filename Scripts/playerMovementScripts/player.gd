@@ -31,7 +31,7 @@ func _process(delta):
 	view.fov = clamp(70+sqrt(stats.vel.length()*7),90, 180)
 	spring.spring_length = clamp(4+(sqrt(stats.vel.length())/2),8, 100)
 	
-	if frame>=11:
+	if frame>=10:
 		mySkin.frame = 0
 		frame = 0
 	mySkin.frame = round(frame)
