@@ -56,7 +56,7 @@ var speed = ply_maxspeed
 @export var ylook : float
 @export var xlook : float
 
-@export var camera : Node3D
+@export var camPath : NodePath
 
 
 

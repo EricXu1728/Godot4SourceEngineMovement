@@ -14,8 +14,7 @@ func Move(delta):
 	if stats.on_floor:
 		WalkMove(delta)
 	else:
-		print("oh")
-		
+
 		state_machine.transition_to("Air")
 
 	if Input.is_action_pressed("jump") && (not stats.crouched) && stats.shouldJump:
@@ -31,8 +30,8 @@ func WalkMove(delta):
 	var forward = Vector3.FORWARD
 	var side = Vector3.LEFT
 
-	forward = forward.rotated(Vector3.UP, stats.camera.rotation.y)
-	side = side.rotated(Vector3.UP, stats.camera.rotation.y)
+	forward = forward.rotated(Vector3.UP, player.camera.rotation.y)
+	side = side.rotated(Vector3.UP, player.camera.rotation.y)
 
 	forward = forward.normalized()
 	side = side.normalized()

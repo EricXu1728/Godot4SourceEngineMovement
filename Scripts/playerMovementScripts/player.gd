@@ -13,8 +13,10 @@ var height = 2 #the model is 2 meter tall
 
 
 func _ready():
+	camera = get_node(stats.camPath)
+	
 	stats.on_floor = false
-	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
+
 	spring.add_excluded_object(self.get_rid())
 	
 
@@ -79,7 +81,7 @@ func move_and_slide_own() -> bool:
 	checkMotion.y  -= stats.ply_gravity * get_delta_time() * get_delta_time()
 		
 	var testcol := move_and_collide(checkMotion, true)
-	print(testcol)
+	#print(testcol)
 	if testcol:
 		var testNormal = testcol.get_normal()
 		if testNormal.angle_to(up_direction) < stats.ply_maxslopeangle:

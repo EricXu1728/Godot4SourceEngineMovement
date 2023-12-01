@@ -28,8 +28,8 @@ func AirMove(delta):
 	var forward = Vector3.FORWARD
 	var side = Vector3.LEFT
 
-	forward = forward.rotated(Vector3.UP, stats.camera.rotation.y)
-	side = side.rotated(Vector3.UP, stats.camera.rotation.y)
+	forward = forward.rotated(Vector3.UP, player.camera.rotation.y)
+	side = side.rotated(Vector3.UP, player.camera.rotation.y)
 
 	forward = forward.normalized()
 	side = side.normalized()

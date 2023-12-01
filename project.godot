@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Godot4SourceEngineMovement"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [input]
 
 click={
 "deadzone": 0.5,
-"events": [null, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(652, 12),"global_position":Vector2(660, 96),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+"events": [null, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(652, 12),"global_position":Vector2(660, 96),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 move_forward={

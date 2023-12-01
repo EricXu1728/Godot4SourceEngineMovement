@@ -3,7 +3,7 @@ class_name Player_Inputs
 #CODE THAT PARSES USER INPUT
 #just organized like this for organization's sake
 @export var stats: playerVariables
-
+var camera : Node3D
 
 
 func _ready():
@@ -30,8 +30,8 @@ func InputMouse(event):
 	stats.xlook = clamp(stats.xlook, stats.ply_maxlookangle_down, stats.ply_maxlookangle_up)
 	
 func ViewAngles(delta):
-	stats.camera.rotation_degrees.x = stats.xlook
-	stats.camera.rotation_degrees.y = stats.ylook
+	camera.rotation_degrees.x = stats.xlook
+	camera.rotation_degrees.y = stats.ylook
 	
 func InputKeys():
 	stats.sidemove += int(stats.ply_sidespeed) * (int(Input.get_action_strength("move_left") * 50))
