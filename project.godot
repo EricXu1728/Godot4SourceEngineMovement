@@ -14,6 +14,10 @@ config/name="Godot4SourceEngineMovement"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://images/icon.svg"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 click={

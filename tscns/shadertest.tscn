@@ -12,8 +12,8 @@
 render_priority = 0
 shader = ExtResource("4_eatw8")
 shader_parameter/line_color = Color(0.85098, 0.447059, 0.156863, 0.752941)
-shader_parameter/line_count = 2.4
-shader_parameter/line_density = 0.138
+shader_parameter/line_count = 1.1
+shader_parameter/line_density = 0.154
 shader_parameter/line_faloff = 0.0
 shader_parameter/mask_size = 0.569
 shader_parameter/mask_edge = 0.502
@@ -41,10 +41,10 @@ shader_parameter/noise = ExtResource("5_uic8j")
 render_priority = 0
 shader = ExtResource("4_eatw8")
 shader_parameter/line_color = Color(1, 1, 1, 0.752941)
-shader_parameter/line_count = 1.0
-shader_parameter/line_density = 0.186
+shader_parameter/line_count = 0.8
+shader_parameter/line_density = 0.202
 shader_parameter/line_faloff = 0.0
-shader_parameter/mask_size = 0.149
+shader_parameter/mask_size = 0.153
 shader_parameter/mask_edge = 0.125
 shader_parameter/animation_speed = 10.0
 shader_parameter/noise = ExtResource("5_uic8j")
@@ -152,6 +152,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.994278, 0.103888, -0.0248531, 0.00776748, -0.302364, -0.953161, -0.106537, 0.947514, -0.301441, -1.62983, -0.0876884, 0.520838)
+transform = Transform3D(-0.98597, 0, -0.166924, 0, 1, 0, 0.166924, 0, -0.98597, -1.62983, -0.0876884, 0.520838)
 material_override = SubResource("ShaderMaterial_4qta1")
 mesh = SubResource("CapsuleMesh_x2h50")

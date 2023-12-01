@@ -10,3 +10,4 @@ stats = ExtResource("2_1xxnr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_yi5tj")
+pitch_scale = 100.0
