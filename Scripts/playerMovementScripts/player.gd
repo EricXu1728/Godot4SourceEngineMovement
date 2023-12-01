@@ -1,4 +1,4 @@
-extends Player_Inputs
+extends PlayerInputs
 class_name Player
 
 @onready var myShape = $CollisionShape3D
@@ -15,10 +15,10 @@ var height = 2 #the model is 2 meter tall
 
 
 func _ready():
+	camera = get_node(stats.camPath)
 	print(stats.vel)
 	
 	stats.on_floor = false
-	stats.camera = $TwistPivot #CHANGE WHEN YOU WANT TO MESS WITH CAMERA
 	spring.add_excluded_object(self.get_rid())
 	
 	
@@ -39,8 +39,8 @@ func _process(delta):
 	frame+= stats.vel.length() * 0.01
 	
 		
-	mySkin.rotation.y = stats.camera.rotation.y
-	mySkin.rotation.x = (stats.camera.rotation.x)/2
+	mySkin.rotation.y = camera.rotation.y
+	mySkin.rotation.x = (camera.rotation.x)/2
 
 #
 #	fireball.rotation.y = atan2(stats.vel.x, stats.vel.z)

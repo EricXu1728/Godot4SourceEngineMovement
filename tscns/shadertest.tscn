@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://yhbg026i5ocg"]
+[gd_scene load_steps=20 format=3 uid="uid://yhbg026i5ocg"]
 
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="1_grudr"]
 [ext_resource type="Texture2D" uid="uid://chssoy8c7bjhu" path="res://images/distancehex.png" id="2_1otpf"]
@@ -80,18 +80,6 @@ shader_parameter/mask_edge = 0.451
 shader_parameter/animation_speed = 10.0
 shader_parameter/noise = ExtResource("5_uic8j")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qt6hu"]
-render_priority = 0
-shader = ExtResource("4_eatw8")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_count = 0.5
-shader_parameter/line_density = 0.5
-shader_parameter/line_faloff = 0.25
-shader_parameter/mask_size = 0.1
-shader_parameter/mask_edge = 0.5
-shader_parameter/animation_speed = 57.286
-shader_parameter/noise = ExtResource("5_uic8j")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4qta1"]
 render_priority = 0
 shader = ExtResource("4_eatw8")
@@ -145,11 +133,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.4212)
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("5_ap3ok")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_qt6hu")
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.98597, 0, -0.166924, 0, 1, 0, 0.166924, 0, -0.98597, -1.62983, -0.0876884, 0.520838)

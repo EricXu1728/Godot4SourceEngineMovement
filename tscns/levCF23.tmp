@@ -183,9 +183,6 @@ script = ExtResource("4_ivjvi")
 
 [node name="WorldSetup" parent="." instance=ExtResource("5_1fjn0")]
 
-[node name="shadertest" parent="." instance=ExtResource("14_83tra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78033, 1.90995, 0)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_scale = 0.001
 script = ExtResource("8_81scw")
@@ -206,3 +203,6 @@ offset_bottom = 592.0
 text = "SPEED"
 script = ExtResource("14_k8f7j")
 stats = ExtResource("10_p5cny")
+
+[node name="shadertest" parent="." instance=ExtResource("14_83tra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78033, 1.90995, 0)

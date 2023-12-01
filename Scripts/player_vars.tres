@@ -41,3 +41,4 @@ upmove = 0.0
 forwardmove = 0.0
 ylook = 0.0
 xlook = 0.0
+camPath = NodePath("TwistPivot")

@@ -24,7 +24,7 @@ func _process(delta):
 		
 		#print(pitch)
 		$AudioStreamPlayer.pitch_scale = pitch
-		$AudioStreamPlayer.volume_db = -stats.vel.length()/30
+		$AudioStreamPlayer.volume_db = -pow(stats.vel.length()/40,2)
 		$AudioStreamPlayer.play()
 		
 		var scene_trs =load("res://components/customParticle.tscn")
