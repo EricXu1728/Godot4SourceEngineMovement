@@ -1,5 +1,7 @@
 shader_type spatial;
 
+render_mode cull_disabled ;
+
 
 uniform sampler2D noise: repeat_enable;
 uniform vec4 line_color: source_color;

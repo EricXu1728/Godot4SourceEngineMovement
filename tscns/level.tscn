@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=23 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" path="res://tscns/block.tscn" id="1_jv655"]
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://tscns/player.tscn" id="1_rsegt"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="12_5r21d"]
 [ext_resource type="Script" path="res://ColorRect.gd" id="13_chubs"]
 [ext_resource type="PackedScene" uid="uid://yhbg026i5ocg" path="res://tscns/shadertest.tscn" id="14_83tra"]
-[ext_resource type="Script" path="res://tscns/Speedometer.gd" id="14_k8f7j"]
+[ext_resource type="Script" path="res://Scripts/Speedometer.gd" id="14_k8f7j"]
+[ext_resource type="PackedScene" uid="uid://f0wsgshd1lvi" path="res://blendtest.blend" id="15_8tskk"]
+[ext_resource type="PackedScene" uid="uid://dviu6ljls32eq" path="res://fire.tscn" id="16_f5nnd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -206,3 +208,9 @@ offset_bottom = 592.0
 text = "SPEED"
 script = ExtResource("14_k8f7j")
 stats = ExtResource("10_p5cny")
+
+[node name="blendtest2" parent="." instance=ExtResource("15_8tskk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.56971, 2.16266, -16.0906)
+
+[node name="blendtest" parent="blendtest2" instance=ExtResource("16_f5nnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)

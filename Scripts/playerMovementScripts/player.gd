@@ -29,7 +29,7 @@ var nextEmit = 0
 func _process(delta):
 	
 	view.fov = clamp(70+sqrt(stats.vel.length()*7),90, 180)
-	spring.spring_length = clamp(4+(sqrt(stats.vel.length())/2),8, 100)
+	spring.spring_length = clamp(4+(sqrt(stats.vel.length())/1.5),8, 100)
 	
 	if frame>=10:
 		mySkin.frame = 0
@@ -115,7 +115,7 @@ func move_and_slide_own() -> bool:
 
 	#check floor
 	var checkMotion := velocity * get_delta_time()
-	checkMotion.y  -= stats.ply_gravity * get_delta_time() * get_delta_time()
+	checkMotion.y  -= stats.ply_gravity * get_delta_time()
 		
 	var testcol := move_and_collide(checkMotion, true)
 
