@@ -78,7 +78,7 @@ func move_and_slide_own() -> bool:
 
 	#check floor
 	var checkMotion := velocity * get_delta_time()
-	checkMotion.y  -= stats.ply_gravity * get_delta_time() * get_delta_time()
+	checkMotion.y  -= stats.ply_gravity * get_delta_time()
 		
 	var testcol := move_and_collide(checkMotion, true)
 	#print(testcol)
