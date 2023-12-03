@@ -15,7 +15,7 @@ func physics_update(delta: float) -> void:
 
 	
 
-	if stats.on_floor && abs(player.velocity.y)<15:
+	if stats.on_floor:# && abs(player.velocity.y)<15:
 		
 		state_machine.transition_to("Run")
 	else:
