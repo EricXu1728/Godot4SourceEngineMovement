@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
 [ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/player_vars.tres" id="2_obrsc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
 [ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/sonicBoomSpawner.tscn" id="12_v7iwn"]
+[ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/fireballHandler.tscn" id="13_cy6t1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 margin = 0.001
@@ -93,3 +94,6 @@ point = NodePath("..")
 
 [node name="shadow" parent="." node_paths=PackedStringArray("ignore") instance=ExtResource("11_6rufm")]
 ignore = NodePath("..")
+
+[node name="FireballHandler" parent="." instance=ExtResource("13_cy6t1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

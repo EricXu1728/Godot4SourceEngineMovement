@@ -15,6 +15,7 @@ var height = 2 #the model is 2 meter tall
 
 
 func _ready():
+	#get_viewport().get_camera_3d()
 	camera = get_node(stats.camPath)
 	print(stats.vel)
 	

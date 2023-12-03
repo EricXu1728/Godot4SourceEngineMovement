@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7ilc88edt76w" path="res://tscns/slope.tscn" id="4_hnn3q"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
-[ext_resource type="Texture2D" uid="uid://cvueg3f24a3ox" path="res://images/Drawing-1.sketchpad (1).png" id="5_bcknb"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://2.PNG" id="5_kgphi"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="8_81scw"]
 [ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/player_vars.tres" id="10_p5cny"]
 [ext_resource type="Shader" path="res://shaders/speedLine.gdshader" id="11_2lsuk"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://yhbg026i5ocg" path="res://tscns/shadertest.tscn" id="14_83tra"]
 [ext_resource type="Script" path="res://Scripts/Speedometer.gd" id="14_k8f7j"]
 [ext_resource type="PackedScene" uid="uid://f0wsgshd1lvi" path="res://blendtest.blend" id="15_4fi2e"]
-[ext_resource type="PackedScene" uid="uid://ks27n2x5614" path="res://fireball.tscn" id="16_yl7ps"]
+[ext_resource type="PackedScene" uid="uid://ks27n2x5614" path="res://components/fireball.tscn" id="16_yl7ps"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -179,8 +179,8 @@ transform = Transform3D(1.41421, -1.41421, 0, 1.41421, 1.41421, 0, 0, 0, 20, 58.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.9541, 369.561, 210.786)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2607, 0)
-texture = ExtResource("5_bcknb")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.09027, 0)
+texture = ExtResource("5_kgphi")
 script = ExtResource("4_ivjvi")
 
 [node name="WorldSetup" parent="." instance=ExtResource("5_1fjn0")]

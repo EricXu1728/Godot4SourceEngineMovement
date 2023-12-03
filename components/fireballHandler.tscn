@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh6rryimnjkpn"]
+
+[ext_resource type="Script" path="res://components/fireball.gd" id="1_t1n55"]
+[ext_resource type="PackedScene" uid="uid://ks27n2x5614" path="res://components/fireball.tscn" id="1_wuh5j"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/player_vars.tres" id="2_ge8a1"]
+
+[node name="FireballHandler" type="Node3D"]
+script = ExtResource("1_t1n55")
+stats = ExtResource("2_ge8a1")
+
+[node name="fireball" parent="." instance=ExtResource("1_wuh5j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 109.0
+offset_top = 80.0
+offset_right = 245.0
+offset_bottom = 125.0
+text = "AMOGUS"

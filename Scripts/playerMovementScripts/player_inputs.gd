@@ -27,6 +27,8 @@ func _input(event):
 func InputMouse(event):
 	stats.xlook += -event.relative.y * stats.ply_xlookspeed 
 	stats.ylook += -event.relative.x * stats.ply_ylookspeed
+	
+	
 	stats.xlook = clamp(stats.xlook, stats.ply_maxlookangle_down, stats.ply_maxlookangle_up)
 	
 func ViewAngles(delta):
