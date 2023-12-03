@@ -36,6 +36,7 @@ func AirMove(delta):
 	side = side.normalized()
 	
 	stats.vel.y -= stats.ply_gravity * delta
+	#print("huh ",stats.vel.y)
 	
 
 	var fmove = stats.forwardmove

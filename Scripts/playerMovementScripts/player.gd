@@ -114,8 +114,8 @@ func move_and_slide_own() -> bool:
 
 
 	#check floor
-	var checkMotion := velocity * get_delta_time()
-	checkMotion.y  -= stats.ply_gravity * get_delta_time()
+	var checkMotion := velocity * (1/60.)
+	checkMotion.y  -= stats.ply_gravity * (1/360.)
 		
 	var testcol := move_and_collide(checkMotion, true)
 
@@ -127,11 +127,11 @@ func move_and_slide_own() -> bool:
 	# Loop performing the move
 	var motion := velocity * get_delta_time()
 	
-	
+
 	for step in max_slides:
 		
-		var collision := move_and_collide(motion)
 		
+		var collision := move_and_collide(motion)
 		
 		if not collision:
 			# No collision, so move has finished

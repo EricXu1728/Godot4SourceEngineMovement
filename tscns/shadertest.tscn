@@ -109,6 +109,7 @@ skeleton = NodePath("../..")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0251699)
 material_override = SubResource("ShaderMaterial_803sx")
+cast_shadow = 0
 mesh = SubResource("SphereMesh_rb4k4")
 skeleton = NodePath("../../..")
 

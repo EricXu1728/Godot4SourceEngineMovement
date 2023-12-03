@@ -1,7 +1,7 @@
 shader_type spatial;
 
-render_mode cull_disabled ;
-
+render_mode cull_disabled , unshaded;
+//TIP: Keep mask size> Mask Edge
 
 uniform sampler2D noise: repeat_enable;
 uniform vec4 line_color: source_color;

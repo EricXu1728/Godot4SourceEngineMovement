@@ -12,7 +12,7 @@ func _ready():
 func _process(delta):
 	#var current = myMat.get_shader_parameter("mask_edge")
 	
-	var edge = 2.3- (pow(stats.vel.length(), .1)*1.3)
+	var edge = 2.4- (pow(stats.vel.length(), .1)*1.3)
 	edge = clamp(edge, .23, 1)
 	
 	myMat.set_shader_parameter("mask_edge", edge)
