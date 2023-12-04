@@ -11,8 +11,8 @@
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
 [ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
-[ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/sonicBoomSpawner.tscn" id="12_v7iwn"]
-[ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/fireballHandler.tscn" id="13_cy6t1"]
+[ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/particle/sonicBoomSpawner.tscn" id="12_v7iwn"]
+[ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 margin = 0.001

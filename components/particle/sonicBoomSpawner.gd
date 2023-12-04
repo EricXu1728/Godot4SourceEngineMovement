@@ -27,7 +27,7 @@ func _process(delta):
 		$AudioStreamPlayer.volume_db = -pow(stats.vel.length()/40,2)
 		$AudioStreamPlayer.play()
 		
-		var scene_trs =load("res://components/customParticle.tscn")
+		var scene_trs =load("res://components/particle/burstParticle.tscn")
 		var scene=scene_trs.instantiate()
 		
 		scene.position = point.position + (stats.vel*delta * 1)
