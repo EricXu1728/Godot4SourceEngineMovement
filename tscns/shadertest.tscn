@@ -1,12 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://yhbg026i5ocg"]
+[gd_scene load_steps=22 format=3 uid="uid://yhbg026i5ocg"]
 
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="1_grudr"]
 [ext_resource type="Texture2D" uid="uid://chssoy8c7bjhu" path="res://images/distancehex.png" id="2_1otpf"]
 [ext_resource type="Texture2D" uid="uid://cyb36fe8j6w1o" path="res://images/player.png" id="3_ld024"]
 [ext_resource type="Shader" path="res://shaders/fire.gdshader" id="4_eatw8"]
 [ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://images/Drawing-2.sketchpad.jpeg" id="4_rsbbl"]
-[ext_resource type="Script" path="res://Label.gd" id="5_ap3ok"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="5_uic8j"]
+[ext_resource type="Script" path="res://tscns/Label.cs" id="7_q3mgl"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://2.PNG" id="8_7v3cl"]
+[ext_resource type="Script" path="res://tscns/Sprite2D.cs" id="9_pertf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y5c4p"]
 render_priority = 0
@@ -131,11 +133,24 @@ texture = ExtResource("4_rsbbl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.4212)
 
 [node name="Label" type="Label" parent="Camera3D"]
-offset_right = 40.0
-offset_bottom = 23.0
-script = ExtResource("5_ap3ok")
+anchors_preset = -1
+anchor_right = 0.003
+anchor_bottom = 0.003
+offset_left = 105.0
+offset_top = 93.0
+offset_right = 141.544
+offset_bottom = 114.056
+text = "Huh
+"
+script = ExtResource("7_q3mgl")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.98597, 0, -0.166924, 0, 1, 0, 0.166924, 0, -0.98597, -1.62983, -0.0876884, 0.520838)
 material_override = SubResource("ShaderMaterial_4qta1")
 mesh = SubResource("CapsuleMesh_x2h50")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(441, 273)
+scale = Vector2(0.391275, 0.221519)
+texture = ExtResource("8_7v3cl")
+script = ExtResource("9_pertf")

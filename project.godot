@@ -14,6 +14,18 @@ config/name="Godot4SourceEngineMovement"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://images/icon.svg"
 
+[dotnet]
+
+project/assembly_name="Godot4SourceEngineMovement"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[gd2cs]
+
+config/ask_no_python=true
+
 [input]
 
 click={
