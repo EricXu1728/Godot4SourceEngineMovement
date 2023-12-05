@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh6rryimnjkpn"]
+[gd_scene load_steps=5 format=3 uid="uid://dh6rryimnjkpn"]
 
 [ext_resource type="Script" path="res://components/particle/fireball.gd" id="1_7n28n"]
 [ext_resource type="PackedScene" uid="uid://ks27n2x5614" path="res://components/particle/fireball.tscn" id="1_wuh5j"]
-[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/player_vars.tres" id="2_ge8a1"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_vwy31"]
+[ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/particle/sonicBoomSpawner.tscn" id="4_yd5iq"]
 
 [node name="FireballHandler" type="Node3D"]
 script = ExtResource("1_7n28n")
-stats = ExtResource("2_ge8a1")
+stats = ExtResource("2_vwy31")
 
 [node name="fireball" parent="." instance=ExtResource("1_wuh5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 49.0
+offset_right = 128.0
+offset_bottom = 72.0
+
+[node name="sonicBoomSpawner" parent="." instance=ExtResource("4_yd5iq")]

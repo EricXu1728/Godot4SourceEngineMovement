@@ -1,6 +1,6 @@
 shader_type spatial;
 
-render_mode unshaded;
+render_mode unshaded, cull_disabled;
 uniform sampler2D texture_albedo : hint_default_white;
 
 void vertex() {
@@ -13,6 +13,6 @@ void vertex() {
 }
 
 void fragment() {
-	ALBEDO = texture( texture_albedo, UV ).rgb;
+	ALBEDO = texture( texture_albedo, UV ).rgb; 
 	ALPHA = texture( texture_albedo, UV ).a;	
 }

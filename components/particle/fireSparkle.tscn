@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://byws1hlvss5y4"]
+
+[ext_resource type="PackedScene" uid="uid://b22vs505lea0n" path="res://components/particle/lineParticle.tscn" id="1_b4luk"]
+[ext_resource type="Shader" path="res://shaders/tunnleSpeedLines.gdshader" id="2_imtno"]
+[ext_resource type="Shader" path="res://shaders/tunnelParticle.gdshader" id="3_vmtxa"]
+[ext_resource type="Texture2D" uid="uid://b1gu07pft4nek" path="res://images/spark.png" id="4_3nv7h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8aa7l"]
+shader = ExtResource("2_imtno")
+shader_parameter/tunnel_radius = 1.0
+shader_parameter/tunnel_length = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_juf5u"]
+render_priority = 0
+shader = ExtResource("3_vmtxa")
+shader_parameter/texture_albedo = ExtResource("4_3nv7h")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_76e4v"]
+material = SubResource("ShaderMaterial_juf5u")
+size = Vector2(0.2, 0.2)
+orientation = 2
+
+[node name="speedLine" instance=ExtResource("1_b4luk")]
+
+[node name="GPUParticles3D" parent="." index="0"]
+amount = 10
+lifetime = 0.1
+interpolate = false
+fract_delta = false
+process_material = SubResource("ShaderMaterial_8aa7l")
+draw_pass_1 = SubResource("PlaneMesh_76e4v")

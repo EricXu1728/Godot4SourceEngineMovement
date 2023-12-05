@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=16 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
-[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/player_vars.tres" id="2_obrsc"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_sfipa"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="4_oxk7l"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.gd" id="5_mty1n"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.gd" id="6_vmmom"]
@@ -11,7 +11,6 @@
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
 [ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
-[ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/particle/sonicBoomSpawner.tscn" id="12_v7iwn"]
 [ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
@@ -34,7 +33,7 @@ shader_parameter/sdf_texture = ExtResource("10_ki5xb")
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_a7j60")
-stats = ExtResource("2_obrsc")
+stats = ExtResource("2_sfipa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -89,11 +88,9 @@ material_override = SubResource("ShaderMaterial_ln4rn")
 texture = ExtResource("10_ki5xb")
 hframes = 11
 
-[node name="sonicBoomSpawner" parent="." node_paths=PackedStringArray("point") instance=ExtResource("12_v7iwn")]
-point = NodePath("..")
-
 [node name="shadow" parent="." node_paths=PackedStringArray("ignore") instance=ExtResource("11_6rufm")]
 ignore = NodePath("..")
 
-[node name="FireballHandler" parent="." instance=ExtResource("13_cy6t1")]
+[node name="FireballHandler" parent="." node_paths=PackedStringArray("point") instance=ExtResource("13_cy6t1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+point = NodePath("..")

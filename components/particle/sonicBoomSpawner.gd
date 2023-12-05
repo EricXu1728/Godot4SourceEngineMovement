@@ -27,18 +27,26 @@ func _process(delta):
 		$AudioStreamPlayer.volume_db = -pow(stats.vel.length()/40,2)
 		$AudioStreamPlayer.play()
 		
-		var scene_trs =load("res://components/particle/burstParticle.tscn")
-		var scene=scene_trs.instantiate()
+		spawnSonic((stats.vel*delta * 1))
 		
-		scene.position = point.position + (stats.vel*delta * 1)
-		scene.position.y +=1
-		
-		scene.rotation.y = atan2(stats.vel.x, stats.vel.z)
-		var speedVec = Vector2(stats.vel.x, stats.vel.z)
-		var my_random_number = rng.randf_range(0.0, 360.0)
-		scene.rotation.z = my_random_number
-
-		scene.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
-		
-		base.add_child(scene)
 	pass
+
+func spawnSonic(plusPosition := Vector3.ZERO, partScale := Vector2(1,1)) -> Node3D:
+	var scene_trs =load("res://components/particle/burstParticle.tscn")
+	var scene=scene_trs.instantiate()
+		
+	scene.position = point.position + plusPosition
+	scene.position.y +=1
+		
+	scene.rotation.y = atan2(stats.vel.x, stats.vel.z)
+	var speedVec = Vector2(stats.vel.x, stats.vel.z)
+	var my_random_number = rng.randf_range(0.0, 360.0)
+	scene.rotation.z = my_random_number
+
+	scene.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
+		
+	scene.set_scale(partScale)
+	
+	base.add_child(scene)
+		
+	return scene
