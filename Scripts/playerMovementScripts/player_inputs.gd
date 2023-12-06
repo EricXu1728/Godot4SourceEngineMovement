@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name PlayerInputs
 #CODE THAT PARSES USER INPUT
 #just organized like this for organization's sake
-@export var stats: playerVariables
+@export var stats: Resource
 var camera : Node3D
 
 

@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var stats : playerVariables
+@export var stats : Resource
 @onready var decal = $Shadowarm/Node3D/Decal
 @export var ignore : Node3D
 @onready var shadowArm = $Shadowarm

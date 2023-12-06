@@ -43,19 +43,6 @@ func _process(delta):
 	mySkin.rotation.y = camera.rotation.y
 	mySkin.rotation.x = (camera.rotation.x)/2
 
-#
-#	fireball.rotation.y = atan2(stats.vel.x, stats.vel.z)
-#	var speedVec = Vector2(stats.vel.x, stats.vel.z)
-#
-#	fireball.rotation.x = atan2(speedVec.length(), stats.vel.y)-(PI/2)
-#
-#
-	
-		
-#		#fireballPart.emitting = true
-#		fireballPart.emit_particle(fireballPart.xform, fireballPart.velocity, fireballPart.color, fireballPart.custom, fireballPart.flags)
-#		#emit_particle(xform: Transform3D, velocity: Vector3, color: Color, custom: Color, flags: int)
-#
 			
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		InputKeys()

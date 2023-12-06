@@ -1,26 +1,18 @@
 using Godot;
 using System;
 
-public partial class Label : Godot.Label
+public partial class Node2 : Node
 {
+	[Export] public playerVariables.player_vars stats;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print("Woa");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-	}
-}
-
-using static Godot.GD;
-
-public class Test
-{
-	static Test()
-	{
-		Print("Hello"); // Instead of GD.Print("Hello");
+		//stats.ply_mousesensitivity += 1;
+		//GD.Print(stats.ply_mousesensitivity);
 	}
 }

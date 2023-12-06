@@ -1,31 +1,30 @@
 using Godot;
 using System;
 
-public class Sprite : Godot.Sprite
+public partial class amongus : Sprite2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float delta)
+	public override void _Process(double delta)
 	{
 		float AMOUNT = 5;
-		if (Input.IsKeyPressed((int)KeyList.W))
+		if (Input.IsActionPressed("ui_up"))
 		{
 			this.Position += new Vector2(0, -AMOUNT);
 		}
-		if (Input.IsKeyPressed((int)KeyList.S))
+		if (Input.IsActionPressed("ui_down"))
 		{
 			this.Position += new Vector2(0, AMOUNT);
 		}
-		if (Input.IsKeyPressed((int)KeyList.A))
+		if (Input.IsActionPressed("ui_left"))
 		{
 			this.Position += new Vector2(-AMOUNT,0);
 		}
-		if (Input.IsKeyPressed((int)KeyList.D))
+		if (Input.IsActionPressed("ui_right"))
 		{
 			this.Position += new Vector2(AMOUNT,0);
 		}

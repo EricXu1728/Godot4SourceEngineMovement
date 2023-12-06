@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var stats: playerVariables
+@export var stats: Resource
 @export var point : Node3D
 
 @onready var fireball :=$fireball
@@ -45,7 +45,7 @@ func _process(delta):
 				fireball.scale = Vector3(2,2,2)
 				fireball.position.x = 1
 				
-				var boom = boomSpawner.spawnSonic((stats.vel*delta * 10))
+				var boom = boomSpawner.spawnSonic((stats.vel*delta * 12)    , Vector2(3,3))
 				boom.set_modulate(Color.ORANGE)
 				
 		1:
@@ -67,7 +67,7 @@ func _process(delta):
 				state = 2
 				fireball.position.x = 2
 				
-				var boom = boomSpawner.spawnSonic((stats.vel*delta * 10))
+				var boom = boomSpawner.spawnSonic((stats.vel*delta * 12)    , Vector2(3,3))
 				boom.set_modulate(Color.YELLOW)
 				
 		2:
@@ -85,7 +85,7 @@ func _process(delta):
 				layers[2].show()
 				state = 3
 				
-				var boom = boomSpawner.spawnSonic((stats.vel*delta * 10))
+				var boom = boomSpawner.spawnSonic((stats.vel*delta * 12)    , Vector2(3,3))
 				boom.set_modulate(Color.RED)
 				#boom.velocity = stats.vel/2
 				

@@ -1,5 +1,5 @@
 extends RichTextLabel
-@export var stats : playerVariables
+@export var stats : Resource
 var speed = 0
 var yOrigin = 0
 var xOrigin = 0

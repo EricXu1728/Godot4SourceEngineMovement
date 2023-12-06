@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var stats : playerVariables
+@export var stats : Resource
 var nextEmit = 0
 var base : Node3D
 @export var point : Node3D

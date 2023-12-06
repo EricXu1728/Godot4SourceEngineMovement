@@ -1,7 +1,7 @@
 extends ColorRect
 
 @onready var myMat
-@export var stats : playerVariables
+@export var stats : Resource
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	myMat = self.material

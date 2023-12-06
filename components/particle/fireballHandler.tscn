@@ -12,10 +12,8 @@ stats = ExtResource("2_vwy31")
 [node name="fireball" parent="." instance=ExtResource("1_wuh5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 88.0
-offset_top = 49.0
-offset_right = 128.0
-offset_bottom = 72.0
-
 [node name="sonicBoomSpawner" parent="." instance=ExtResource("4_yd5iq")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
