@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://crat2kydcc1em"]
+[gd_scene load_steps=13 format=3 uid="uid://crat2kydcc1em"]
 
 [ext_resource type="PackedScene" uid="uid://c24fe8wk43e08" path="res://tscns/block.tscn" id="1_jv655"]
 [ext_resource type="PackedScene" uid="uid://cn4n03x6jlpyo" path="res://tscns/player.tscn" id="1_rsegt"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b7ilc88edt76w" path="res://tscns/slope.tscn" id="4_hnn3q"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
-[ext_resource type="Script" path="res://Scripts/RenameThisLater.gd" id="7_dqsuf"]
-[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://player_vars.tres" id="8_u0wfb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -169,7 +167,8 @@ script = ExtResource("4_ivjvi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="RenameThisLater" type="RichTextLabel" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+[node name="RenameThisLater" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
 offset_left = 11.0
 offset_top = 7.0
 offset_right = 1152.0
@@ -179,8 +178,5 @@ text = "HEllo bozo
 "
 tab_size = 7
 context_menu_enabled = true
-script = ExtResource("7_dqsuf")
-stats = ExtResource("8_u0wfb")
-player = NodePath("../../player")
 
 [node name="Node3D" type="Node3D" parent="."]
