@@ -5,6 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Run Godo run",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build_godot",
+            "program": "C:/Users/Frank/Desktop/godot 4/Godot_v4.2-stable_mono_win64/Godot_v4.2-stable_mono_win64.exe",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "args": ["--path", "${workspaceRoot}"]
+        },
+        {
             "name": "Play in Editor",
             "type": "godot-mono",
             "mode": "playInEditor",
@@ -16,7 +27,7 @@
             "request": "launch",
             "mode": "executable",
             "preLaunchTask": "build",
-            "executable": "<insert-godot-executable-path-here>",
+            "executable": "C:/Users/Frank/Desktop/godot 4/Godot_v4.2-stable_mono_win64/Godot_v4.2-stable_mono_win64.exe",
             "executableArguments": [
                 "--path",
                 "${workspaceRoot}"
@@ -28,7 +39,7 @@
             "request": "launch",
             "mode": "executable",
             "preLaunchTask": "build",
-            "executable": "<insert-godot-executable-path-here>",
+            "executable": "C:/Users/Frank/Desktop/godot 4/Godot_v4.2-stable_mono_win64/Godot_v4.2-stable_mono_win64.exe",
             "executableArguments": [
                 "--path",
                 "${workspaceRoot}",

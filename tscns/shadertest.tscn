@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://images/Drawing-2.sketchpad.jpeg" id="4_rsbbl"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="5_uic8j"]
 [ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://2.PNG" id="8_7v3cl"]
-[ext_resource type="Script" path="res://tscns/amongus.cs" id="8_enqg0"]
+[ext_resource type="Script" path="res://amongus.cs" id="8_enqg0"]
 [ext_resource type="Script" path="res://new_script.cs" id="9_i6obx"]
 [ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="10_if0fe"]
-[ext_resource type="Script" path="res://tscns/Node2.cs" id="11_6f0ob"]
+[ext_resource type="Script" path="res://Node2.cs" id="11_6f0ob"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y5c4p"]
 render_priority = 0

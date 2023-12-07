@@ -12,7 +12,8 @@ var state := 0
 var breakPoint := [40, 80, 120]
 var goal := Vector3.ZERO
 
-var margin := 10
+var speed_margin := 10
+var look_margin := (PI/3)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -54,7 +55,7 @@ func _process(delta):
 			goal.z = goal.y
 			
 			
-			if(length<(breakPoint[0]-margin)):
+			if(length<(breakPoint[0]-speed_margin)):
 				fireball.position.x = 1
 				state = 0
 				layers[0].hide()
@@ -75,7 +76,7 @@ func _process(delta):
 			goal.y = 1.4 + ((length - breakPoint[1])*0.015)
 			goal.z = goal.y
 			
-			if(length<(breakPoint[1]-margin)):
+			if(length<(breakPoint[1]-speed_margin)):
 				fireball.position.x = 1
 				layers[1].hide()
 				state = 1
@@ -93,7 +94,7 @@ func _process(delta):
 			goal.x = 8 + ((length - breakPoint[2])*0.03)
 			goal.y = 1.8 + ((length - breakPoint[2])*0.015)
 			goal.z = goal.y
-			if(length<(breakPoint[2]-margin)):
+			if(length<(breakPoint[2]-speed_margin)):
 				
 				layers[2].hide()
 				state = 2
@@ -113,8 +114,8 @@ func updateRot():
 	
 	compareRot = wrapf(compareRot, -PI, PI)
 	
-	var margin = (PI/3)
-	if(compareRot > ((PI/2)-margin)) && (compareRot < ((PI/2)+margin)):
+	
+	if(compareRot > ((PI/2)-look_margin)) && (compareRot < ((PI/2)+look_margin)):
 		var count = 0
 		for _i in layers:
 			_i.set_sorting_offset(-30+count)
