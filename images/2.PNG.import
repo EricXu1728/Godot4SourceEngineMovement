@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chssoy8c7bjhu"
-path.s3tc="res://.godot/imported/distancehex.png-5f1b2fee6e20068ab81f6e99156754d0.s3tc.ctex"
+uid="uid://d13lgrdcyhn7r"
+path.s3tc="res://.godot/imported/2.PNG-f5d5f5b891896914c3fde6e00d76f98f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://images/distancehex.png"
-dest_files=["res://.godot/imported/distancehex.png-5f1b2fee6e20068ab81f6e99156754d0.s3tc.ctex"]
+source_file="res://images/2.PNG"
+dest_files=["res://.godot/imported/2.PNG-f5d5f5b891896914c3fde6e00d76f98f.s3tc.ctex"]
 
 [params]
 

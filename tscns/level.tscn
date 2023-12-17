@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7ilc88edt76w" path="res://tscns/slope.tscn" id="4_hnn3q"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
-[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://2.PNG" id="5_kgphi"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="5_kgphi"]
 [ext_resource type="Script" path="res://hud_elements/windowController.gd" id="8_81scw"]
 [ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="10_p5cny"]
 [ext_resource type="Shader" path="res://shaders/canvasSpeedLine.gdshader" id="11_2lsuk"]

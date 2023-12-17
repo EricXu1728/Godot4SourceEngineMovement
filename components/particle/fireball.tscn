@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://f0wsgshd1lvi" path="res://blendtest.blend" id="1_u74il"]
 [ext_resource type="Shader" path="res://shaders/fire.gdshader" id="2_351rv"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="3_ls8gx"]
-[ext_resource type="Texture2D" uid="uid://o4xlwbin0ji8" path="res://textures/2.PNG" id="4_o211g"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="4_o211g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4erv8"]
 render_priority = 0

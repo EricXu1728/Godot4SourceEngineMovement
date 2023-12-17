@@ -7,7 +7,7 @@ func enter(msg := {}) -> void:
 	print("AIR")
 	stats.on_floor = false
 	if msg.has("do_jump"):
-		player.clearCoyote()
+		#player.clearCoyote()
 		CheckJumpButton()
 
 func physics_update(delta: float) -> void:
@@ -16,7 +16,7 @@ func physics_update(delta: float) -> void:
 
 	
 
-	if stats.on_floor:
+	if stats.on_floor:# && abs(player.velocity.y)<15:
 		
 		state_machine.transition_to("Run")
 	else:

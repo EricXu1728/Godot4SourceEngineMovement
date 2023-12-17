@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b22vs505lea0n" path="res://components/particle/lineParticle.tscn" id="1_b4luk"]
 [ext_resource type="Shader" path="res://shaders/tunnleSpeedLines.gdshader" id="2_imtno"]
 [ext_resource type="Shader" path="res://shaders/tunnelParticle.gdshader" id="3_vmtxa"]
-[ext_resource type="Texture2D" uid="uid://b1gu07pft4nek" path="res://images/spark.png" id="4_3nv7h"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="4_uo2xt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8aa7l"]
 shader = ExtResource("2_imtno")
@@ -13,7 +13,7 @@ shader_parameter/tunnel_length = 1.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_juf5u"]
 render_priority = 0
 shader = ExtResource("3_vmtxa")
-shader_parameter/texture_albedo = ExtResource("4_3nv7h")
+shader_parameter/texture_albedo = ExtResource("4_uo2xt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_76e4v"]
 material = SubResource("ShaderMaterial_juf5u")
@@ -24,7 +24,6 @@ orientation = 2
 
 [node name="GPUParticles3D" parent="." index="0"]
 amount = 10
-lifetime = 0.1
 interpolate = false
 fract_delta = false
 process_material = SubResource("ShaderMaterial_8aa7l")

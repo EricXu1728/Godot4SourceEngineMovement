@@ -5,6 +5,7 @@ var nextEmit = 0
 var base : Node3D
 @export var point : Node3D
 var rng = RandomNumberGenerator.new()
+var scene_trs =load("res://components/particle/burstParticle.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +33,7 @@ func _process(delta):
 	pass
 
 func spawnSonic(plusPosition := Vector3.ZERO, partScale := Vector2(1,1)) -> Node3D:
-	var scene_trs =load("res://components/particle/burstParticle.tscn")
+	
 	var scene=scene_trs.instantiate()
 		
 	scene.position = point.position + plusPosition

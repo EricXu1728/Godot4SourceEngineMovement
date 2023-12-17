@@ -23,9 +23,9 @@ func _process(delta):
 	var newscale = (pow(speed,0.4)/3)-0.2
 	newscale = clamp(newscale, 1, 5)
 	
-	var range = clamp(newscale -1, 0, 5)
-	var randomx = rng.randf_range(-range, range)
-	var randomy = rng.randf_range(-range, range)
+	var range_ = clamp(newscale -1, 0, 5)
+	var randomx = rng.randf_range(-range_, range_)
+	var randomy = rng.randf_range(-range_, range_)
 	
 	self.position.y = yOrigin+((1-(newscale))*yOriginSize) + randomy
 	self.position.x = xOrigin + randomx

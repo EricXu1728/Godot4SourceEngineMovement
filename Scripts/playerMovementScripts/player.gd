@@ -15,6 +15,7 @@ var height = 2 #the model is 2 meter tall
 
 
 func _ready():
+	mySkin.set_sorting_offset(1)
 	#get_viewport().get_camera_3d()
 	camera = get_node(stats.camPath)
 	print(stats.vel)
@@ -36,6 +37,7 @@ func _process(delta):
 		mySkin.frame = 0
 		frame = 0
 	mySkin.frame = round(frame)
+	$Sprite3D/color.frame = round(frame)
 	#print(mySkin.frame)
 	frame+= stats.vel.length() * 0.01
 	

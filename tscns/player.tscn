@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
 [ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
 [ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
+[ext_resource type="Texture2D" uid="uid://bc6ig6uo37nak" path="res://images/color.png" id="11_4414l"]
 [ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
@@ -86,6 +87,11 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 material_override = SubResource("ShaderMaterial_ln4rn")
 texture = ExtResource("10_ki5xb")
+hframes = 11
+
+[node name="color" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+texture = ExtResource("11_4414l")
 hframes = 11
 
 [node name="shadow" parent="." node_paths=PackedStringArray("ignore") instance=ExtResource("11_6rufm")]

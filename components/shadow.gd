@@ -17,6 +17,6 @@ func _ready():
 func _process(delta):
 	#print(stats.vel)
 	decal.position.z = -stats.vel.y * delta
-	decal.scale.y = 1 + abs(-stats.vel.y *delta *2)
+	decal.scale.y = 0.3 + abs(-stats.vel.y *delta *2)
 	#print(decal.scale.y)
 	pass
