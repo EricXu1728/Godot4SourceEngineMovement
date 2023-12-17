@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://yhbg026i5ocg"]
 
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="1_grudr"]
-[ext_resource type="Texture2D" uid="uid://chssoy8c7bjhu" path="res://images/distancehex.png" id="2_1otpf"]
+[ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://images/icon.svg" id="2_1otpf"]
 [ext_resource type="Texture2D" uid="uid://cyb36fe8j6w1o" path="res://images/player.png" id="3_ld024"]
 [ext_resource type="Shader" path="res://shaders/fire.gdshader" id="4_eatw8"]
 [ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://images/Drawing-2.sketchpad.jpeg" id="4_rsbbl"]
