@@ -39,7 +39,7 @@ func _process(delta):
 	mySkin.frame = round(frame)
 	$Sprite3D/color.frame = round(frame)
 	#print(mySkin.frame)
-	frame+= stats.vel.length() * 0.01
+	frame+= stats.vel.length() * delta * 0.6
 	
 		
 	mySkin.rotation.y = camera.rotation.y

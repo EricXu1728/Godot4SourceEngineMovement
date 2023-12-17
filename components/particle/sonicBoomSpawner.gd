@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if stats.vel.length()>40:
-		nextEmit += pow(stats.vel.length(),1.6)
+		nextEmit += pow(stats.vel.length(),1.6) * delta * 60
 
 	if(nextEmit>20000):
 		nextEmit-=20000

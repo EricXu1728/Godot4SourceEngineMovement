@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://shaders/tunnleSpeedLines.gdshader" id="1_o51o4"]
 [ext_resource type="Shader" path="res://shaders/tunnelParticle.gdshader" id="2_gu3qn"]
-[ext_resource type="Texture2D" uid="uid://o4xlwbin0ji8" path="res://images/2.PNG" id="2_ovnqv"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="2_ovnqv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_35b27"]
 shader = ExtResource("1_o51o4")
