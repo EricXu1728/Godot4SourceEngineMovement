@@ -36,7 +36,7 @@ namespace playerVariables{
 		[Export] public  int ply_stopspeed {get; set;} = 50;
 		[Export] public  int ply_gravity {get; set;} = 60;
 
-		[Export] public  float ply_maxslopeangle  {get; set;} = Mathf.DegToRad((float) 55);
+		[Export] public  float ply_maxslopeangle  {get; set;} = Mathf.DegToRad((float) 45);
 		[Export] public  int ply_maxvelocity {get; set;} = 35000;
 		
 		[Export] public  int ply_jumpheight {get; set;} = 4;
