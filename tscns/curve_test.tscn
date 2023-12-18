@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7awoeomxp6fr"]
+
+[ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="1_mnlfp"]
+
+[sub_resource type="Curve3D" id="Curve3D_ylip8"]
+_data = {
+"points": PackedVector3Array(-0.181508, 0, -0.0595167, 0.181508, 0, 0.0595167, -9.18551, -0.265575, -1.78204, 0.183254, 0, 0.603712, -0.183254, 0, -0.603712, -4.89367, -2.74261, -3.6604, -6.21554, -1.82829, -3.43357, 6.21554, 1.82829, 3.43357, 4.13727, -0.94297, -9.22954, -0.387235, 2.43068, -6.1235, 0.387235, -2.43068, 6.1235, 9.12718, -0.51892, 0.938639, 0.43253, 0, -0.39991, -0.43253, 0, 0.39991, 0.494088, -1.49973, 6.58253, 0.612152, 0, 0.28088, -0.612152, 0, -0.28088, -2.24366, 0.717698, 5.00521, 0, 0, 0, 0, 0, 0, -3.26823, 1.37447, 3.27871, -0.181508, 0, -0.0595167, 0.181508, 0, 0.0595167, -4.38623, 1.16067, 0.257637),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb212"]
+albedo_texture = ExtResource("1_mnlfp")
+uv1_triplanar = true
+
+[node name="CurveTest" type="Node3D"]
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+curve = SubResource("Curve3D_ylip8")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+polygon = PackedVector2Array(0, 0, 0.5, 1, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_tb212")

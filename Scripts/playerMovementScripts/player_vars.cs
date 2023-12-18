@@ -28,15 +28,15 @@ namespace playerVariables{
 		[Export] public int ply_backspeed {get; set;} = 20;
 
 		//Player vars
-		[Export] public int ply_accelerate {get; set;} = 10; //ground acceleration
-		[Export] public int ply_airaccelerate {get; set;} = 12; //effects control and surfing
+		[Export] public int ply_accelerate {get; set;} = 7; //ground acceleration
+		[Export] public int ply_airaccelerate {get; set;} = 7; //effects control and surfing
 		[Export] public  int ply_maxacceleration {get; set;} = 10;
 		[Export] public  int ply_airspeedcap {get; set;} = 7; //turn up for faster air straifing and surfing 
 		[Export] public  int ply_friction {get; set;} = 3;
 		[Export] public  int ply_stopspeed {get; set;} = 50;
 		[Export] public  int ply_gravity {get; set;} = 60;
 
-		[Export] public  float ply_maxslopeangle  {get; set;} = Mathf.DegToRad((float) 45);
+		[Export] public  float ply_maxslopeangle  {get; set;} = Mathf.DegToRad((float) 55);
 		[Export] public  int ply_maxvelocity {get; set;} = 35000;
 		
 		[Export] public  int ply_jumpheight {get; set;} = 4;
