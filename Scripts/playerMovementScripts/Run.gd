@@ -14,8 +14,7 @@ func Move(delta):
 	if stats.on_floor:
 		WalkMove(delta)
 	else:
-		print("oh")
-		
+
 		state_machine.transition_to("Air")
 
 	if Input.is_action_pressed("jump") && (not stats.crouched) && stats.shouldJump:
