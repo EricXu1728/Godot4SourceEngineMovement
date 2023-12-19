@@ -1,18 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=14 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
+[ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://images/icon.svg" id="3_imbja"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="4_oxk7l"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.gd" id="5_mty1n"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.gd" id="6_vmmom"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Standing.gd" id="7_jr32t"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.gd" id="8_uw634"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.gd" id="9_1hcmd"]
-[ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
-[ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
-[ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
-[ext_resource type="Texture2D" uid="uid://bc6ig6uo37nak" path="res://images/color.png" id="11_4414l"]
-[ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65t5e"]
+albedo_texture = ExtResource("3_imbja")
+
+[sub_resource type="BoxMesh" id="BoxMesh_usx7c"]
+material = SubResource("StandardMaterial3D_65t5e")
+size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 margin = 0.001
@@ -21,20 +24,13 @@ size = Vector3(1, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4pade"]
 size = Vector3(1, 0.8, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ln4rn"]
-render_priority = 0
-shader = ExtResource("9_y1ap3")
-shader_parameter/thickness = 0.5
-shader_parameter/softness = 0.0
-shader_parameter/colour = Color(0, 0, 0, 1)
-shader_parameter/outline_colour = Color(1, 1, 1, 1)
-shader_parameter/outline_thickness = 0.0
-shader_parameter/outline_softness = 0.1
-shader_parameter/sdf_texture = ExtResource("10_ki5xb")
-
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_a7j60")
 stats = ExtResource("2_graem")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_usx7c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -82,21 +78,3 @@ target_position = Vector3(0, -1.3, 0)
 [node name="CoyoteTime" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
-material_override = SubResource("ShaderMaterial_ln4rn")
-texture = ExtResource("10_ki5xb")
-hframes = 11
-
-[node name="color" type="Sprite3D" parent="Sprite3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-texture = ExtResource("11_4414l")
-hframes = 11
-
-[node name="shadow" parent="." node_paths=PackedStringArray("ignore") instance=ExtResource("11_6rufm")]
-ignore = NodePath("..")
-
-[node name="FireballHandler" parent="." node_paths=PackedStringArray("point") instance=ExtResource("13_cy6t1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-point = NodePath("..")

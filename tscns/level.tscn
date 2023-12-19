@@ -1,22 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=19 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://tscns/player.tscn" id="1_rsegt"]
+[ext_resource type="Texture2D" uid="uid://cpe3gv52gbqwg" path="res://textures/2.PNG" id="4_fbpvl"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
-[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="5_kgphi"]
-[ext_resource type="Script" path="res://hud_elements/windowController.gd" id="8_81scw"]
-[ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="10_p5cny"]
-[ext_resource type="Shader" path="res://shaders/canvasSpeedLine.gdshader" id="11_2lsuk"]
-[ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="12_5r21d"]
-[ext_resource type="Script" path="res://amongus.cs" id="12_cnaw3"]
-[ext_resource type="Script" path="res://hud_elements/ScreenLine.gd" id="13_chubs"]
-[ext_resource type="PackedScene" path="res://tscns/shadertest.tscn" id="14_83tra"]
-[ext_resource type="Script" path="res://Scripts/Speedometer.gd" id="14_k8f7j"]
-[ext_resource type="PackedScene" uid="uid://f0wsgshd1lvi" path="res://blendtest.blend" id="15_4fi2e"]
 [ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
 [ext_resource type="PackedScene" uid="uid://c805ovgtm67o6" path="res://tscns/block.tscn" id="16_rjewc"]
-[ext_resource type="PackedScene" uid="uid://ks27n2x5614" path="res://components/particle/fireball.tscn" id="16_yl7ps"]
-[ext_resource type="PackedScene" uid="uid://b22vs505lea0n" path="res://components/particle/lineParticle.tscn" id="17_ke3rs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,19 +26,11 @@ size = Vector3(2000, 0.5, 2000)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8a2re"]
 size = Vector3(2000, 0.5, 2000)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_x35o4"]
-shader = ExtResource("11_2lsuk")
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/line_count = 3.0
-shader_parameter/line_density = 0.15
-shader_parameter/line_faloff = 0.15
-shader_parameter/mask_size = 0.0
-shader_parameter/mask_edge = 0.172
-shader_parameter/animation_speed = 10.0
-shader_parameter/noise = ExtResource("12_5r21d")
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rr07l"]
+load_path = "res://.godot/imported/2.PNG-f5d5f5b891896914c3fde6e00d76f98f.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dimrh"]
-albedo_texture = ExtResource("5_kgphi")
+albedo_texture = ExtResource("4_fbpvl")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 uv1_world_triplanar = true
@@ -110,49 +91,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.6024, 250.194, 236.311)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.09027, 0)
-texture = ExtResource("5_kgphi")
+texture = SubResource("CompressedTexture2D_rr07l")
 script = ExtResource("4_ivjvi")
 
 [node name="WorldSetup" parent="." instance=ExtResource("5_1fjn0")]
-
-[node name="shadertest" parent="." instance=ExtResource("14_83tra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78033, 1.90995, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-follow_viewport_scale = 0.001
-script = ExtResource("8_81scw")
-
-[node name="ScreenLine" type="ColorRect" parent="CanvasLayer"]
-visibility_layer = 17
-material = SubResource("ShaderMaterial_x35o4")
-offset_right = 1157.0
-offset_bottom = 654.0
-script = ExtResource("13_chubs")
-stats = ExtResource("10_p5cny")
-
-[node name="Speedometer" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 68.0
-offset_top = 567.0
-offset_right = 325.0
-offset_bottom = 592.0
-text = "SPEED"
-script = ExtResource("14_k8f7j")
-stats = ExtResource("10_p5cny")
-
-[node name="amongus" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1102, 39)
-scale = Vector2(0.152684, 0.103727)
-texture = ExtResource("5_kgphi")
-script = ExtResource("12_cnaw3")
-
-[node name="blendtest" parent="." instance=ExtResource("15_4fi2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78277, 1.74022, -23.855)
-
-[node name="blendtest2" parent="." instance=ExtResource("16_yl7ps")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18308, -23.4582)
-
-[node name="test" parent="." instance=ExtResource("17_ke3rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0708, 8.43542, 0)
 
 [node name="layout" type="Node3D" parent="."]
 

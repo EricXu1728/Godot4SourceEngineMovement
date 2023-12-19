@@ -2,7 +2,7 @@ extends PlayerInputs
 class_name Player
 
 @onready var myShape = $CollisionShape3D
-@onready var mySkin = $Sprite3D
+@onready var mySkin = $MeshInstance3D
 @onready var bonker = $Headbonk
 @onready var spring = $TwistPivot/PitchPivot
 @onready var coyoteTimer = $CoyoteTime
@@ -24,28 +24,11 @@ func _ready():
 	spring.add_excluded_object(self.get_rid())
 	
 	
-
-var frame = 0
-var nextEmit = 0
-
 func _process(delta):
 	
 	view.fov = clamp(70+sqrt(stats.vel.length()*7),90, 180)
 	spring.spring_length = clamp(4+(sqrt(stats.vel.length())/1.5),8, 100)
 	
-	if frame>=10:
-		mySkin.frame = 0
-		frame = 0
-	mySkin.frame = round(frame)
-	$Sprite3D/color.frame = round(frame)
-	#print(mySkin.frame)
-	frame+= stats.vel.length() * delta * 0.6
-	
-		
-	mySkin.rotation.y = camera.rotation.y
-	mySkin.rotation.x = (camera.rotation.x)/2
-
-			
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		InputKeys()
 		

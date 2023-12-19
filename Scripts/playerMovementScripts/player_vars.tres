@@ -1,9 +1,9 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://blcrcljlra16c"]
+[gd_resource type="Resource" script_class="playerVariables" load_steps=2 format=3 uid="uid://blcrcljlra16c"]
 
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/player_vars.cs" id="1_cxytm"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/player_vars.gd" id="1_ffqun"]
 
 [resource]
-script = ExtResource("1_cxytm")
+script = ExtResource("1_ffqun")
 vel = Vector3(0, 0, 0)
 snap = Vector3(0, -1, 0)
 ply_mousesensitivity = 1.5
@@ -16,7 +16,7 @@ ply_upspeed = 20
 ply_forwardspeed = 20
 ply_backspeed = 20
 ply_accelerate = 7
-ply_airaccelerate = 20
+ply_airaccelerate = 15
 ply_maxacceleration = 10
 ply_airspeedcap = 7
 ply_friction = 3
