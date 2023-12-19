@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7awoeomxp6fr"]
 
-[ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="1_mnlfp"]
+[ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="1_c6de1"]
 
 [sub_resource type="Curve3D" id="Curve3D_ylip8"]
 _data = {
@@ -10,7 +10,7 @@ _data = {
 point_count = 8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb212"]
-albedo_texture = ExtResource("1_mnlfp")
+albedo_texture = ExtResource("1_c6de1")
 uv1_triplanar = true
 
 [node name="CurveTest" type="Node3D"]

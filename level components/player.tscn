@@ -33,6 +33,7 @@ shader_parameter/outline_softness = 0.1
 shader_parameter/sdf_texture = ExtResource("10_ki5xb")
 
 [node name="player" type="CharacterBody3D"]
+collision_layer = 4
 script = ExtResource("1_a7j60")
 stats = ExtResource("2_graem")
 

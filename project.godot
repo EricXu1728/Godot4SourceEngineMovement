@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot4SourceEngineMovement"
-run/main_scene="res://tscns/level.tscn"
+run/main_scene="res://levels/level.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://images/icon.svg"
 
@@ -79,3 +79,9 @@ restart={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_physics/layer_1="Walls"
+3d_physics/layer_2="Coins"
+3d_physics/layer_3="Player"

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyu2arbtnsyr6"]
+
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_gcvs1"]
+[ext_resource type="Texture2D" uid="uid://cpe3gv52gbqwg" path="res://textures/2.PNG" id="1_ulsii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efsps"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gpcrh"]
+size = Vector3(2, 2, 2)
+
+[node name="Coin" type="Area3D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_gcvs1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_efsps")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+texture = ExtResource("1_ulsii")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gpcrh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
