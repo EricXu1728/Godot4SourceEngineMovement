@@ -96,6 +96,7 @@ texture = ExtResource("11_4414l")
 hframes = 11
 
 [node name="shadow" parent="." node_paths=PackedStringArray("ignore") instance=ExtResource("11_6rufm")]
+stats = ExtResource("2_graem")
 ignore = NodePath("..")
 
 [node name="FireballHandler" parent="." node_paths=PackedStringArray("point") instance=ExtResource("13_cy6t1")]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://level components/world_setup.tscn" id="5_1fjn0"]
 [ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="5_kgphi"]
 [ext_resource type="Script" path="res://hud_elements/windowController.gd" id="8_81scw"]
-[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="10_p5cny"]
+[ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="10_p5cny"]
 [ext_resource type="Shader" path="res://shaders/canvasSpeedLine.gdshader" id="11_2lsuk"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="12_5r21d"]
 [ext_resource type="Script" path="res://amongus.cs" id="12_cnaw3"]

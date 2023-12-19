@@ -8,6 +8,10 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if(stats == null):
+		set_script(null)
+		return
+		
 	$Shadowarm/Node3D/Decal.set_cull_mask(1)
 	shadowArm.add_excluded_object(ignore.get_rid())
 	pass # Replace with function body.
