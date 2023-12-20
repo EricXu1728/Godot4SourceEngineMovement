@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="3_aqal0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efsps"]
-size = Vector3(2, 2, 2)
+size = Vector3(4, 4, 4)
 
 [node name="Coin" type="Area3D"]
 collision_layer = 2

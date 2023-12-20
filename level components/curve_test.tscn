@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7awoeomxp6fr"]
+[gd_scene load_steps=5 format=3 uid="uid://b7awoeomxp6fr"]
 
 [ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="1_c6de1"]
 
@@ -12,6 +12,13 @@ point_count = 8
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb212"]
 albedo_texture = ExtResource("1_c6de1")
 uv1_triplanar = true
+
+[sub_resource type="Curve3D" id="Curve3D_3fc75"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 86.5771, 16.7928, -1.56068, 0, 0, 0, 0, 0, 0, -90.113, 5.90479, -17.4973, 0, 0, 0, 0, 0, 0, 80.5666, -54.6197, 55.9915, 0, 0, 0, 0, 0, 0, 61.4062, -64.3087, -48.4512, 0, 0, 0, 0, 0, 0, 32.0388, -151.382, 98.3264),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="CurveTest" type="Node3D"]
 
@@ -32,3 +39,11 @@ path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 material = SubResource("StandardMaterial3D_tb212")
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 129.654, 0)
+curve = SubResource("Curve3D_3fc75")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+transform = Transform3D(-0.21565, -0.436797, -0.873311, -0.937914, -0.156109, 0.309684, -0.271602, 0.885903, -0.376018, -31.6631, -14.8221, 7.66924)
+progress = 244.669

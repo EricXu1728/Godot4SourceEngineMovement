@@ -15,6 +15,7 @@ var height = 2 #the model is 2 meter tall
 
 
 func _ready():
+	
 	mySkin.set_sorting_offset(1)
 	#get_viewport().get_camera_3d()
 	camera = get_node(stats.camPath)

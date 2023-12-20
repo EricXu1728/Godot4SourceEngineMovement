@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=31 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://level components/player.tscn" id="1_rsegt"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
 [ext_resource type="PackedScene" uid="uid://c805ovgtm67o6" path="res://level components/block.tscn" id="16_rjewc"]
 [ext_resource type="PackedScene" uid="uid://dyu2arbtnsyr6" path="res://level components/coin.tscn" id="16_socfp"]
+[ext_resource type="PackedScene" uid="uid://c86iyry2o2kvd" path="res://level components/coin_path.tscn" id="17_0j72w"]
 [ext_resource type="PackedScene" uid="uid://b22vs505lea0n" path="res://components/particle/lineParticle.tscn" id="17_ke3rs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
@@ -85,6 +86,13 @@ size = Vector3(2000, 0.5, 2000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8a2re"]
 size = Vector3(2000, 0.5, 2000)
+
+[sub_resource type="Curve3D" id="Curve3D_mi5f8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 54.8177, 232.808, 218.265, 0.00012207, 32.9831, 49.213, -0.00012207, -32.9831, -49.213, 53, 143.791, 171.547, 0, -5.75896, 57.5896, 0, 5.75896, -57.5896, 53, 132.394, 55.447),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="Level" type="Node3D"]
 
@@ -265,3 +273,21 @@ script = ExtResource("4_ivjvi")
 
 [node name="Coin" parent="coins" instance=ExtResource("16_socfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5102, 245.501, 233.202)
+
+[node name="CoinPath" parent="coins" instance=ExtResource("17_0j72w")]
+transform = Transform3D(1.22775, 0, 0, 0, 1.01826, 0, 0, 0, 1, 0, 10, 0)
+curve = SubResource("Curve3D_mi5f8")
+distance = 20.0
+
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45229" to="coins/CoinPath/@Area3D@45229" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45230" to="coins/CoinPath/@Area3D@45230" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45231" to="coins/CoinPath/@Area3D@45231" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45232" to="coins/CoinPath/@Area3D@45232" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45233" to="coins/CoinPath/@Area3D@45233" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45234" to="coins/CoinPath/@Area3D@45234" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45235" to="coins/CoinPath/@Area3D@45235" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45236" to="coins/CoinPath/@Area3D@45236" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45237" to="coins/CoinPath/@Area3D@45237" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45238" to="coins/CoinPath/@Area3D@45238" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45239" to="coins/CoinPath/@Area3D@45239" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@45240" to="coins/CoinPath/@Area3D@45240" method="_on_body_entered"]
