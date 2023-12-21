@@ -52,13 +52,13 @@ public partial class coin_controller : Node3D
 			//Vector3 dir = c.GlobalPosition.DirectionTo(collector.GlobalPosition);
 			Vector3 direction_ = c.GlobalPosition.DirectionTo(target);
 			float distance_ = c.GlobalPosition.DistanceTo(target);
-			float speed_ = Math.Clamp(distance_ * 50, 100, 999);
+			float speed_ = Math.Clamp(distance_ /2, 1, 10);
 
-			c.GlobalPosition += direction_ * (float)delta *speed_;//c.GlobalPosition.Lerp(target, (float)(delta*50));
+			c.GlobalPosition += direction_ * speed_;//c.GlobalPosition.Lerp(target, (float)(delta*50));
 			
 			target = c.GlobalPosition;
 
-			if(c.GlobalPosition.DistanceTo(collectorPos) < 0.25){
+			if(c.GlobalPosition.DistanceTo(collectorPos) < 0.4){
 				//toRemove.Add(c);
 				toRemove.Add(c);
 
