@@ -43,7 +43,7 @@ public partial class coin_controller : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		List<coin> toRemove = new List<coin>();
+		HashSet<coin> toRemove = new HashSet<coin>();
 
 		Vector3 collectorPos = collector.GlobalPosition + new Vector3(0,1,0);
 		Vector3 target = collectorPos;
@@ -52,7 +52,7 @@ public partial class coin_controller : Node3D
 			//Vector3 dir = c.GlobalPosition.DirectionTo(collector.GlobalPosition);
 			Vector3 direction_ = c.GlobalPosition.DirectionTo(target);
 			float distance_ = c.GlobalPosition.DistanceTo(target);
-			float speed_ = Math.Clamp(distance_ /2, 1, 10);
+			float speed_ = Math.Clamp(distance_ *50, 100, 10000) * (float)delta;//Math.Clamp(distance_ /2, 1, 10);
 
 			c.GlobalPosition += direction_ * speed_;//c.GlobalPosition.Lerp(target, (float)(delta*50));
 			
@@ -80,10 +80,14 @@ public partial class coin_controller : Node3D
 	
 	private void _on_coin_coin_collected(coin collected_coin)
 	{
-		
-		CollectedCoins.Add(collected_coin);
-		
-		collected_coin.remove_shadow();
+		if(collected_coin.interacted == false){
+			collected_coin.interacted = true;
+			CollectedCoins.Add(collected_coin);
+			
+			collected_coin.remove_shadow();
+		}else{
+			GD.Print("Leak");
+		}
 	}
 
 }

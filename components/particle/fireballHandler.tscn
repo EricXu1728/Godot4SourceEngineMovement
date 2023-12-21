@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://components/particle/fireball.gd" id="1_7n28n"]
 [ext_resource type="PackedScene" uid="uid://ks27n2x5614" path="res://components/particle/fireball.tscn" id="1_wuh5j"]
-[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_vwy31"]
+[ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_vwy31"]
 [ext_resource type="PackedScene" uid="uid://b2ax2pi4dct82" path="res://components/particle/sonicBoomSpawner.tscn" id="4_yd5iq"]
 
 [node name="FireballHandler" type="Node3D"]

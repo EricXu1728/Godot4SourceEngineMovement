@@ -26,7 +26,7 @@ func _process(delta):
 		#print(pitch)
 		$AudioStreamPlayer.pitch_scale = pitch
 		$AudioStreamPlayer.volume_db = -pow(stats.vel.length()/40,2)
-		$AudioStreamPlayer.play()
+		#$AudioStreamPlayer.play()
 		
 		spawnSonic((stats.vel*delta * 1))
 		

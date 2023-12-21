@@ -14,7 +14,7 @@ func _ready():
 func _process(delta):
 	self.scale.x += 10. *delta
 	self.scale.y += 10. *delta
-	sprite.modulate.a *= 0.9
+	sprite.modulate.a -= 0.05 *(delta*60)
 	
 	if timer.is_stopped():
 		queue_free()

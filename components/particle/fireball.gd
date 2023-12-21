@@ -18,6 +18,7 @@ var look_margin := (PI/3)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	boomSpawner.point = point
+	boomSpawner.stats = stats
 	
 	fireball.position.x = 1#-1
 	for i in layers:

@@ -8,6 +8,8 @@ public partial class coin : Area3D
 	
 	[Signal] public delegate void CoinCollectedEventHandler(coin collected_coin);
 
+	public Boolean interacted = false;
+
 	private AnimationPlayer coinAnimePlayer;
 
 	// Called when the node enters the scene tree for the first time.
@@ -37,14 +39,15 @@ public partial class coin : Area3D
 	}
 	
 	public void remove_shadow(){
-		RemoveChild(GetNode<Node>("shadow"));
+		Node n = GetNode<Node>("shadow");
+		n.QueueFree();
 	}
 	
 	private void _on_animation_player_animation_finished(StringName anim_name)
 	{
 		explosiveSpark newSpark =  explosion.Instantiate<explosiveSpark>();
 		
-		newSpark.GlobalPosition = GlobalPosition + new Vector3(0,2,0);
+		newSpark.GlobalPosition = this.GlobalPosition + new Vector3(0,2,0);
 		
 		GetParent().AddChild(newSpark);
 
