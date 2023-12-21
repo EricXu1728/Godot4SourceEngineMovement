@@ -46,7 +46,6 @@ public partial class coin : Area3D
 		
 		newSpark.GlobalPosition = GlobalPosition + new Vector3(0,2,0);
 		
-		GD.Print(GlobalPosition);
 		GetParent().AddChild(newSpark);
 
 		QueueFree();
