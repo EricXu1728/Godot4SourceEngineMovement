@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c86iyry2o2kvd"]
 
-[ext_resource type="Script" path="res://Scripts/coin_path.cs" id="1_jrxtg"]
+[ext_resource type="Script" path="res://Scripts/Coin behavior/coin_path.cs" id="1_jrxtg"]
 
 [sub_resource type="Curve3D" id="Curve3D_hy86w"]
 

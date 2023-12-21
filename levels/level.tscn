@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=33 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://level components/player.tscn" id="1_rsegt"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
@@ -7,12 +7,14 @@
 [ext_resource type="Script" path="res://hud_elements/windowController.gd" id="8_81scw"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="10_p5cny"]
 [ext_resource type="Shader" path="res://shaders/canvasSpeedLine.gdshader" id="11_2lsuk"]
+[ext_resource type="Script" path="res://Scripts/Coin behavior/coin_counter.cs" id="11_w3yw3"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="12_5r21d"]
 [ext_resource type="Script" path="res://amongus.cs" id="12_cnaw3"]
 [ext_resource type="Script" path="res://hud_elements/ScreenLine.gd" id="13_chubs"]
 [ext_resource type="PackedScene" uid="uid://yhbg026i5ocg" path="res://level components/shadertest.tscn" id="14_83tra"]
 [ext_resource type="Script" path="res://Scripts/Speedometer.gd" id="14_k8f7j"]
 [ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
+[ext_resource type="Script" path="res://Scripts/Coin behavior/coin_controller.cs" id="16_a4a68"]
 [ext_resource type="PackedScene" uid="uid://c805ovgtm67o6" path="res://level components/block.tscn" id="16_rjewc"]
 [ext_resource type="PackedScene" uid="uid://dyu2arbtnsyr6" path="res://level components/coin.tscn" id="16_socfp"]
 [ext_resource type="PackedScene" uid="uid://c86iyry2o2kvd" path="res://level components/coin_path.tscn" id="17_0j72w"]
@@ -130,10 +132,19 @@ script = ExtResource("14_k8f7j")
 stats = ExtResource("10_p5cny")
 
 [node name="amongus" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1102, 39)
-scale = Vector2(0.152684, 0.103727)
+position = Vector2(1018.75, 72)
+scale = Vector2(0.369799, 0.2)
 texture = ExtResource("5_kgphi")
 script = ExtResource("12_cnaw3")
+
+[node name="coin_counter" type="Label" parent="CanvasLayer"]
+offset_left = 902.0
+offset_top = 49.0
+offset_right = 960.0
+offset_bottom = 72.0
+scale = Vector2(2, 2)
+text = "COINS: "
+script = ExtResource("11_w3yw3")
 
 [node name="layout" type="Node3D" parent="."]
 
@@ -270,24 +281,29 @@ texture = ExtResource("5_kgphi")
 script = ExtResource("4_ivjvi")
 
 [node name="coins" type="Node3D" parent="."]
+script = ExtResource("16_a4a68")
+coin_label_path = NodePath("../CanvasLayer/coin_counter")
 
 [node name="Coin" parent="coins" instance=ExtResource("16_socfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5102, 245.501, 233.202)
 
 [node name="CoinPath" parent="coins" instance=ExtResource("17_0j72w")]
-transform = Transform3D(1.22775, 0, 0, 0, 1.01826, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1.22775, 0, 0, 0, 1.01826, 0, 0, 0, 1, -4.38786, 10, 0)
 curve = SubResource("Curve3D_mi5f8")
 distance = 20.0
 
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45229" to="coins/CoinPath/@Area3D@45229" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45230" to="coins/CoinPath/@Area3D@45230" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45231" to="coins/CoinPath/@Area3D@45231" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45232" to="coins/CoinPath/@Area3D@45232" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45233" to="coins/CoinPath/@Area3D@45233" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45234" to="coins/CoinPath/@Area3D@45234" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45235" to="coins/CoinPath/@Area3D@45235" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45236" to="coins/CoinPath/@Area3D@45236" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45237" to="coins/CoinPath/@Area3D@45237" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45238" to="coins/CoinPath/@Area3D@45238" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45239" to="coins/CoinPath/@Area3D@45239" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@45240" to="coins/CoinPath/@Area3D@45240" method="_on_body_entered"]
+[node name="Coin2" parent="coins" instance=ExtResource("16_socfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.7613, 246.169, 243.918)
+
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19180" to="coins/CoinPath/@Area3D@19180" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19181" to="coins/CoinPath/@Area3D@19181" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19182" to="coins/CoinPath/@Area3D@19182" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19183" to="coins/CoinPath/@Area3D@19183" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19184" to="coins/CoinPath/@Area3D@19184" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19185" to="coins/CoinPath/@Area3D@19185" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19186" to="coins/CoinPath/@Area3D@19186" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19187" to="coins/CoinPath/@Area3D@19187" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19188" to="coins/CoinPath/@Area3D@19188" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19189" to="coins/CoinPath/@Area3D@19189" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19190" to="coins/CoinPath/@Area3D@19190" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19191" to="coins/CoinPath/@Area3D@19191" method="_on_body_entered"]
