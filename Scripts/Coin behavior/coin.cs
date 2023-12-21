@@ -17,6 +17,7 @@ public partial class coin : Area3D
 	{
 
 		coinAnimePlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		coinAnimePlayer.SpeedScale = 1.5F;
 		//GD.Print(coinAnimePlayer);
 		// Node receiver = GetNode(signal_receiver);
 		// GD.Print(receiver);
@@ -47,7 +48,7 @@ public partial class coin : Area3D
 	{
 		explosiveSpark newSpark =  explosion.Instantiate<explosiveSpark>();
 		
-		newSpark.GlobalPosition = this.GlobalPosition + new Vector3(0,2,0);
+		newSpark.Position = this.Position + new Vector3(0,2,0);
 		
 		GetParent().AddChild(newSpark);
 

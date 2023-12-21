@@ -33,7 +33,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, 0, 0, 0, 0, -1, -0.05, -8, 0.05, 8, 3, -0.05, -5, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, -1, -0.05, -8, 0.05, 8, 3, -0.05, -2, 0, 0),
 "times": PackedFloat32Array(0, 0.1, 0.35)
 }
 

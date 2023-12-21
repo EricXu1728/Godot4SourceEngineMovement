@@ -16,6 +16,9 @@ public partial class explosiveSpark : GpuParticles3D
 	
 	private void _on_finished()
 	{
+		Callable callable = new Callable(this, MethodName.QueueFree);
+		callable.CallDeferred();
+		GetParent().RemoveChild(this);
 		QueueFree();
 	}
 
