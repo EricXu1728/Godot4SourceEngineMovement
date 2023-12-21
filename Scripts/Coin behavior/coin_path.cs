@@ -8,7 +8,7 @@ public partial class coin_path : Path3D
 {
 	private static PackedScene COIN = (PackedScene)ResourceLoader.Load("res://level components/coin.tscn");
 	
-	private float _distance = 10;
+	private float _distance = 20;
 	
 	private List<Area3D> coins = new List<Area3D>(); 
 	
@@ -53,7 +53,7 @@ public partial class coin_path : Path3D
 		
 		
 		
-		double length = this.Curve.GetBakedLength();
+		float length = this.Curve.GetBakedLength();
 		//GD.Print(length);
 
 		float progress = 0;
@@ -87,6 +87,8 @@ public partial class coin_path : Path3D
 		spawn_coins();
 		// Replace with function body.
 	}
+	
+
 }
 
 

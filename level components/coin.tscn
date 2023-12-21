@@ -1,11 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyu2arbtnsyr6"]
+[gd_scene load_steps=8 format=3 uid="uid://dyu2arbtnsyr6"]
 
 [ext_resource type="Script" path="res://Scripts/Coin behavior/coin.cs" id="1_0qbuy"]
 [ext_resource type="Texture2D" uid="uid://cpe3gv52gbqwg" path="res://textures/2.PNG" id="1_ulsii"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="3_aqal0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efsps"]
-size = Vector3(10, 10, 10)
+size = Vector3(12, 12, 15)
+
+[sub_resource type="Animation" id="Animation_jbdre"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_h7jis"]
+resource_name = "coin_collect"
+length = 0.5
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, -1, -0.05, -8, 0.05, 8, 3, -0.05, -5, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.35)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wgbc3"]
+_data = {
+"RESET": SubResource("Animation_jbdre"),
+"coin_collect": SubResource("Animation_h7jis")
+}
 
 [node name="Coin" type="Area3D"]
 collision_layer = 2
@@ -22,4 +58,10 @@ texture = ExtResource("1_ulsii")
 
 [node name="shadow" parent="." instance=ExtResource("3_aqal0")]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wgbc3")
+}
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

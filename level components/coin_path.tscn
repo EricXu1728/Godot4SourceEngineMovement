@@ -1,17 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c86iyry2o2kvd"]
+[gd_scene load_steps=2 format=3 uid="uid://c86iyry2o2kvd"]
 
 [ext_resource type="Script" path="res://Scripts/Coin behavior/coin_path.cs" id="1_jrxtg"]
 
-[sub_resource type="Curve3D" id="Curve3D_hy86w"]
-
 [node name="CoinPath" type="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-curve = SubResource("Curve3D_hy86w")
 script = ExtResource("1_jrxtg")
-distance = 5.0
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(0.897652, 0.0641286, -0.435946, -3.72518e-09, 0.989321, 0.145533, 0.440636, -0.130641, 0.888098, -18.678, 8.8186, 38.2019)
-progress = 230.0
+transform = Transform3D(-0.00390547, 0.999947, -0.00432053, -0.922844, -0.00526805, -0.385009, -0.385033, 0.00248372, 0.922828, 57.1078, 156.703, -172.94)
+progress = 7.97884
 
 [connection signal="curve_changed" from="." to="." method="_on_curve_changed"]

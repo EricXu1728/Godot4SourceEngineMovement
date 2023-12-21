@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://df5p6ak61m4g0"]
+
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="1_dbx5m"]
+[ext_resource type="Script" path="res://components/particle/explosiveSpark.cs" id="2_7gbyr"]
+
+[sub_resource type="Curve" id="Curve_w611h"]
+_data = [Vector2(0, 1), 0.0, 0.131987, 0, 0, Vector2(0.99999, 0), -2.66409, -2.66409, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4da6b"]
+curve = SubResource("Curve_w611h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nql3r"]
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+angular_velocity_min = 10.0
+angular_velocity_max = 10.0
+scale_curve = SubResource("CurveTexture_4da6b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bfhw"]
+shading_mode = 0
+albedo_texture = ExtResource("1_dbx5m")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_6j20m"]
+material = SubResource("StandardMaterial3D_3bfhw")
+
+[node name="ExplosiveSpark" type="GPUParticles3D"]
+cast_shadow = 0
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_nql3r")
+draw_pass_1 = SubResource("QuadMesh_6j20m")
+script = ExtResource("2_7gbyr")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
