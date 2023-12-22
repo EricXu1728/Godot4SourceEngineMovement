@@ -1,8 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbuxl77ae86f4"]
+[gd_scene load_steps=5 format=3 uid="uid://dbuxl77ae86f4"]
 
 [ext_resource type="Script" path="res://Scripts/WindowController.gd" id="1_vahh1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ydy8l"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mdvn2"]
+sky_material = SubResource("ProceduralSkyMaterial_ydy8l")
+
+[sub_resource type="Environment" id="Environment_d72a4"]
+background_mode = 2
+sky = SubResource("Sky_mdvn2")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="WorldSetup" type="Node3D"]
 
 [node name="WindowController" type="Node3D" parent="."]
 script = ExtResource("1_vahh1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.80995, 0.479456, 0.337793, 0, -0.575947, 0.817487, 0.5865, -0.662123, -0.466488, 0, 3.92634, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_d72a4")

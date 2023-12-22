@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2ax2pi4dct82"]
 
 [ext_resource type="Script" path="res://components/particle/sonicBoomSpawner.gd" id="1_ml0bt"]
-[ext_resource type="AudioStream" uid="uid://d4etd3dup35fe" path="res://122127__zimbot__thud_4_lowlongreverb.wav" id="3_yi5tj"]
+[ext_resource type="AudioStream" uid="uid://d4etd3dup35fe" path="res://audio/thud.wav" id="2_8evtt"]
 
 [node name="sonicBoomSpawner" type="Node3D"]
 script = ExtResource("1_ml0bt")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_yi5tj")
+stream = ExtResource("2_8evtt")
 pitch_scale = 100.0

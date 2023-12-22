@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0sg7nscuvmt7"]
+
+[ext_resource type="Script" path="res://Scripts/Coin behavior/coin_controller.cs" id="1_ty5ol"]
+[ext_resource type="AudioStream" uid="uid://v804ophguh4i" path="res://audio/Collect.wav" id="2_1bp51"]
+[ext_resource type="AudioStream" uid="uid://bje1ittpk54ch" path="res://audio/Clock.wav" id="3_ffioe"]
+
+[node name="CoinHandler" type="Node3D"]
+script = ExtResource("1_ty5ol")
+
+[node name="collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1bp51")
+
+[node name="clock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ffioe")

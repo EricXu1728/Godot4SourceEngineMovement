@@ -7,6 +7,7 @@ public partial class coin : Area3D
 	private PackedScene explosion =  ResourceLoader.Load<PackedScene>("res://components/particle/explosiveSpark.tscn");
 	
 	[Signal] public delegate void CoinCollectedEventHandler(coin collected_coin);
+	[Signal] public delegate void CoinDestroyedEventHandler();
 
 	public Boolean interacted = false;
 
@@ -51,6 +52,8 @@ public partial class coin : Area3D
 		newSpark.Position = this.Position + new Vector3(0,2,0);
 		
 		GetParent().AddChild(newSpark);
+
+		EmitSignal(SignalName.CoinDestroyed);
 
 		QueueFree();
 	}
