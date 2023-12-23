@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=18 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
 [ext_resource type="Texture2D" uid="uid://bc6ig6uo37nak" path="res://images/color.png" id="11_4414l"]
 [ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
+[ext_resource type="AudioStream" uid="uid://bkb60ocldfvbw" path="res://audio/step.wav" id="14_dnyny"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 margin = 0.001
@@ -102,3 +103,6 @@ ignore = NodePath("..")
 [node name="FireballHandler" parent="." node_paths=PackedStringArray("point") instance=ExtResource("13_cy6t1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 point = NodePath("..")
+
+[node name="step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_dnyny")

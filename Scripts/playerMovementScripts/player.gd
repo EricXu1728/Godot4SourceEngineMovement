@@ -7,6 +7,7 @@ class_name Player
 @onready var spring = $TwistPivot/PitchPivot
 @onready var coyoteTimer = $CoyoteTime
 @onready var view = $TwistPivot/PitchPivot/view
+@onready var step = $step
 
 
 
@@ -27,7 +28,9 @@ func _ready():
 	
 
 var frame = 0
-var nextEmit = 0
+
+var stepped := false
+var oddstep := true
 
 func _process(delta):
 	
@@ -37,6 +40,22 @@ func _process(delta):
 	if frame>=10:
 		mySkin.frame = 0
 		frame = 0
+		
+	
+	if((mySkin.frame == 2 || mySkin.frame ==7)):
+		if(stepped ==false):
+			oddstep = !oddstep
+			
+			if(oddstep):
+				step.pitch_scale=1
+			else:
+				step.pitch_scale=-1
+			
+			stepped = true
+			step.play()
+	else:
+		stepped = false
+	
 	mySkin.frame = round(frame)
 	$Sprite3D/color.frame = round(frame)
 	#print(mySkin.frame)
