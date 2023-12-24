@@ -1,13 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
 
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Player.cs" id="1_pvyd0"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
-[ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="4_oxk7l"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.gd" id="5_mty1n"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.gd" id="6_vmmom"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Standing.gd" id="7_jr32t"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.gd" id="8_uw634"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.gd" id="9_1hcmd"]
+[ext_resource type="Script" path="res://Scripts/stateMachine.cs" id="3_5j2tv"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/playerState.cs" id="4_8qb0b"]
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
 [ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
@@ -98,7 +94,7 @@ _data = {
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 4
-script = ExtResource("1_a7j60")
+script = ExtResource("1_pvyd0")
 stats = ExtResource("2_graem")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -116,28 +112,28 @@ margin = 0.5
 transform = Transform3D(1, 0, 0, 0, 0.965925, -0.258819, 0, 0.258819, 0.965925, 0, 0, -1)
 fov = 110.0
 
-[node name="activityMachine" type="Node" parent="."]
-script = ExtResource("4_oxk7l")
+[node name="activityMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_5j2tv")
 initial_state = NodePath("Run")
 
 [node name="Run" type="Node" parent="activityMachine"]
-script = ExtResource("5_mty1n")
+script = ExtResource("4_8qb0b")
 
 [node name="Air" type="Node" parent="activityMachine"]
-script = ExtResource("6_vmmom")
+script = ExtResource("4_8qb0b")
 
-[node name="standingMachine" type="Node" parent="."]
-script = ExtResource("4_oxk7l")
+[node name="standingMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_5j2tv")
 initial_state = NodePath("Standing")
 
 [node name="Standing" type="Node" parent="standingMachine"]
-script = ExtResource("7_jr32t")
+script = ExtResource("4_8qb0b")
 
 [node name="Crouching" type="Node" parent="standingMachine"]
-script = ExtResource("8_uw634")
+script = ExtResource("4_8qb0b")
 
 [node name="Crouched" type="Node" parent="standingMachine"]
-script = ExtResource("9_1hcmd")
+script = ExtResource("4_8qb0b")
 
 [node name="Headbonk" type="ShapeCast3D" parent="."]
 transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 1, 0)

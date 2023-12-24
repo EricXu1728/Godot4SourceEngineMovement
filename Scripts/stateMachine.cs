@@ -6,13 +6,16 @@ public partial class stateMachine : Node
 {
 	[Signal] public delegate void transitionedEventHandler(string state_name);
 	
-	[Export] public NodePath initial_state = new NodePath();
-	State state;
-	
+	[Export] public State initial_state {get; set;}
+
+	public State state;
+
 	public override void _Ready(){
-		state = GetNode<State>(initial_state);	
+		state = initial_state;	
+	
 		
 		foreach(State child in GetChildren()){
+			GD.Print(child);
 			child.ownerStateMachine = this;
 		}
 	}

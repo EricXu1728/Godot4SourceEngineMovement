@@ -9,8 +9,8 @@ using System.Runtime.CompilerServices;
 
 public partial class PlayerInputs : CharacterBody3D
 {
-	[Export] public player_vars stats;
-	public Camera3D camera;
+	[Export] public player_vars stats {get; set;}
+	public Node3D camera;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -43,14 +43,15 @@ public partial class PlayerInputs : CharacterBody3D
 
 	public void InputMouse(InputEventMouseMotion @event){
 		Vector2 mouseMovement = @event.Relative;
-		stats.xlook += -mouseMovement[0] * stats.ply_xlookspeed;
-		stats.ylook += -mouseMovement[1] * stats.ply_ylookspeed;
+		stats.xlook += -mouseMovement[1] * stats.ply_xlookspeed;
+		stats.ylook += -mouseMovement[0] * stats.ply_ylookspeed;
 
 		stats.xlook = Math.Clamp(stats.xlook, stats.ply_maxlookangle_down, stats.ply_maxlookangle_up);
+		//GD.Print(stats.xlook);
 	}
 
 	public void ViewAngles(){
-		camera.Rotation = new Vector3(stats.xlook, stats.ylook,0);
+		camera.RotationDegrees = new Vector3(stats.xlook, stats.ylook,0);
 	}
 
 	public void InputKeys(){
