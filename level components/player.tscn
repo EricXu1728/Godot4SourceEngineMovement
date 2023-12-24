@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=21 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
 [ext_resource type="Texture2D" uid="uid://bc6ig6uo37nak" path="res://images/color.png" id="11_4414l"]
 [ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
-[ext_resource type="AudioStream" uid="uid://bkb60ocldfvbw" path="res://audio/step.wav" id="14_dnyny"]
+[ext_resource type="AudioStream" uid="uid://chk3ueqt4wk74" path="res://audio/step.wav" id="14_dnyny"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
 margin = 0.001
@@ -32,6 +32,69 @@ shader_parameter/outline_colour = Color(1, 1, 1, 1)
 shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_softness = 0.1
 shader_parameter/sdf_texture = ExtResource("10_ki5xb")
+
+[sub_resource type="Animation" id="Animation_mtl4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D/color:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_40mha"]
+resource_name = "running"
+length = 11.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D/color:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vw2la"]
+_data = {
+"RESET": SubResource("Animation_mtl4w"),
+"running": SubResource("Animation_40mha")
+}
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 4
@@ -106,3 +169,8 @@ point = NodePath("..")
 
 [node name="step" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_dnyny")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vw2la")
+}

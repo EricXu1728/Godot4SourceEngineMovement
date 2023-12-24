@@ -8,7 +8,7 @@ class_name Player
 @onready var coyoteTimer = $CoyoteTime
 @onready var view = $TwistPivot/PitchPivot/view
 @onready var step = $step
-
+@onready var animations = $AnimationPlayer
 
 
 
@@ -47,9 +47,9 @@ func _process(delta):
 			oddstep = !oddstep
 			
 			if(oddstep):
-				step.pitch_scale=1
+				step.pitch_scale=1.1
 			else:
-				step.pitch_scale=-1
+				step.pitch_scale=0.9
 			
 			stepped = true
 			step.play()

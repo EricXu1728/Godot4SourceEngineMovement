@@ -12,3 +12,4 @@ stream = ExtResource("2_1bp51")
 
 [node name="clock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ffioe")
+volume_db = -5.0

@@ -17,11 +17,11 @@ namespace playerVariables{
 		[Export] public Vector3 snap {get; set;} = Vector3.Down;
 		
 		// Mouse stuff
-		[Export] public double ply_mousesensitivity {get; set;} = 1.5;
+		[Export] public float ply_mousesensitivity {get; set;} = 1.5f;
 		[Export] public int ply_maxlookangle_down {get; set;} = -90;
 		[Export] public int ply_maxlookangle_up {get; set;} = 90;
-		[Export] public double ply_ylookspeed {get; set;} = 0.3;
-		[Export] public double ply_xlookspeed {get; set;} = 0.3;
+		[Export] public float ply_ylookspeed {get; set;} = 0.3f;
+		[Export] public float ply_xlookspeed {get; set;} = 0.3f;
 		[Export] public int ply_sidespeed {get; set;} = 20;
 		[Export] public int ply_upspeed {get; set;} = 20;
 		[Export] public int ply_forwardspeed {get; set;} = 20;
@@ -57,11 +57,11 @@ namespace playerVariables{
 		[Export] public bool shouldJump {get; set;} = false;
 
 		// Floats
-		[Export] public double sidemove {get; set;}
-		[Export] public double upmove {get; set;}
-		[Export] public double forwardmove {get; set;}
-		[Export] public double ylook {get; set;}
-		[Export] public double xlook {get; set;}
+		[Export] public float sidemove {get; set;}
+		[Export] public float upmove {get; set;}
+		[Export] public float forwardmove {get; set;}
+		[Export] public float ylook {get; set;}
+		[Export] public float xlook {get; set;}
 
 		//Camera
 		[Export] public Godot.NodePath camPath  {get; set;}

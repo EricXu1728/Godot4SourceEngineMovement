@@ -10,35 +10,35 @@ namespace StateMachine;
 // The state machine node will set it.
 public partial class State : Node
 {
-	StateMachine.stateMachine ownerStateMachine;
+	public stateMachine ownerStateMachine;
 	
 	//Virtual function. Receives events from the `_unhandled_input()` callback.
-	public void handle_input(InputEvent _event){
+	public void HandleInput(InputEvent _event){
 
 	}
 	
 	// Virtual function. Corresponds to the `_process()` callback.
-	public void update(float delta){
+	public void Update(double delta){
 		
 	}
 
 
 	// Virtual function. Corresponds to the `_physics_process()` callback.
-	public void physics_update(double delta){
+	public void PhysicsUpdate(double delta){
 		
 	}
 
 
 	// Virtual function. Called by the state machine upon changing the active state. The `msg` parameter
 	// is a dictionary with arbitrary data the state can use to initialize itself.
-	public void enter(string _msg){
+	public void Enter(string _msg){
 		//
 	}
 
 
 	// Virtual function. Called by the state machine before changing the active state. Use this function
 	// to clean up the state.
-	public void exit(){
+	public void Exit(){
 		
 	}
 }
