@@ -63,10 +63,10 @@ public partial class coin_controller : Node3D
 		foreach (coin c in CollectedCoins){
 			//Vector3 dir = c.GlobalPosition.DirectionTo(collector.GlobalPosition);
 			Vector3 direction_ = c.GlobalPosition.DirectionTo(target);
-			float distance_ = c.GlobalPosition.DistanceTo(target);
-			float speed_ = Math.Clamp(distance_ *50, 100, 10000) * (float)delta;//Math.Clamp(distance_ /2, 1, 10);
+			double distance_ = c.GlobalPosition.DistanceTo(target);
+			double speed_ = Math.Clamp(distance_ *50, 100, 10000) * delta;//Math.Clamp(distance_ /2, 1, 10);
 
-			c.GlobalPosition += direction_ * speed_;//c.GlobalPosition.Lerp(target, (float)(delta*50));
+			c.GlobalPosition += direction_ * (float)speed_;//c.GlobalPosition.Lerp(target, (float)(delta*50));
 			
 			target = c.GlobalPosition;
 

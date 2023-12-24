@@ -1,9 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=21 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Player.cs" id="1_pvyd0"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.cs" id="3_5j2tv"]
-[ext_resource type="Script" path="res://Scripts/playerMovementScripts/playerState.cs" id="4_8qb0b"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.cs" id="4_623cq"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.cs" id="4_j7li4"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Standing.cs" id="6_dt6ck"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.cs" id="7_s3742"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.cs" id="8_8eqra"]
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
 [ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
@@ -114,26 +118,26 @@ fov = 110.0
 
 [node name="activityMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_5j2tv")
-initial_state = NodePath("Run")
+initial_state = NodePath("Air")
 
 [node name="Run" type="Node" parent="activityMachine"]
-script = ExtResource("4_8qb0b")
+script = ExtResource("4_623cq")
 
 [node name="Air" type="Node" parent="activityMachine"]
-script = ExtResource("4_8qb0b")
+script = ExtResource("4_j7li4")
 
 [node name="standingMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_5j2tv")
 initial_state = NodePath("Standing")
 
 [node name="Standing" type="Node" parent="standingMachine"]
-script = ExtResource("4_8qb0b")
+script = ExtResource("6_dt6ck")
 
 [node name="Crouching" type="Node" parent="standingMachine"]
-script = ExtResource("4_8qb0b")
+script = ExtResource("7_s3742")
 
 [node name="Crouched" type="Node" parent="standingMachine"]
-script = ExtResource("4_8qb0b")
+script = ExtResource("8_8eqra")
 
 [node name="Headbonk" type="ShapeCast3D" parent="."]
 transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0, 1, 0)

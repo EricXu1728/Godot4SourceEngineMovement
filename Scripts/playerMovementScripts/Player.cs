@@ -4,9 +4,10 @@ using playerVariables;
 
 public partial class Player : PlayerInputs
 {
-	private CollisionShape3D myShape;
-	private Sprite3D mySkin;
-	private ShapeCast3D bonker;
+	public CollisionShape3D myShape;
+	public Sprite3D mySkin;
+	private Sprite3D color;
+	public ShapeCast3D bonker;
 	private SpringArm3D spring;
 	private Timer coyoteTimer;
 	private Camera3D view;
@@ -23,6 +24,7 @@ public partial class Player : PlayerInputs
 		view = GetNode<Camera3D>("TwistPivot/PitchPivot/view");
 		Step = GetNode<AudioStreamPlayer>("step");
 		animations = GetNode<AnimationPlayer>("AnimationPlayer");
+		color = GetNode<Sprite3D>("Sprite3D/color");
 
 
 
@@ -36,9 +38,44 @@ public partial class Player : PlayerInputs
 		
 	}
 
+	float frame = 0;
+	Boolean oddstep = false;
+	Boolean stepped = false;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (frame>=10){
+			mySkin.Frame = 0;
+			frame = 0;
+		}
+		
+	
+		if(mySkin.Frame == 2 || mySkin.Frame ==7){
+			if(stepped ==false){
+				oddstep = !oddstep;
+				
+				if(oddstep){
+					Step.PitchScale=1.1f;
+				}else{
+					Step.PitchScale=0.9f;
+				}
+				stepped = true;
+				Step.Play();
+			}
+		}else{
+			stepped = false;
+		}
+		
+		mySkin.Frame = (int)Mathf.Round(frame);
+		color.Frame = (int)Mathf.Round(frame);
+	
+		frame += (float)(stats.vel.Length() * delta * 0.6);
+
+
+
+
+
+
 		view.Fov = Math.Clamp(70+Mathf.Sqrt(stats.vel.Length()*7),90, 180);
 		spring.SpringLength = (float)Math.Clamp( 4 + (Mathf.Sqrt(stats.vel.Length())/1.5),8, 100);
 

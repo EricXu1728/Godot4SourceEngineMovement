@@ -37,7 +37,7 @@ public partial class stateMachine : Node
 	
 	}
 
-	public void TransitionTo(String targetStateName, string msg)
+	public void TransitionTo(String targetStateName, string msg = "")
 	{  
 		// Safety check, you could use an System.Diagnostics.Debug.Assert() here to report an error if the state name is incorrect.
 		// We don't use an assert here to help with code reuse. If you reuse a state in different state machines
