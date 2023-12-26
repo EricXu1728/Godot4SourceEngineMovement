@@ -1,0 +1,212 @@
+{
+	"connections": [
+		{
+			"from": "invert",
+			"from_port": 0,
+			"to": "dilate",
+			"to_port": 0
+		},
+		{
+			"from": "dilate",
+			"from_port": 0,
+			"to": "tones_map",
+			"to_port": 0
+		},
+		{
+			"from": "dilate_2",
+			"from_port": 0,
+			"to": "tones_map_2",
+			"to_port": 0
+		},
+		{
+			"from": "tones_map",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "tones_map_2",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "invert_2",
+			"to_port": 0
+		},
+		{
+			"from": "invert_2",
+			"from_port": 0,
+			"to": "dilate_2",
+			"to_port": 0
+		},
+		{
+			"from": "invert_2",
+			"from_port": 0,
+			"to": "invert",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "322",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": -413.527771,
+				"y": 364.916656
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": true,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 1,
+				"size": 11,
+				"sss": 1
+			},
+			"seed_int": 0,
+			"type": "material"
+		},
+		{
+			"name": "invert",
+			"node_position": {
+				"x": -123.407349,
+				"y": 265.216187
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "invert"
+		},
+		{
+			"name": "dilate",
+			"node_position": {
+				"x": 153.050995,
+				"y": 331.716187
+			},
+			"parameters": {
+				"param0": 12,
+				"param1": 0.002,
+				"param2": 0,
+				"param3": 0,
+				"param4": true
+			},
+			"seed_int": 0,
+			"type": "dilate"
+		},
+		{
+			"name": "tones_map",
+			"node_position": {
+				"x": 398.092651,
+				"y": 330.216187
+			},
+			"parameters": {
+				"in_max": 0,
+				"in_min": 1,
+				"out_max": 0.5,
+				"out_min": 0
+			},
+			"seed_int": 0,
+			"type": "tones_map"
+		},
+		{
+			"name": "dilate_2",
+			"node_position": {
+				"x": -30.907349,
+				"y": 59.716187
+			},
+			"parameters": {
+				"param0": 12,
+				"param1": 0.002,
+				"param2": 0,
+				"param3": 0,
+				"param4": true
+			},
+			"seed_int": 0,
+			"type": "dilate"
+		},
+		{
+			"name": "tones_map_2",
+			"node_position": {
+				"x": 268.092651,
+				"y": 57.480072
+			},
+			"parameters": {
+				"in_max": 1,
+				"in_min": 0,
+				"out_max": 0.5,
+				"out_min": 0
+			},
+			"seed_int": 0,
+			"type": "tones_map"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": 673.152649,
+				"y": 188.216171
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0,
+				"op": 0
+			},
+			"seed_int": 0,
+			"type": "math"
+		},
+		{
+			"name": "image",
+			"node_position": {
+				"x": -792.837341,
+				"y": -33.612915
+			},
+			"parameters": {
+				"clamp": true,
+				"fix_ar": true,
+				"image": "%PROJECT_PATH%/Sprite1_strip11 - Copy.png"
+			},
+			"seed_int": 0,
+			"type": "image"
+		},
+		{
+			"name": "invert_2",
+			"node_position": {
+				"x": -279.163666,
+				"y": 161.012604
+			},
+			"parameters": {
+
+			},
+			"seed_int": 0,
+			"type": "invert"
+		}
+	],
+	"parameters": {
+
+	},
+	"seed_int": 0,
+	"shortdesc": "",
+	"type": "graph"
+}

@@ -64,7 +64,7 @@ public partial class coin_controller : Node3D
 			//Vector3 dir = c.GlobalPosition.DirectionTo(collector.GlobalPosition);
 			Vector3 direction_ = c.GlobalPosition.DirectionTo(target);
 			double distance_ = c.GlobalPosition.DistanceTo(target);
-			double speed_ = Math.Clamp(distance_ *50, 100, 10000) * delta;//Math.Clamp(distance_ /2, 1, 10);
+			double speed_ = Math.Clamp(distance_ *50, 100, 10000)/100; //* delta;//Math.Clamp(distance_ /2, 1, 10);
 
 			c.GlobalPosition += direction_ * (float)speed_;//c.GlobalPosition.Lerp(target, (float)(delta*50));
 			

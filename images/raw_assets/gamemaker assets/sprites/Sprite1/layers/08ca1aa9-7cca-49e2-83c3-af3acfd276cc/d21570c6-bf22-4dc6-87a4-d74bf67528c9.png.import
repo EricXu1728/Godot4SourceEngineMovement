@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://5u04mhitc2uo"
+path="res://.godot/imported/d21570c6-bf22-4dc6-87a4-d74bf67528c9.png-4a96c746ed204a115225b38e9a04b7b2.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://images/raw_assets/gamemaker assets/sprites/Sprite1/layers/08ca1aa9-7cca-49e2-83c3-af3acfd276cc/d21570c6-bf22-4dc6-87a4-d74bf67528c9.png"
+dest_files=["res://.godot/imported/d21570c6-bf22-4dc6-87a4-d74bf67528c9.png-4a96c746ed204a115225b38e9a04b7b2.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
