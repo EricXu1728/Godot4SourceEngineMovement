@@ -1,9 +1,9 @@
 {
 	"connections": [
 		{
-			"from": "invert",
+			"from": "invert_2",
 			"from_port": 0,
-			"to": "dilate",
+			"to": "invert",
 			"to_port": 0
 		},
 		{
@@ -19,21 +19,9 @@
 			"to_port": 0
 		},
 		{
-			"from": "tones_map",
+			"from": "invert",
 			"from_port": 0,
-			"to": "math",
-			"to_port": 1
-		},
-		{
-			"from": "tones_map_2",
-			"from_port": 0,
-			"to": "math",
-			"to_port": 0
-		},
-		{
-			"from": "image",
-			"from_port": 0,
-			"to": "invert_2",
+			"to": "dilate",
 			"to_port": 0
 		},
 		{
@@ -43,9 +31,21 @@
 			"to_port": 0
 		},
 		{
-			"from": "invert_2",
+			"from": "tones_map_2",
 			"from_port": 0,
-			"to": "invert",
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "tones_map",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "image",
+			"from_port": 0,
+			"to": "invert_2",
 			"to_port": 0
 		}
 	],
@@ -90,8 +90,8 @@
 		{
 			"name": "invert",
 			"node_position": {
-				"x": -123.407349,
-				"y": 265.216187
+				"x": -277.574005,
+				"y": 244.382843
 			},
 			"parameters": {
 
@@ -100,26 +100,10 @@
 			"type": "invert"
 		},
 		{
-			"name": "dilate",
-			"node_position": {
-				"x": 153.050995,
-				"y": 331.716187
-			},
-			"parameters": {
-				"param0": 12,
-				"param1": 0.002,
-				"param2": 0,
-				"param3": 0,
-				"param4": true
-			},
-			"seed_int": 0,
-			"type": "dilate"
-		},
-		{
 			"name": "tones_map",
 			"node_position": {
-				"x": 398.092651,
-				"y": 330.216187
+				"x": 370.31485,
+				"y": 323.271729
 			},
 			"parameters": {
 				"in_max": 0,
@@ -129,22 +113,6 @@
 			},
 			"seed_int": 0,
 			"type": "tones_map"
-		},
-		{
-			"name": "dilate_2",
-			"node_position": {
-				"x": -30.907349,
-				"y": 59.716187
-			},
-			"parameters": {
-				"param0": 12,
-				"param1": 0.002,
-				"param2": 0,
-				"param3": 0,
-				"param4": true
-			},
-			"seed_int": 0,
-			"type": "dilate"
 		},
 		{
 			"name": "tones_map_2",
@@ -164,8 +132,8 @@
 		{
 			"name": "math",
 			"node_position": {
-				"x": 673.152649,
-				"y": 188.216171
+				"x": 671.763733,
+				"y": 188.216187
 			},
 			"parameters": {
 				"clamp": false,
@@ -177,30 +145,77 @@
 			"type": "math"
 		},
 		{
-			"name": "image",
-			"node_position": {
-				"x": -792.837341,
-				"y": -33.612915
-			},
-			"parameters": {
-				"clamp": true,
-				"fix_ar": true,
-				"image": "%PROJECT_PATH%/Sprite1_strip11 - Copy.png"
-			},
-			"seed_int": 0,
-			"type": "image"
-		},
-		{
 			"name": "invert_2",
 			"node_position": {
-				"x": -279.163666,
-				"y": 161.012604
+				"x": -436.810272,
+				"y": 123.79039
 			},
 			"parameters": {
 
 			},
 			"seed_int": 0,
 			"type": "invert"
+		},
+		{
+			"name": "dilate_2",
+			"node_position": {
+				"x": -1.029681,
+				"y": -94.655594
+			},
+			"parameters": {
+				"param0": 12,
+				"param1": 0.005,
+				"param2": 0,
+				"param3": 0,
+				"param4": false
+			},
+			"seed_int": 0,
+			"type": "dilate"
+		},
+		{
+			"name": "shape",
+			"node_position": {
+				"x": -830.418579,
+				"y": 226.511078
+			},
+			"parameters": {
+				"edge": 0.1,
+				"radius": 0.85,
+				"shape": 1,
+				"sides": 6
+			},
+			"seed_int": 0,
+			"type": "shape"
+		},
+		{
+			"name": "dilate",
+			"node_position": {
+				"x": 97.414757,
+				"y": 375.788879
+			},
+			"parameters": {
+				"param0": 12,
+				"param1": 0.005,
+				"param2": 0,
+				"param3": 0,
+				"param4": false
+			},
+			"seed_int": 0,
+			"type": "dilate"
+		},
+		{
+			"name": "image",
+			"node_position": {
+				"x": -758.574036,
+				"y": -92.939583
+			},
+			"parameters": {
+				"clamp": true,
+				"fix_ar": true,
+				"image": "%PROJECT_PATH%/raw_running_strip11.png"
+			},
+			"seed_int": 0,
+			"type": "image"
 		}
 	],
 	"parameters": {

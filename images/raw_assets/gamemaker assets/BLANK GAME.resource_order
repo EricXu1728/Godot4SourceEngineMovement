@@ -19,8 +19,9 @@
   "ResourceOrderSettings": [
     {"name":"Sprite3","order":17,"path":"sprites/Sprite3/Sprite3.yy",},
     {"name":"spark","order":18,"path":"sprites/spark/spark.yy",},
-    {"name":"Sprite15","order":1,"path":"sprites/Sprite15/Sprite15.yy",},
-    {"name":"Sprite156","order":2,"path":"sprites/Sprite156/Sprite156.yy",},
+    {"name":"running_outline","order":1,"path":"sprites/running_outline/running_outline.yy",},
+    {"name":"Sprite7","order":3,"path":"sprites/Sprite7/Sprite7.yy",},
+    {"name":"running_background","order":2,"path":"sprites/running_background/running_background.yy",},
     {"name":"Sprite2","order":16,"path":"sprites/Sprite2/Sprite2.yy",},
   ],
 }

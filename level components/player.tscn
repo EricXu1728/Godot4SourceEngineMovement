@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.cs" id="7_s3742"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.cs" id="8_8eqra"]
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="9_y1ap3"]
-[ext_resource type="Texture2D" uid="uid://bi8u1ev52eduy" path="res://images/playerstrip.png" id="10_ki5xb"]
+[ext_resource type="Texture2D" uid="uid://dvui42llbsfad" path="res://images/strip.png" id="11_1lnw6"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="11_6rufm"]
 [ext_resource type="Texture2D" uid="uid://bc6ig6uo37nak" path="res://images/color.png" id="11_4414l"]
 [ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
@@ -31,7 +31,7 @@ shader_parameter/colour = Color(0, 0, 0, 1)
 shader_parameter/outline_colour = Color(1, 1, 1, 1)
 shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_softness = 0.1
-shader_parameter/sdf_texture = ExtResource("10_ki5xb")
+shader_parameter/sdf_texture = ExtResource("11_1lnw6")
 
 [sub_resource type="Animation" id="Animation_mtl4w"]
 length = 0.001
@@ -151,7 +151,7 @@ one_shot = true
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 material_override = SubResource("ShaderMaterial_ln4rn")
-texture = ExtResource("10_ki5xb")
+texture = ExtResource("11_1lnw6")
 hframes = 11
 
 [node name="color" type="Sprite3D" parent="Sprite3D"]
