@@ -35,11 +35,11 @@
   },
   "resources": [
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},},
+    {"id":{"name":"raw_running77","path":"sprites/raw_running77/raw_running77.yy",},},
     {"id":{"name":"spark","path":"sprites/spark/spark.yy",},},
-    {"id":{"name":"running_outline","path":"sprites/running_outline/running_outline.yy",},},
     {"id":{"name":"raw_running","path":"sprites/raw_running/raw_running.yy",},},
+    {"id":{"name":"raw_color","path":"sprites/raw_color/raw_color.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
-    {"id":{"name":"running_background","path":"sprites/running_background/running_background.yy",},},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},},
   ],
   "RoomOrderNodes": [],

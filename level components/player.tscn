@@ -30,7 +30,7 @@ shader_parameter/softness = 0.0
 shader_parameter/colour = Color(0, 0, 0, 1)
 shader_parameter/outline_colour = Color(1, 1, 1, 1)
 shader_parameter/outline_thickness = 0.0
-shader_parameter/outline_softness = 0.1
+shader_parameter/outline_softness = 0.0
 shader_parameter/sdf_texture = ExtResource("11_1lnw6")
 
 [sub_resource type="Animation" id="Animation_mtl4w"]
@@ -155,7 +155,7 @@ texture = ExtResource("11_1lnw6")
 hframes = 11
 
 [node name="color" type="Sprite3D" parent="Sprite3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.04, 0)
 texture = ExtResource("11_4414l")
 hframes = 11
 

@@ -164,7 +164,7 @@
 			},
 			"parameters": {
 				"param0": 12,
-				"param1": 0.005,
+				"param1": 0.01,
 				"param2": 0,
 				"param3": 0,
 				"param4": false
@@ -191,11 +191,11 @@
 			"name": "dilate",
 			"node_position": {
 				"x": 97.414757,
-				"y": 375.788879
+				"y": 377.788879
 			},
 			"parameters": {
 				"param0": 12,
-				"param1": 0.005,
+				"param1": 0.01,
 				"param2": 0,
 				"param3": 0,
 				"param4": false
