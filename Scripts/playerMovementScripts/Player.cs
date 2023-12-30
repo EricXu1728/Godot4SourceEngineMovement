@@ -5,8 +5,7 @@ using playerVariables;
 public partial class Player : PlayerInputs
 {
 	public CollisionShape3D myShape;
-	public Sprite3D mySkin;
-	private Sprite3D color;
+	public PlayerSprite mySkin;
 	public ShapeCast3D bonker;
 	private SpringArm3D spring;
 	private Timer coyoteTimer;
@@ -17,18 +16,15 @@ public partial class Player : PlayerInputs
 	public override void _Ready()
 	{
 		myShape = GetNode<CollisionShape3D>("CollisionShape3D");
-		mySkin = GetNode<Sprite3D>("Sprite3D");
+		mySkin = GetNode<PlayerSprite>("Sprite");
 		bonker = GetNode<ShapeCast3D>("Headbonk");
 		spring = GetNode<SpringArm3D>("TwistPivot/PitchPivot");
 		coyoteTimer = GetNode<Timer>("CoyoteTime");
 		view = GetNode<Camera3D>("TwistPivot/PitchPivot/view");
 		Step = GetNode<AudioStreamPlayer>("step");
 		animations = GetNode<AnimationPlayer>("AnimationPlayer");
-		color = GetNode<Sprite3D>("Sprite3D/color");
 
 
-
-		mySkin.SortingOffset =1;
 		//get_viewport().GetCamera3d()
 		camera = GetNode<Node3D>(stats.camPath);
 		GD.Print(stats.vel);
@@ -45,12 +41,11 @@ public partial class Player : PlayerInputs
 	public override void _Process(double delta)
 	{
 		if (frame>=10){
-			mySkin.Frame = 0;
-			frame = 0;
+			mySkin.setFrame(0);
+			frame -=10;
 		}
 		
-	
-		if(mySkin.Frame == 2 || mySkin.Frame ==7){
+		if(mySkin.getFrame() == 2 || mySkin.getFrame() ==7){
 			if(stepped ==false){
 				oddstep = !oddstep;
 				
@@ -66,8 +61,8 @@ public partial class Player : PlayerInputs
 			stepped = false;
 		}
 		
-		mySkin.Frame = (int)Mathf.Round(frame);
-		color.Frame = (int)Mathf.Round(frame);
+		mySkin.setFrame((int)Mathf.Round(frame));
+
 	
 		frame += (float)(stats.vel.Length() * delta * 0.6);
 
@@ -119,6 +114,7 @@ public partial class Player : PlayerInputs
 			
 			}
 		}
+		
 	}
 
 	public void ClearCoyote()
