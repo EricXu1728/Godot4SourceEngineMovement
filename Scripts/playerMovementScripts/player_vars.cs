@@ -14,6 +14,7 @@ namespace playerVariables{
 		//STORES intIABLES TO BE USED BY ALL PLAYER PARTS
 		//Also stores very commonly used functions (such as friction) by most player related interfaces and parts Vectors
 		[Export] public Vector3 vel {get; set;} = Vector3.Zero;
+		[Export] public Vector3 lostSpeed {get; set;} = Vector3.Zero;
 		[Export] public Vector3 snap {get; set;} = Vector3.Down;
 		
 		// Mouse stuff
@@ -52,9 +53,10 @@ namespace playerVariables{
 		[Export] public bool crouched {get; set;}
 		[Export] public bool sprinting {get; set;}
 		[Export] public bool canJump {get; set;}
-		[Export] public bool wasOnFloor {get; set;} = false;
-		[Export] public bool on_floor {get; set;} = false;
-		[Export] public bool shouldJump {get; set;} = false;
+		public bool wasOnFloor  = false;
+		public bool on_floor = false;
+		public bool shouldJump = false;
+		public bool collision = false;
 
 		// Floats
 		[Export] public float sidemove {get; set;}

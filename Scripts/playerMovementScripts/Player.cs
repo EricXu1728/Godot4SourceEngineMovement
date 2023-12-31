@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using playerVariables;
+//using System.Numerics;
 
 public partial class Player : PlayerInputs
 {
@@ -92,8 +93,10 @@ public partial class Player : PlayerInputs
 		stats.wasOnFloor = stats.on_floor;
 	
 		Velocity = stats.vel;
-		MoveAndSlideOwn();
+		stats.collision = MoveAndSlideOwn();
 		stats.vel = Velocity;
+
+	
 		
 		
 		if(stats.wasOnFloor && !stats.on_floor)
@@ -147,6 +150,8 @@ public partial class Player : PlayerInputs
 	
 	public bool MoveAndSlideOwn()
 	{  
+
+		Vector3 currentSpeed = Velocity;
 		bool collided  = false;
 	
 		// Reset previously detected floor
@@ -198,6 +203,9 @@ public partial class Player : PlayerInputs
 	
 	
 		}
+
+
+		stats.lostSpeed = currentSpeed -= Velocity;
 		return collided;
 		
 	}

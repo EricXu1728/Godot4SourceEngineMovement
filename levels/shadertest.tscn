@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://yhbg026i5ocg"]
+[gd_scene load_steps=27 format=3 uid="uid://yhbg026i5ocg"]
 
 [ext_resource type="Shader" path="res://shaders/distanceField.gdshader" id="1_grudr"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://images/icon.svg" id="2_1otpf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbfsffqgcnf51" path="res://images/Drawing-2.sketchpad.jpeg" id="4_rsbbl"]
 [ext_resource type="Texture2D" uid="uid://bu01ch6nuartj" path="res://images/noiseTexture.png" id="5_uic8j"]
 [ext_resource type="Script" path="res://Label.gd" id="7_hadie"]
+[ext_resource type="Shader" path="res://shaders/outline.gdshader" id="8_oh2h6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y5c4p"]
 render_priority = 0
@@ -94,6 +95,33 @@ albedo_texture = ExtResource("2_1otpf")
 [sub_resource type="SphereMesh" id="SphereMesh_e1vbj"]
 material = SubResource("StandardMaterial3D_dxsdb")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcpyq"]
+render_priority = 0
+shader = ExtResource("8_oh2h6")
+shader_parameter/outline_width = 1.5
+shader_parameter/base_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ifpmm"]
+material = SubResource("ShaderMaterial_kcpyq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgqmq"]
+render_priority = 0
+shader = ExtResource("8_oh2h6")
+shader_parameter/outline_width = 1.5
+shader_parameter/base_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_48d1j"]
+material = SubResource("ShaderMaterial_tgqmq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tc282"]
+render_priority = 0
+shader = ExtResource("8_oh2h6")
+shader_parameter/outline_width = 1.0
+shader_parameter/base_color = Color(1, 1, 1, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_ao825"]
+material = SubResource("ShaderMaterial_tc282")
+
 [node name="shadertest" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -124,7 +152,7 @@ material_override = SubResource("ShaderMaterial_tv6vm")
 texture = ExtResource("4_rsbbl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22.4212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.69833)
 
 [node name="Label" type="Label" parent="Camera3D"]
 anchors_preset = -1
@@ -146,3 +174,15 @@ mesh = SubResource("CapsuleMesh_x2h50")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09117, 0, 0)
 mesh = SubResource("SphereMesh_e1vbj")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.71628)
+mesh = SubResource("SphereMesh_ifpmm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.71628)
+mesh = SubResource("CapsuleMesh_48d1j")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.53765)
+mesh = SubResource("PrismMesh_ao825")

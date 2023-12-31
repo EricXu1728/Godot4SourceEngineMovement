@@ -7,7 +7,7 @@ using Array = Godot.Collections.Array;
 namespace StateMachine;
 public partial class Air : playerState
 {
-	//I hate how inheritence works
+	private Vector3 savedSpeed = Vector3.Zero;
 	
 
 
@@ -24,10 +24,35 @@ public partial class Air : playerState
 		}
 	}
 	
+	private Boolean onWall  =false;
+	private Boolean wasOnWall = false;
 	public override void PhysicsUpdate(double delta)
 	{  
 		AirMove(delta);
+
+		wasOnWall = onWall;
 		
+		if(stats.collision && stats.on_floor==false && Input.IsActionPressed("move_forward")){
+			Vector3 new_vel = stats.vel;
+			new_vel[1] = Mathf.Max(new_vel[1], Mathf.Max(new_vel[1]+stats.lostSpeed.Length() - (stats.ply_accelerate*0.9f), stats.lostSpeed.Length() - (stats.ply_accelerate*0.9f)));
+			stats.vel = new_vel;
+			onWall = true;
+			//GD.Print("climbing");
+		}else{
+			onWall = false;
+			
+			if(wasOnWall){
+				GD.Print("yiipie");
+
+				//Vector3 newSpeed  = stats.vel;
+				//newSpeed[0] = savedSpeed[0]/5;
+				//newSpeed[2] = savedSpeed[2]/5;
+				
+				//stats.vel = newSpeed;
+			}else{
+				savedSpeed = stats.vel;
+			}
+		}
 
 	
 		if(stats.on_floor)// && Mathf.Abs(player.velocity[1])<15:
