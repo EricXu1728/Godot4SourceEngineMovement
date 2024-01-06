@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=23 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Player.cs" id="1_pvyd0"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.cs" id="3_5j2tv"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.cs" id="4_623cq"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Air.cs" id="4_j7li4"]
+[ext_resource type="Script" path="res://Scripts/playerMovementScripts/Climbing.cs" id="6_6meoi"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Standing.cs" id="6_dt6ck"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouching.cs" id="7_s3742"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Crouched.cs" id="8_8eqra"]
@@ -119,13 +120,16 @@ fov = 110.0
 
 [node name="activityMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_5j2tv")
-initial_state = NodePath("Run")
+initial_state = NodePath("Air")
 
 [node name="Run" type="Node" parent="activityMachine"]
 script = ExtResource("4_623cq")
 
 [node name="Air" type="Node" parent="activityMachine"]
 script = ExtResource("4_j7li4")
+
+[node name="Climbing" type="Node" parent="activityMachine"]
+script = ExtResource("6_6meoi")
 
 [node name="standingMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_5j2tv")
@@ -178,3 +182,7 @@ hframes = 11
 transform = Transform3D(1.035, 0, 0, 0, 1.035, 0, 0, 0, 1.035, 0, 0, 0)
 texture = ExtResource("11_4414l")
 hframes = 11
+
+[node name="climbingCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, -3)

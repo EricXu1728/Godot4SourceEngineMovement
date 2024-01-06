@@ -13,6 +13,7 @@ public partial class Player : PlayerInputs
 	private Camera3D view;
 	private AudioStreamPlayer Step;
 	private AnimationPlayer animations;
+	private RayCast3D climbCast;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -24,7 +25,7 @@ public partial class Player : PlayerInputs
 		view = GetNode<Camera3D>("TwistPivot/PitchPivot/view");
 		Step = GetNode<AudioStreamPlayer>("step");
 		animations = GetNode<AnimationPlayer>("AnimationPlayer");
-
+		climbCast = GetNode<RayCast3D>("climbingCast");
 
 		//get_viewport().GetCamera3d()
 		camera = GetNode<Node3D>(stats.camPath);
@@ -38,9 +39,15 @@ public partial class Player : PlayerInputs
 	float frame = 0;
 	Boolean oddstep = false;
 	Boolean stepped = false;
+	public Boolean canClimb = false;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		stats.speed = new Vector2(stats.vel[0], stats.vel[2]).Length();
+		
+		canClimb = climbCast.IsColliding();
+		
+		
 		if (frame>=10){
 			mySkin.setFrame(0);
 			frame -=10;
@@ -79,6 +86,16 @@ public partial class Player : PlayerInputs
 		spriteRotation.X = camera.Rotation.X/2;
 		spriteRotation.Y = camera.Rotation.Y;
 		mySkin.Rotation = spriteRotation;
+
+		Vector3 climbCastRotation = climbCast.Rotation;
+		climbCastRotation.Y = camera.Rotation.Y;
+		climbCast.Rotation = climbCastRotation;
+
+		Vector3 climbCastPosition = climbCast.TargetPosition;
+		climbCastPosition[2] = (float)(stats.speed * -delta* 3)-1;
+		climbCast.TargetPosition = climbCastPosition;
+		//GD.Print(climbCast.TargetPosition );
+
 
 
 		if(Input.MouseMode == Input.MouseModeEnum.Captured)

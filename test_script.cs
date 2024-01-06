@@ -16,6 +16,6 @@ public partial class test_script : Label
 	public override void _Process(double delta)
 	{
 
-		Text = stats.collision+"\n"+stats.on_floor+"\n"+stats.lostSpeed;
+		Text = player.canClimb+"\n"+stats.on_floor+"\n"+stats.vel;
 	}
 }

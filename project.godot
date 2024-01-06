@@ -15,6 +15,10 @@ run/main_scene="res://levels/level.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://images/icon.svg"
 
+[display]
+
+window/vsync/vsync_mode=0
+
 [dotnet]
 
 project/assembly_name="Godot4SourceEngineMovement"

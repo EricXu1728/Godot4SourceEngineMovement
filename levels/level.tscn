@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=32 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://level components/player.tscn" id="1_rsegt"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
@@ -12,13 +12,12 @@
 [ext_resource type="Script" path="res://test_script.cs" id="12_6sfmk"]
 [ext_resource type="Script" path="res://amongus.cs" id="12_cnaw3"]
 [ext_resource type="Script" path="res://hud_elements/ScreenLine.gd" id="13_chubs"]
-[ext_resource type="PackedScene" uid="uid://yhbg026i5ocg" path="res://levels/shadertest.tscn" id="14_83tra"]
 [ext_resource type="Script" path="res://Scripts/Speedometer.gd" id="14_k8f7j"]
 [ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
+[ext_resource type="Script" path="res://Label.gd" id="16_b638j"]
 [ext_resource type="PackedScene" uid="uid://c805ovgtm67o6" path="res://level components/block.tscn" id="16_rjewc"]
 [ext_resource type="PackedScene" uid="uid://dyu2arbtnsyr6" path="res://level components/coin.tscn" id="16_socfp"]
 [ext_resource type="PackedScene" uid="uid://c86iyry2o2kvd" path="res://level components/coin_path.tscn" id="17_0j72w"]
-[ext_resource type="PackedScene" uid="uid://b22vs505lea0n" path="res://components/particle/lineParticle.tscn" id="17_ke3rs"]
 [ext_resource type="PackedScene" uid="uid://d0sg7nscuvmt7" path="res://level components/coin_handler.tscn" id="18_l53p8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x35o4"]
@@ -141,7 +140,7 @@ scale = Vector2(2, 2)
 text = "COINS: "
 script = ExtResource("11_w3yw3")
 
-[node name="Label" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+[node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 330.0
 offset_top = 224.0
 offset_right = 536.0
@@ -149,7 +148,6 @@ offset_bottom = 285.0
 text = "1999"
 script = ExtResource("12_6sfmk")
 stats = ExtResource("10_p5cny")
-player = NodePath("../../player")
 
 [node name="layout" type="Node3D" parent="."]
 
@@ -272,18 +270,27 @@ mesh = SubResource("BoxMesh_k83rx")
 transform = Transform3D(1, 2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_8a2re")
 
+[node name="Block2" parent="layout" instance=ExtResource("16_rjewc")]
+transform = Transform3D(30, 0, 0, 0, 0.707107, 2.12132, 0, -0.707107, 2.12132, 66.8348, -0.387751, -213.191)
+
 [node name="testStuff" type="Node3D" parent="."]
-
-[node name="shadertest" parent="testStuff" instance=ExtResource("14_83tra")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78033, 1.90995, 0)
-
-[node name="test" parent="testStuff" instance=ExtResource("17_ke3rs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0708, 8.43542, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="testStuff"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.09027, 0)
 texture = ExtResource("5_kgphi")
 script = ExtResource("4_ivjvi")
+
+[node name="Label" type="Label" parent="testStuff"]
+anchors_preset = -1
+anchor_right = 0.003
+anchor_bottom = 0.003
+offset_left = 105.0
+offset_top = 93.0
+offset_right = 141.544
+offset_bottom = 114.056
+text = "Huh
+"
+script = ExtResource("16_b638j")
 
 [node name="coins" parent="." instance=ExtResource("18_l53p8")]
 coin_label_path = NodePath("../CanvasLayer/coin_counter")

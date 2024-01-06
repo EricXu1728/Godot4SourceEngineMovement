@@ -25,6 +25,10 @@ public partial class State : Node
 	// Virtual function. Called by the state machine upon changing the active state. The `msg` parameter
 	// is a dictionary with arbitrary data the state can use to initialize itself.
 	public virtual  void Enter(string _msg){}
+	
+	public virtual  void Enter(double _msg){}
+	
+	public virtual  void Enter(float _msg){}
 
 
 	// Virtual function. Called by the state machine before changing the active state. Use this function

@@ -32,26 +32,9 @@ public partial class Air : playerState
 
 		wasOnWall = onWall;
 		
-		if(stats.collision && stats.on_floor==false && Input.IsActionPressed("move_forward")){
-			Vector3 new_vel = stats.vel;
-			new_vel[1] = Mathf.Max(new_vel[1], Mathf.Max(new_vel[1]+stats.lostSpeed.Length() - (stats.ply_accelerate*0.9f), stats.lostSpeed.Length() - (stats.ply_accelerate*0.9f)));
-			stats.vel = new_vel;
-			onWall = true;
-			//GD.Print("climbing");
-		}else{
-			onWall = false;
-			
-			if(wasOnWall){
-				GD.Print("yiipie");
-
-				//Vector3 newSpeed  = stats.vel;
-				//newSpeed[0] = savedSpeed[0]/5;
-				//newSpeed[2] = savedSpeed[2]/5;
-				
-				//stats.vel = newSpeed;
-			}else{
-				savedSpeed = stats.vel;
-			}
+		if(player.canClimb && stats.on_floor==false && Input.IsActionPressed("move_forward")){ //player.canClimb
+			ownerStateMachine.TransitionTo("Climbing");
+			GD.Print("TRy climb");
 		}
 
 	
