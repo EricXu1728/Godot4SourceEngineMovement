@@ -30,9 +30,9 @@ namespace playerVariables{
 
 		//Player vars
 		[Export] public int ply_accelerate {get; set;} = 7; //ground acceleration
-		[Export] public int ply_airaccelerate {get; set;} = 7; //effects control and surfing
+		[Export] public int ply_airaccelerate {get; set;} = 400; //effects control and surfing
 		[Export] public  int ply_maxacceleration {get; set;} = 10;
-		[Export] public  int ply_airspeedcap {get; set;} = 7; //turn up for faster air straifing and surfing 
+		[Export] public  int ply_airspeedcap {get; set;} = 1; //turn up for faster air straifing and surfing 
 		[Export] public  int ply_friction {get; set;} = 3;
 		[Export] public  int ply_stopspeed {get; set;} = 50;
 		[Export] public  int ply_gravity {get; set;} = 60;
