@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=26 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Player.cs" id="1_pvyd0"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
@@ -120,9 +120,14 @@ shader_parameter/sdf_texture = ExtResource("11_1lnw6")
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3pqfn"]
 animation = &"running"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_plimr"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iby0u"]
+states/Start/position = Vector2(250, 76)
 states/running/node = SubResource("AnimationNodeAnimation_3pqfn")
-states/running/position = Vector2(306, 137)
+states/running/position = Vector2(486, 61)
+transitions = ["Start", "running", SubResource("AnimationNodeStateMachineTransition_plimr")]
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 4
