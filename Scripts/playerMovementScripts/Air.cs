@@ -150,10 +150,10 @@ public partial class Air : playerState
 		
 		flMul = Mathf.Sqrt(2 * stats.ply_gravity * stats.ply_jumpheight);
 		
-		float jumpvel =  flGroundFactor * flMul  + Mathf.Max(0, stats.vel[1]);// 2 * gravity * height
+		float jumpvel =  flGroundFactor * flMul  + Mathf.Max(0, stats.vel[1]*1.5f);// 2 * gravity * height
 		
 		Vector3 tempVel = stats.vel;
-		tempVel[1]= Mathf.Max(jumpvel, jumpvel + stats.vel[1]);
+		tempVel[1]= Mathf.Max(jumpvel, jumpvel );
 		stats.vel = tempVel;
 		GD.Print("Coyote jump: ",stats.vel[1]);
 	

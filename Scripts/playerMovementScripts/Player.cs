@@ -14,6 +14,7 @@ public partial class Player : PlayerInputs
 	private AudioStreamPlayer Step;
 	private AnimationPlayer animations;
 	private RayCast3D climbCast;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -34,50 +35,24 @@ public partial class Player : PlayerInputs
 		stats.on_floor = false;
 		spring.AddExcludedObject(this.GetRid());
 		
+		animations.Play("running");
 	}
 
 	float frame = 0;
 	Boolean oddstep = false;
 	Boolean stepped = false;
 	public Boolean canClimb = false;
+	public Vector3 climbAngle = Vector3.Zero;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		animations.SpeedScale = stats.vel.Length()/2;
+
 		stats.speed = new Vector2(stats.vel[0], stats.vel[2]).Length();
 		
-		canClimb = climbCast.IsColliding();
-		
-		
-		if (frame>=10){
-			mySkin.setFrame(0);
-			frame -=10;
-		}
-		
-		if(mySkin.getFrame() == 2 || mySkin.getFrame() ==7){
-			if(stepped ==false){
-				oddstep = !oddstep;
-				
-				if(oddstep){
-					Step.PitchScale=1.1f;
-				}else{
-					Step.PitchScale=0.9f;
-				}
-				stepped = true;
-				Step.Play();
-			}
-		}else{
-			stepped = false;
-		}
-		
-		mySkin.setFrame((int)Mathf.Round(frame));
-
 	
-		frame += (float)(stats.vel.Length() * delta * 0.6);
-
-
-
-
-
+		
+	
 
 		view.Fov = Math.Clamp(70+Mathf.Sqrt(stats.vel.Length()*7),90, 180);
 		spring.SpringLength = (float)Math.Clamp( 4 + (Mathf.Sqrt(stats.vel.Length())/1.5),8, 100);
@@ -92,10 +67,18 @@ public partial class Player : PlayerInputs
 		climbCast.Rotation = climbCastRotation;
 
 		Vector3 climbCastPosition = climbCast.TargetPosition;
-		climbCastPosition[2] = (float)(stats.speed * -delta* 3)-1;
+		climbCastPosition[2] = (float)(stats.speed * -delta* 3)-2;
 		climbCast.TargetPosition = climbCastPosition;
 		//GD.Print(climbCast.TargetPosition );
 
+		canClimb = climbCast.IsColliding();
+		if(canClimb){
+			climbAngle = climbCast.GetCollisionNormal() ;
+			if (climbAngle.AngleTo(UpDirection) < stats.ply_maxslopeangle){
+				
+				canClimb = false;
+			}
+		}
 
 
 		if(Input.MouseMode == Input.MouseModeEnum.Captured)
@@ -209,7 +192,7 @@ public partial class Player : PlayerInputs
 			// Calculate velocity to slide along the surface
 		
 			}
-			var normal = collision.GetNormal();
+			Vector3 normal = collision.GetNormal();
 			
 			motion = collision.GetRemainder().Slide(normal);
 			Velocity = Velocity.Slide(normal);

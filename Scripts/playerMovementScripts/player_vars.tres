@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_cxytm")
-vel = Vector3(0, 0, 0)
-lostSpeed = Vector3(0, 0, 0)
-snap = Vector3(0, -1, 0)
+vel = null
+lostSpeed = null
+snap = null
 ply_mousesensitivity = 1.5
 ply_maxlookangle_down = -90
 ply_maxlookangle_up = 90
@@ -19,7 +19,7 @@ ply_backspeed = 20
 ply_accelerate = 7
 ply_airaccelerate = 400
 ply_maxacceleration = 10
-ply_airspeedcap = 1
+ply_airspeedcap = 1.5
 ply_friction = 3
 ply_stopspeed = 50
 ply_gravity = 60

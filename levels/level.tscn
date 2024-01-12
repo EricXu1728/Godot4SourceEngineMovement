@@ -140,7 +140,7 @@ scale = Vector2(2, 2)
 text = "COINS: "
 script = ExtResource("11_w3yw3")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 offset_left = 330.0
 offset_top = 224.0
 offset_right = 536.0
@@ -148,6 +148,7 @@ offset_bottom = 285.0
 text = "1999"
 script = ExtResource("12_6sfmk")
 stats = ExtResource("10_p5cny")
+player = NodePath("../../player")
 
 [node name="layout" type="Node3D" parent="."]
 
@@ -271,7 +272,7 @@ transform = Transform3D(1, 2.98023e-08, 0, 2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_8a2re")
 
 [node name="Block2" parent="layout" instance=ExtResource("16_rjewc")]
-transform = Transform3D(30, 0, 0, 0, 0.707107, 2.12132, 0, -0.707107, 2.12132, 66.8348, -0.387751, -213.191)
+transform = Transform3D(30, 0, 0, 0, 0.766045, 1.92836, 0, -0.642788, 2.29813, 66.8348, -0.387751, -213.191)
 
 [node name="testStuff" type="Node3D" parent="."]
 

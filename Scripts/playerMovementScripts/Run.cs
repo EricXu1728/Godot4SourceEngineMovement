@@ -17,6 +17,11 @@ public partial class Run : playerState
 	
 	public override void PhysicsUpdate(double delta)
 	{  
+		if(player.canClimb && stats.on_floor==false && Input.IsActionPressed("move_forward") && stats.vel[1]>10){
+			ownerStateMachine.TransitionTo("Climbing");
+			GD.Print("TRy climb");
+		}
+		
 		Move(delta);
 	}
 	
@@ -200,10 +205,10 @@ public partial class Run : playerState
 
 		
 
-		float jumpvel =  flGroundFactor * flMul  + Mathf.Max(0, stats.vel[1]);// 2 * gravity * height
+		float jumpvel =  flGroundFactor * flMul  + Mathf.Max(0, stats.vel[1]*1.5f);// 2 * gravity * height
 		
 		Vector3 tempVel = stats.vel;
-		tempVel[1]= Mathf.Max(jumpvel, jumpvel + stats.vel[1]);
+		tempVel[1]= Mathf.Max(jumpvel, jumpvel);
 		stats.vel = tempVel;
 
 		GD.Print("nomral jump: ",stats.vel[1]);
