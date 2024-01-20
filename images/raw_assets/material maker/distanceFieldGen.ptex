@@ -132,7 +132,7 @@
 		{
 			"name": "math",
 			"node_position": {
-				"x": 671.763733,
+				"x": 672.728271,
 				"y": 188.216187
 			},
 			"parameters": {
@@ -164,7 +164,7 @@
 			},
 			"parameters": {
 				"param0": 12,
-				"param1": 0.01,
+				"param1": 0.003,
 				"param2": 0,
 				"param3": 0,
 				"param4": false
@@ -195,7 +195,7 @@
 			},
 			"parameters": {
 				"param0": 12,
-				"param1": 0.01,
+				"param1": 0.003,
 				"param2": 0,
 				"param3": 0,
 				"param4": false

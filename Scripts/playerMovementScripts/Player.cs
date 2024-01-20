@@ -13,6 +13,7 @@ public partial class Player : PlayerInputs
 	private Camera3D view;
 	private AudioStreamPlayer Step;
 	private AnimationPlayer animations;
+	private AnimationTree animationTree;
 	private RayCast3D climbCast;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -27,6 +28,7 @@ public partial class Player : PlayerInputs
 		Step = GetNode<AudioStreamPlayer>("step");
 		animations = GetNode<AnimationPlayer>("AnimationPlayer");
 		climbCast = GetNode<RayCast3D>("climbingCast");
+		animationTree = GetNode<AnimationTree>("AnimationTree");
 
 		//get_viewport().GetCamera3d()
 		camera = GetNode<Node3D>(stats.camPath);
@@ -35,7 +37,7 @@ public partial class Player : PlayerInputs
 		stats.on_floor = false;
 		spring.AddExcludedObject(this.GetRid());
 		
-		animations.Play("running");
+		//animations.Play("idle");
 	}
 
 	float frame = 0;
@@ -46,13 +48,11 @@ public partial class Player : PlayerInputs
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		animations.SpeedScale = stats.vel.Length()/2;
+		UpdateAnimationParams();
+		
 
 		stats.speed = new Vector2(stats.vel[0], stats.vel[2]).Length();
 		
-	
-		
-	
 
 		view.Fov = Math.Clamp(70+Mathf.Sqrt(stats.vel.Length()*7),90, 180);
 		spring.SpringLength = (float)Math.Clamp( 4 + (Mathf.Sqrt(stats.vel.Length())/1.5),8, 100);
@@ -150,13 +150,11 @@ public partial class Player : PlayerInputs
 	
 	public bool MoveAndSlideOwn()
 	{  
-
 		Vector3 currentSpeed = Velocity;
 		bool collided  = false;
 	
 		// Reset previously detected floor
 		stats.on_floor  = false;
-	
 	
 		//check floor
 		Vector3 checkMotion  = Velocity * (1/60f);
@@ -200,11 +198,7 @@ public partial class Player : PlayerInputs
 	
 			// Collision has occurred
 			collided = true;
-	
-	
 		}
-
-
 		stats.lostSpeed = currentSpeed -= Velocity;
 		return collided;
 		
@@ -218,242 +212,24 @@ public partial class Player : PlayerInputs
 	
 		}
 		return (float)GetProcessDeltaTime();
+	}
 	
-	
+	public void UpdateAnimationParams(){
+		//GD.Print("yaya");
+		if(stats.vel.Length()<0.1){
+			animationTree.Set("parameters/conditions/is_moving", false);
+			animationTree.Set("parameters/conditions/is_still", true);
+			animationTree.Set("parameters/idle/TimeScale/scale", 5.0);
+			//GD.Print("1");
+			//animationTree.SpeedScale = 3;
+			animations.SpeedScale = 3;
+		}else{
+			animationTree.Set("parameters/conditions/is_moving", true);
+			animationTree.Set("parameters/conditions/is_still", false);
+			//animations.SpeedScale = 100;// stats.vel.Length()/2;
+			animationTree.Set("parameters/running/TimeScale/scale", stats.vel.Length()/1.5);
+			//GD.Print("2");
+		}
 	}
 }
 
-/*
-
-using System;
-using Godot;
-using Dictionary = Godot.Collections.Dictionary;
-using Array = Godot.Collections.Array;
-
-
-public class player1 : PlayerInputs
-{
-	 
-	@onready var myShape = GetNode("CollisionShape3D");
-	@onready var mySkin = GetNode("Sprite3D");
-	@onready var bonker = GetNode("Headbonk");
-	@onready var spring = GetNode("TwistPivot/PitchPivot");
-	@onready var coyoteTimer = GetNode("CoyoteTime");
-	@onready var view = GetNode("TwistPivot/PitchPivot/view");
-	@onready var step = GetNode("step");
-	@onready var animations = GetNode("AnimationPlayer");
-	
-	
-	
-	public __TYPE height = 2 ;//the model is 2 meter tall
-	
-	
-	public void _Ready()
-	{  
-		
-		mySkin.SetSortingOffset(1);
-		//get_viewport().GetCamera3d()
-		camera = GetNode(stats.camPath);
-		GD.Print(stats.vel);
-		
-		stats.on_floor = false;
-		spring.AddExcludedObject(self.GetRid());
-		
-		
-	
-	}
-	
-	public __TYPE frame = 0;
-	
-	public bool stepped  = false;
-	public bool oddstep  = true;
-	
-	public void _Process(__TYPE delta)
-	{  
-		
-		view.fov = Mathf.Clamp(70+sqrt(stats.vel.Length()*7),90, 180);
-		spring.spring_length = Mathf.Clamp(4+(Mathf.Sqrt(stats.vel.Length())/1.5),8, 100);
-		
-		if(frame>=10)
-		{
-			mySkin.frame = 0;
-			frame = 0;
-			
-		
-		}
-		if(((mySkin.frame == 2 || mySkin.frame ==7)))
-		{
-			if((stepped ==false))
-			{
-				oddstep = !oddstep;
-				
-				if((oddstep))
-				{
-					step.pitch_scale=1.1;
-				}
-				else
-				{
-					step.pitch_scale=0.9;
-				
-				}
-				stepped = true;
-				step.Play();
-			}
-		}
-		else
-		{
-			stepped = false;
-		
-		}
-		mySkin.frame = Mathf.Round(frame);
-		GetNode("Sprite3D/color").frame = Mathf.Round(frame);
-		//print(mySkin.frame)
-		frame+= stats.vel.Length() * delta * 0.6;
-		
-			
-		mySkin.rotation.y = camera.rotation.y;
-		mySkin.rotation.x = (camera.rotation.x)/2;
-	
-				
-		if(Input.GetMouseMode() == Input.MOUSE_MODE_CAPTURED)
-		{
-			InputKeys();
-			
-			ViewAngles(delta);
-		
-		}
-		stats.snap = -get_floor_normal()
-	
-		stats.wasOnFloor = stats.on_floor;
-	
-		
-		velocity = stats.vel;
-		MoveAndSlideOwn();
-		stats.vel = velocity;
-		
-		
-		if(stats.wasOnFloor && !stats.on_floor)
-		{
-			GD.Print("start timer");
-			coyoteTimer.Start();
-		
-		}
-		if((stats.on_floor))
-		{
-			stats.shouldJump = true;
-		}
-		else
-		{
-			if(coyoteTimer.IsStopped())
-			{
-				stats.shouldJump = false;
-				//print("timer stopped")
-		
-		
-			
-			}
-		}
-	}
-	
-	public void ClearCoyote()
-	{  
-		coyoteTimer.Stop();
-		stats.shouldJump = false;
-		stats.on_floor = false;
-	
-	}
-	
-	public void CheckVelocity()
-	{  
-		// bound velocity
-		// Bound it.
-		if(stats.vel.Length() > stats.ply_maxvelocity)
-		{
-			stats.vel = stats.ply_maxvelocity;
-	
-		}
-		else if stats.vel.Length() < -stats.ply_maxvelocity:
-			stats.vel = -stats.ply_maxvelocity
-	
-	
-	
-			
-	
-	//# Perform a move-and-slide along the set velocity vector. If the body collides
-	//# with another, it will slide along the other body rather than stop immediately.
-	//# The method returns whether || !it collided with anything.
-	}
-	
-	public bool MoveAndSlideOwn()
-	{  
-		bool collided  = false;
-	
-		// Reset previously detected floor
-		stats.on_floor  = false;
-	
-	
-		//check floor
-		var checkMotion  = velocity * (1/60.);
-		checkMotion.y  -= stats.ply_gravity * (1/360.);
-			
-		var testcol  = MoveAndCollide(checkMotion, true);
-	
-		if(testcol)
-		{
-			var testNormal = testcol.GetNormal();
-			if(testNormal.AngleTo(upDirection) < stats.ply_maxslopeangle)
-			{
-				stats.on_floor = true;
-	
-		// Loop performing the move
-			}
-		}
-		var motion  = velocity * GetDeltaTime();
-		
-	
-		foreach(var step in maxSlides)
-		{
-			
-			
-			var collision  = MoveAndCollide(motion);
-			
-			if(!collision)
-			{
-				// No collision, so move has finished
-			
-				break;
-	
-			// Calculate velocity to slide along the surface
-		
-			}
-			var normal = collision.GetNormal();
-			
-			motion = collision.GetRemainder().Slide(normal);
-			velocity = velocity.Slide(normal);
-	
-	
-			// Collision has occurred
-			collided = true;
-	
-	
-		}
-		return collided;
-		
-	}
-	
-	public float GetDeltaTime()
-	{  
-		if(Engine.IsInPhysicsFrame())
-		{
-			return GetPhysicsProcessDeltaTime();
-	
-		}
-		return GetProcessDeltaTime();
-	
-	
-	}
-	
-	
-	
-}
-*/

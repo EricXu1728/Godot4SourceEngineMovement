@@ -71,6 +71,24 @@ public partial class Climbing : playerState
 		if(player.canClimb==false || stats.on_floor==true){ //player.canClimb
 			ownerStateMachine.TransitionTo("Air");
 			
+			float removeRatio = 0.3f;
+			
+			float removed_speed = stats.vel[1]*(removeRatio);
+			
+			Vector3 newVel = stats.vel;
+			newVel[1] *= (1-removeRatio);
+			
+			Vector2 addSpeed = new Vector2(1f, 0f).Rotated(Mathf.DegToRad(-stats.ylook-90)) * removed_speed ;
+			GD.Print(stats.ylook);
+			
+			newVel[0] += addSpeed[0];
+			newVel[2] += addSpeed[1];
+			
+			stats.vel = newVel;
+			
+			
+			
+			
 			GD.Print("fell off");
 		}
 		

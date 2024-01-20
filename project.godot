@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot4SourceEngineMovement"
 run/main_scene="res://levels/level.tscn"
-config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://images/icon.svg"
 
 [display]
