@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg145smd6n1lb"]
+
+[ext_resource type="Script" path="res://components/HitBox.cs" id="1_ol48k"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="2_k66c8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b837n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mehp"]
+albedo_texture = ExtResource("2_k66c8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_p5wow"]
+material = SubResource("StandardMaterial3D_8mehp")
+
+[node name="HitBox" type="Area3D"]
+script = ExtResource("1_ol48k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_b837n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_p5wow")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

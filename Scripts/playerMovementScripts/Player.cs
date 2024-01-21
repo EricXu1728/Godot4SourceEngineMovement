@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using playerVariables;
+
 //using System.Numerics;
 
 public partial class Player : PlayerInputs
@@ -40,9 +41,6 @@ public partial class Player : PlayerInputs
 		//animations.Play("idle");
 	}
 
-	float frame = 0;
-	Boolean oddstep = false;
-	Boolean stepped = false;
 	public Boolean canClimb = false;
 	public Vector3 climbAngle = Vector3.Zero;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,8 +56,9 @@ public partial class Player : PlayerInputs
 		spring.SpringLength = (float)Math.Clamp( 4 + (Mathf.Sqrt(stats.vel.Length())/1.5),8, 100);
 
 		Vector3 spriteRotation = Vector3.Zero;
-		spriteRotation.X = camera.Rotation.X/2;
+		spriteRotation.X = camera.Rotation.X/2 - (stats.forwardmove/10000);
 		spriteRotation.Y = camera.Rotation.Y;
+		spriteRotation.Z = stats.sidemove/40000; 
 		mySkin.Rotation = spriteRotation;
 
 		Vector3 climbCastRotation = climbCast.Rotation;
@@ -126,6 +125,29 @@ public partial class Player : PlayerInputs
 		stats.shouldJump = false;
 		stats.on_floor = false;
 	
+	}
+	
+
+	private static PackedScene _hitbox = (PackedScene)ResourceLoader.Load("res://components/hit_box.tscn");
+	public override void ClickAction(){
+		HitBox attack = _hitbox.Instantiate<HitBox>();
+
+
+		attack.SetParams(1);
+		Vector3 attackRotation = camera.Rotation;
+
+		attackRotation[0] += 0.2f;
+
+		attack.Rotation = attackRotation;
+		
+		Vector3 dist = new Vector3(3,0,0).Rotated(Vector3.Up, (float)(attack.Rotation[1] + (Math.PI/2)));
+		dist[1] = attack.Rotation[0];
+
+		attack.Scale = new Vector3(5,5,5);
+		
+		Vector3 attackPosition =  new Vector3(0,1,0);
+		attack.Position = attackPosition + dist;
+		AddChild(attack);
 	}
 	
 	public void CheckVelocity()

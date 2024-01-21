@@ -17,10 +17,15 @@ public partial class PlayerInputs : CharacterBody3D
 		throw new Exception("You should not be seeing this (player_inputs.gd is being initiated)");
 	}
 
-    public override void _Input(InputEvent @event)
-    {
-    	if ((@event is InputEventMouseMotion eventMouseMotion) && (Input.MouseMode == Input.MouseModeEnum.Captured)) {
-			InputMouse(eventMouseMotion);
+	public override void _Input(InputEvent @event)
+	{
+		if ((@event is InputEventMouseMotion eventMouseMotion)) {
+			
+			
+			if((Input.MouseMode == Input.MouseModeEnum.Captured)){
+				InputMouse(eventMouseMotion);
+			}
+			
 		}
 
 		if(@event.IsActionPressed("ui_cancel")){
@@ -38,7 +43,9 @@ public partial class PlayerInputs : CharacterBody3D
 			GetTree().ReloadCurrentScene();
 		}
 
-    }
+	}
+	
+	public virtual void  ClickAction(){}
 
 
 	public void InputMouse(InputEventMouseMotion @event){
@@ -55,6 +62,10 @@ public partial class PlayerInputs : CharacterBody3D
 	}
 
 	public void InputKeys(){
+		if(Input.IsActionJustPressed("click")){
+			ClickAction();
+		}
+		
 		stats.sidemove += stats.ply_sidespeed * ((int)(Input.GetActionStrength("move_left") * 50));
 		stats.sidemove -= stats.ply_sidespeed * ((int)(Input.GetActionStrength("move_right") * 50));
 
