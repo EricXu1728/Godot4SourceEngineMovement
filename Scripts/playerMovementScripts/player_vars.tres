@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_cxytm")
 vel = null
-lostSpeed = null
+lostSpeed = Vector3(0, 0, 0)
 snap = null
 ply_mousesensitivity = 1.5
 ply_maxlookangle_down = -90

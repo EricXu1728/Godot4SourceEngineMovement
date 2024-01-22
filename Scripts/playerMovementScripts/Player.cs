@@ -47,6 +47,7 @@ public partial class Player : PlayerInputs
 	public override void _Process(double delta)
 	{
 		UpdateAnimationParams();
+		animationTree.Set("parameters/conditions/attack", false);
 		
 
 		stats.speed = new Vector2(stats.vel[0], stats.vel[2]).Length();
@@ -131,7 +132,12 @@ public partial class Player : PlayerInputs
 	private static PackedScene _hitbox = (PackedScene)ResourceLoader.Load("res://components/hit_box.tscn");
 	public override void ClickAction(){
 		HitBox attack = _hitbox.Instantiate<HitBox>();
-
+		animationTree.Set("parameters/conditions/attack", true);
+		
+		
+		Vector3 newVel = stats.vel;
+		newVel[1] = Mathf.Max(20, newVel[1]+10);
+		stats.vel = newVel;
 
 		attack.SetParams(1);
 		Vector3 attackRotation = camera.Rotation;

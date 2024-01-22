@@ -18,6 +18,7 @@ script = ExtResource("1_ol48k")
 shape = SubResource("BoxShape3D_b837n")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_p5wow")
 
 [node name="Timer" type="Timer" parent="."]

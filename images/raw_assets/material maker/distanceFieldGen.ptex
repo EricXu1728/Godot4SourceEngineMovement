@@ -212,7 +212,7 @@
 			"parameters": {
 				"clamp": true,
 				"fix_ar": true,
-				"image": "%PROJECT_PATH%/raw_running_strip11.png"
+				"image": "%PROJECT_PATH%/raw_attack_strip5.png"
 			},
 			"seed_int": 0,
 			"type": "image"

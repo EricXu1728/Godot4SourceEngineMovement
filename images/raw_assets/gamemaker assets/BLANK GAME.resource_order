@@ -18,8 +18,8 @@
   ],
   "ResourceOrderSettings": [
     {"name":"Sprite3","order":17,"path":"sprites/Sprite3/Sprite3.yy",},
-    {"name":"raw_running77","order":5,"path":"sprites/raw_running77/raw_running77.yy",},
     {"name":"raw_standing_color","order":8,"path":"sprites/raw_standing_color/raw_standing_color.yy",},
+    {"name":"raw_attack","order":10,"path":"sprites/raw_attack/raw_attack.yy",},
     {"name":"raw_standing_color11","order":9,"path":"sprites/raw_standing_color11/raw_standing_color11.yy",},
     {"name":"spark","order":18,"path":"sprites/spark/spark.yy",},
     {"name":"raw_running778","order":6,"path":"sprites/raw_running778/raw_running778.yy",},
