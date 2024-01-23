@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://hynsll4jq3n2"]
+[gd_scene load_steps=46 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Player.cs" id="1_pvyd0"]
 [ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c564cuekn4o2b" path="res://images/player_sprites/player.standing.color.png" id="13_7dbjg"]
 [ext_resource type="PackedScene" uid="uid://dh6rryimnjkpn" path="res://components/particle/fireballHandler.tscn" id="13_cy6t1"]
 [ext_resource type="Texture2D" uid="uid://bqmm0fg8ehlpc" path="res://images/player_sprites/player.standing.png" id="14_1bwn5"]
+[ext_resource type="Texture2D" uid="uid://ct3b4os6ksq34" path="res://images/player_sprites/player.attack.color.png" id="15_xkwf6"]
 [ext_resource type="Texture2D" uid="uid://buxxdvm3xk0ub" path="res://images/player_sprites/player.attack.png" id="17_kk1wc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6d52"]
@@ -160,6 +161,107 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 1.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_56la3"]
+resource_name = "attack"
+length = 5.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite/Outline:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Outline:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_kk1wc")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Outline:material_override:shader_parameter/sdf_texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_kk1wc")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Outline:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite/Outline/color:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_xkwf6")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite/Outline/color:hframes")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite/Outline/color:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite/Outline/color:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.7, 1.7, 1.7)]
 }
 
 [sub_resource type="Animation" id="Animation_xyrwy"]
@@ -457,71 +559,6 @@ tracks/12/keys = {
 "values": [Vector3(0, 1.1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_56la3"]
-resource_name = "attack"
-length = 5.0
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite/Outline:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [5]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite/Outline:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("17_kk1wc")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite/Outline:material_override:shader_parameter/sdf_texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("17_kk1wc")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite/Outline:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite/Outline/color:texture")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vw2la"]
 _data = {
 "RESET": SubResource("Animation_mtl4w"),
@@ -612,7 +649,6 @@ advance_mode = 2
 advance_condition = &"is_moving"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iby0u"]
-states/End/position = Vector2(901.5, 100)
 states/Start/position = Vector2(174, 84)
 states/attack/node = SubResource("AnimationNodeBlendTree_rr82u")
 states/attack/position = Vector2(536, 243.898)
@@ -687,7 +723,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 point = NodePath("..")
 
 [node name="step" type="AudioStreamPlayer" parent="."]
-volume_db = -1.0
+volume_db = -10.0
 pitch_scale = 1.1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -716,8 +752,8 @@ target_position = Vector3(0, 0, -3)
 tree_root = SubResource("AnimationNodeStateMachine_iby0u")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/attack = false
-parameters/conditions/is_moving = true
-parameters/conditions/is_still = false
+parameters/conditions/is_moving = false
+parameters/conditions/is_still = true
 parameters/attack/TimeScale/scale = 30.0
 parameters/idle/TimeScale/scale = 1.0
 parameters/running/TimeScale/scale = 1.0

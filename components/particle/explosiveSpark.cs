@@ -3,6 +3,7 @@ using System;
 
 public partial class explosiveSpark : GpuParticles3D
 {
+	private Vector2 scale = new Vector2(1,1);
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -20,6 +21,10 @@ public partial class explosiveSpark : GpuParticles3D
 		callable.CallDeferred();
 		GetParent().RemoveChild(this);
 		QueueFree();
+	}
+	
+	public void setParams(Vector2 scale){
+		scale = this.scale;
 	}
 
 	

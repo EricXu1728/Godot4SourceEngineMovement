@@ -24,4 +24,6 @@ mesh = SubResource("BoxMesh_p5wow")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_entered_tree" from="CollisionShape3D" to="." method="_on_collision_shape_3d_child_entered_tree"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

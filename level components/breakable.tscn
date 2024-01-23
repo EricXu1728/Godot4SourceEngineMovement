@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://jj7gjnntgva3"]
+
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="1_gdetv"]
+[ext_resource type="Script" path="res://level components/breakable.cs" id="1_pcxki"]
+[ext_resource type="AudioStream" uid="uid://dw113davybfmm" path="res://audio/sfx_explosion.wav" id="3_t20wc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ae6c"]
+albedo_texture = ExtResource("1_gdetv")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxlk8"]
+material = SubResource("StandardMaterial3D_4ae6c")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4gis"]
+
+[node name="Breakable" type="StaticBody3D"]
+script = ExtResource("1_pcxki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kxlk8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_c4gis")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_t20wc")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

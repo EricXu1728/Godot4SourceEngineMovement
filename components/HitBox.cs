@@ -39,10 +39,25 @@ public partial class HitBox : Area3D
 	}
 	private void _on_timer_timeout()
 	{
-		GD.Print("uua");
+		//GD.Print("uua");
 		QueueFree();
 	}
 
+
+	
+	private void _on_body_entered(Node3D body)
+	{
+		if(body.GetType() == typeof(breakable)){
+			//body.QueueFree();
+			breakable breakableBody = (breakable) body;
+			breakableBody.DestroyBlock();
+		}
+		// Replace with function body.
+	}
 }
+
+
+
+
 
 

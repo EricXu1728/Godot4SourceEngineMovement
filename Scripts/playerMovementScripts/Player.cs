@@ -59,7 +59,7 @@ public partial class Player : PlayerInputs
 		Vector3 spriteRotation = Vector3.Zero;
 		spriteRotation.X = camera.Rotation.X/2 - (stats.forwardmove/10000);
 		spriteRotation.Y = camera.Rotation.Y;
-		spriteRotation.Z = stats.sidemove/40000; 
+		spriteRotation.Z = stats.sidemove/30000; 
 		mySkin.Rotation = spriteRotation;
 
 		Vector3 climbCastRotation = climbCast.Rotation;
@@ -139,7 +139,7 @@ public partial class Player : PlayerInputs
 		newVel[1] = Mathf.Max(20, newVel[1]+10);
 		stats.vel = newVel;
 
-		attack.SetParams(1);
+		attack.SetParams(0.5f);
 		Vector3 attackRotation = camera.Rotation;
 
 		attackRotation[0] += 0.2f;
