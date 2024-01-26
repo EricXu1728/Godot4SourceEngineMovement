@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dyu2arbtnsyr6"]
 
 [ext_resource type="Script" path="res://Scripts/Coin behavior/coin.cs" id="1_0qbuy"]
-[ext_resource type="Texture2D" uid="uid://cpe3gv52gbqwg" path="res://textures/2.PNG" id="1_ulsii"]
+[ext_resource type="Texture2D" uid="uid://d13lgrdcyhn7r" path="res://images/2.PNG" id="2_lrl3d"]
 [ext_resource type="PackedScene" uid="uid://b5ot2uaurliy3" path="res://components/shadow.tscn" id="3_aqal0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_efsps"]
@@ -54,7 +54,7 @@ shape = SubResource("BoxShape3D_efsps")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 1
-texture = ExtResource("1_ulsii")
+texture = ExtResource("2_lrl3d")
 
 [node name="shadow" parent="." instance=ExtResource("3_aqal0")]
 

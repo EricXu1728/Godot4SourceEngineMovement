@@ -51,6 +51,9 @@ public partial class HitBox : Area3D
 			//body.QueueFree();
 			breakable breakableBody = (breakable) body;
 			breakableBody.DestroyBlock();
+		}else{
+			GD.Print("whiffed");
+			GD.Print(body.GetType());
 		}
 		// Replace with function body.
 	}

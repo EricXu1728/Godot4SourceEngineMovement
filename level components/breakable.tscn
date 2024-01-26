@@ -15,14 +15,11 @@ material = SubResource("StandardMaterial3D_4ae6c")
 [node name="Breakable" type="StaticBody3D"]
 script = ExtResource("1_pcxki")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_t20wc")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_kxlk8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_c4gis")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_t20wc")
-
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

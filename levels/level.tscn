@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=51 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://level components/player.tscn" id="1_rsegt"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
@@ -15,11 +15,16 @@
 [ext_resource type="Script" path="res://Scripts/Speedometer.gd" id="14_k8f7j"]
 [ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
 [ext_resource type="PackedScene" uid="uid://jj7gjnntgva3" path="res://level components/breakable.tscn" id="15_nbswu"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="16_05obc"]
 [ext_resource type="Script" path="res://Label.gd" id="16_b638j"]
 [ext_resource type="PackedScene" uid="uid://c805ovgtm67o6" path="res://level components/block.tscn" id="16_rjewc"]
 [ext_resource type="PackedScene" uid="uid://dyu2arbtnsyr6" path="res://level components/coin.tscn" id="16_socfp"]
 [ext_resource type="PackedScene" uid="uid://c86iyry2o2kvd" path="res://level components/coin_path.tscn" id="17_0j72w"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="17_g47ns"]
+[ext_resource type="Texture2D" uid="uid://b66oqrkx56c0p" path="res://levels/level1/textures/2.PNG" id="18_3wfli"]
 [ext_resource type="PackedScene" uid="uid://d0sg7nscuvmt7" path="res://level components/coin_handler.tscn" id="18_l53p8"]
+[ext_resource type="Texture2D" uid="uid://cjouivemsr0th" path="res://levels/level1/textures/noiseTexture.png" id="19_ek3k7"]
+[ext_resource type="Texture2D" uid="uid://dqsul5uxjuptu" path="res://levels/level1/textures/texture_01.png" id="20_6s2ir"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x35o4"]
 shader = ExtResource("11_2lsuk")
@@ -76,6 +81,92 @@ size = Vector3(2000, 0.5, 2000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8a2re"]
 size = Vector3(2000, 0.5, 2000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7aw4l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wvmk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4xjv"]
+albedo_texture = ExtResource("18_3wfli")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yem22"]
+albedo_texture = ExtResource("19_ek3k7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2k4k"]
+albedo_texture = ExtResource("20_6s2ir")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pujx1"]
+_surfaces = [{
+"aabb": AABB(-4, -1, -4, 8, 2.00001, 8),
+"attribute_data": PackedByteArray(0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 194, 0, 0, 128, 65, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 194, 0, 0, 128, 65),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_2wvmk"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+}, {
+"aabb": AABB(-23, 1, 1, 22, 1.00001, 28),
+"attribute_data": PackedByteArray(74, 232, 252, 190, 75, 89, 56, 189, 74, 232, 252, 190, 75, 89, 184, 188, 130, 239, 175, 188, 75, 89, 184, 188, 130, 239, 175, 188, 75, 89, 56, 189, 130, 239, 175, 60, 75, 89, 56, 189, 13, 113, 31, 63, 75, 89, 56, 189, 13, 113, 31, 63, 75, 89, 184, 188, 130, 239, 175, 60, 75, 89, 184, 188, 130, 239, 175, 60, 75, 89, 184, 60, 130, 239, 175, 60, 46, 128, 4, 63, 13, 113, 31, 63, 46, 128, 4, 63, 13, 113, 31, 63, 75, 89, 184, 60, 130, 239, 175, 60, 75, 89, 184, 60, 13, 113, 31, 63, 75, 89, 184, 60, 13, 113, 31, 63, 46, 128, 4, 63, 130, 239, 175, 60, 46, 128, 4, 63, 130, 239, 175, 60, 75, 89, 56, 189, 130, 239, 175, 60, 75, 89, 184, 188, 13, 113, 31, 63, 75, 89, 184, 188, 13, 113, 31, 63, 75, 89, 56, 189, 74, 232, 252, 190, 75, 89, 56, 189, 130, 239, 175, 188, 75, 89, 56, 189, 130, 239, 175, 188, 75, 89, 184, 188, 74, 232, 252, 190, 75, 89, 184, 188),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_w4xjv"),
+"name": "2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 232, 65, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+}, {
+"aabb": AABB(1, 1, -14, 10, 1.00001, 11),
+"attribute_data": PackedByteArray(0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 0, 61, 0, 0, 128, 189, 0, 0, 176, 62, 0, 0, 128, 189, 0, 0, 176, 62, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 208, 190, 0, 0, 128, 189, 0, 0, 208, 190, 0, 0, 176, 190, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 176, 190, 0, 0, 208, 190, 0, 0, 176, 190, 0, 0, 128, 189, 0, 0, 176, 190, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 176, 62, 0, 0, 0, 189, 0, 0, 176, 62, 0, 0, 128, 189, 0, 0, 0, 61, 0, 0, 128, 189),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_yem22"),
+"name": "noiseTexture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 64, 192, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63)
+}, {
+"aabb": AABB(0, 1, -11, 10, 2.00001, 15),
+"attribute_data": PackedByteArray(0, 0, 192, 61, 0, 0, 0, 189, 0, 0, 192, 61, 0, 0, 64, 189, 0, 0, 0, 62, 0, 0, 64, 189, 0, 0, 0, 62, 0, 0, 0, 189, 0, 0, 32, 190, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 32, 190, 0, 0, 64, 189, 0, 0, 32, 190, 0, 0, 0, 190, 0, 0, 32, 190, 0, 0, 192, 189, 0, 0, 128, 61, 0, 0, 192, 189, 0, 0, 128, 61, 0, 0, 0, 190, 0, 0, 32, 190, 0, 0, 0, 190, 0, 0, 128, 61, 0, 0, 0, 190, 0, 0, 128, 61, 0, 0, 192, 189, 0, 0, 32, 190, 0, 0, 192, 189, 0, 0, 32, 190, 0, 0, 0, 189, 0, 0, 32, 190, 0, 0, 64, 189, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 128, 61, 0, 0, 0, 189, 0, 0, 192, 61, 0, 0, 0, 189, 0, 0, 0, 62, 0, 0, 0, 189, 0, 0, 0, 62, 0, 0, 64, 189, 0, 0, 192, 61, 0, 0, 64, 189, 0, 0, 0, 61, 0, 0, 64, 189, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 128, 188, 0, 0, 0, 189, 0, 0, 64, 61, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 0, 189, 0, 0, 128, 188, 0, 0, 0, 0, 0, 0, 128, 61, 0, 0, 0, 0, 0, 0, 64, 61, 0, 0, 0, 189, 0, 0, 128, 188, 0, 0, 0, 189, 0, 0, 64, 61, 0, 0, 0, 189, 0, 0, 64, 61, 0, 0, 64, 189, 0, 0, 128, 188, 0, 0, 64, 189, 0, 0, 0, 61, 0, 0, 64, 189, 0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 128, 61, 0, 0, 0, 189, 0, 0, 32, 62, 0, 0, 0, 189, 0, 0, 48, 190, 0, 0, 64, 189, 0, 0, 160, 189, 0, 0, 64, 189, 0, 0, 160, 189, 0, 0, 0, 189, 0, 0, 48, 190, 0, 0, 0, 189, 0, 0, 48, 190, 0, 0, 32, 190, 0, 0, 48, 190, 0, 0, 128, 189, 0, 0, 160, 189, 0, 0, 128, 189, 0, 0, 160, 189, 0, 0, 32, 190, 0, 0, 48, 190, 0, 0, 32, 190, 0, 0, 160, 189, 0, 0, 32, 190, 0, 0, 160, 189, 0, 0, 128, 189, 0, 0, 48, 190, 0, 0, 128, 189, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 32, 62, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 0, 189),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 27, 0, 29, 0, 30, 0, 31, 0, 32, 0, 33, 0, 31, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 35, 0, 37, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 47, 0, 45, 0, 47, 0, 48, 0, 49, 0, 50, 0, 51, 0, 49, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 53, 0, 55, 0, 56, 0, 57, 0, 58, 0, 59, 0),
+"material": SubResource("StandardMaterial3D_p2k4k"),
+"name": "texture_01",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray(0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 160, 192, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 160, 192, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 63, 255, 191, 255, 127, 255, 191, 255, 63, 255, 191, 255, 127, 255, 191, 255, 63, 255, 191, 255, 127, 255, 191, 255, 63, 255, 191, 255, 127, 255, 191, 170, 170, 170, 42, 255, 127, 255, 63, 170, 170, 170, 42, 255, 127, 255, 63, 170, 170, 170, 42, 255, 127, 255, 63, 170, 170, 170, 42, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 170, 170, 255, 127, 255, 255, 255, 191, 170, 170, 255, 127, 255, 255, 255, 191, 170, 170, 255, 127, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 72, 146, 181, 237, 255, 127, 255, 191, 72, 146, 181, 237, 255, 127, 255, 191, 72, 146, 181, 237, 255, 127, 255, 191, 72, 146, 181, 237, 255, 127, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_2fcbx"]
+vertices = PackedVector3Array(-4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, -4, -4, 1, 4, -4, -1, 4, -4, -1, -4, 4, -1, -4, -4, -1, -4, -4, -1, 4, 4, -1, 4, 4, 1, -4, 4, 1, 4, -4, 1, 4, -4, 1, -4, 4, 1, -4, 4, -1, -4, 4, -1, 4, 4, 1, 4, -4, 1, 4, 4, 1, 4, 4, -1, 4, -4, -1, 4, -23, 2, 1, -23, 1, 1, -1, 1, 1, -1, 2, 1, -23, 2, 1, -23, 2, 29, -23, 1, 29, -23, 1, 1, -1, 1, 1, -23, 1, 1, -23, 1, 29, -1, 1, 29, -1, 2, 1, -1, 2, 29, -23, 2, 29, -23, 2, 1, -1, 2, 1, -1, 1, 1, -1, 1, 29, -1, 2, 29, -23, 2, 29, -1, 2, 29, -1, 1, 29, -23, 1, 29, 1, 2, -14, 1, 1, -14, 11, 1, -14, 11, 2, -14, 1, 2, -14, 1, 2, -3, 1, 1, -3, 1, 1, -14, 11, 1, -14, 1, 1, -14, 1, 1, -3, 11, 1, -3, 11, 2, -14, 11, 2, -3, 1, 2, -3, 1, 2, -14, 11, 2, -14, 11, 1, -14, 11, 1, -3, 11, 2, -3, 1, 2, -3, 11, 2, -3, 11, 1, -3, 1, 1, -3, 2, 3, -11, 2, 2, -11, 4, 2, -11, 4, 3, -11, 2, 3, -11, 2, 3, 3, 2, 2, 3, 2, 2, -11, 4, 2, -11, 2, 2, -11, 2, 2, 3, 4, 2, 3, 4, 3, -11, 4, 3, 3, 2, 3, 3, 2, 3, -11, 4, 3, -11, 4, 2, -11, 4, 2, 3, 4, 3, 3, 2, 3, 3, 4, 3, 3, 4, 2, 3, 2, 2, 3, 2, 3, -1, 0, 1, -1, 2, 2, -1, 2, 3, -1, 2, 3, 3, 0, 1, 4, 0, 1, -1, 2, 2, -1, 0, 1, -1, 0, 1, 4, 2, 2, 3, 2, 2, -1, 2, 2, 3, 2, 3, 3, 2, 3, -1, 2, 3, 3, 2, 2, 3, 0, 1, 4, 4, 3, -11, 4, 2, -11, 10, 2, -11, 4, 3, -11, 4, 3, -5, 4, 2, -5, 4, 2, -11, 10, 2, -11, 4, 2, -11, 4, 2, -5, 10, 2, -5, 10, 2, -11, 10, 2, -5, 4, 3, -5, 4, 3, -11, 4, 3, -5, 10, 2, -5, 4, 2, -5)
+indices = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 25, 26, 24, 26, 27, 28, 29, 30, 28, 30, 31, 32, 33, 34, 32, 34, 35, 36, 37, 38, 36, 38, 39, 40, 41, 42, 40, 42, 43, 44, 45, 46, 44, 46, 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 48, 49, 50, 48, 50, 51, 52, 53, 54, 52, 54, 55, 56, 57, 58, 56, 58, 59, 60, 61, 62, 60, 62, 63, 64, 65, 66, 64, 66, 67, 68, 69, 70, 68, 70, 71, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 72, 73, 74, 72, 74, 75, 76, 77, 78, 76, 78, 79, 80, 81, 82, 80, 82, 83, 84, 85, 86, 84, 86, 87, 88, 89, 90, 88, 90, 91, 92, 93, 94, 92, 94, 95, 96, 97, 98, 99, 100, 101, 99, 101, 102, 103, 104, 105, 103, 105, 106, 107, 108, 109, 107, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 117, 119, 120, 121, 122, 123, 121, 123, 124, 125, 126, 127, 125, 127, 128, 129, 130, 131)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qvhwy"]
+points = PackedVector3Array(-4, 1, -4, -4, -1, -4, 4, -1, -4, 4, 1, -4, -4, 1, 4, -4, -1, 4, 4, -1, 4, 4, 1, 4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t4iqv"]
+points = PackedVector3Array(-23, 2, 1, -23, 1, 1, -1, 1, 1, -1, 2, 1, -23, 2, 29, -23, 1, 29, -1, 1, 29, -1, 2, 29)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dief0"]
+points = PackedVector3Array(1, 2, -14, 1, 1, -14, 11, 1, -14, 11, 2, -14, 1, 2, -3, 1, 1, -3, 11, 1, -3, 11, 2, -3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8qv8i"]
+points = PackedVector3Array(2, 3, -11, 2, 2, -11, 4, 2, -11, 4, 3, -11, 2, 3, 3, 2, 2, 3, 4, 2, 3, 4, 3, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ruwba"]
+points = PackedVector3Array(2, 3, -1, 0, 1, -1, 2, 2, -1, 2, 3, 3, 0, 1, 4, 2, 2, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_61afx"]
+points = PackedVector3Array(4, 3, -11, 4, 2, -11, 10, 2, -11, 4, 3, -5, 4, 2, -5, 10, 2, -5)
 
 [sub_resource type="Curve3D" id="Curve3D_mi5f8"]
 _data = {
@@ -280,6 +371,41 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 58.3146, 246.205, 221.283)
 [node name="Breakable2" parent="layout" instance=ExtResource("15_nbswu")]
 transform = Transform3D(100, 0, 0, 0, 60, 0, 0, 0, 5, 58.3146, 177.154, -201.677)
 
+[node name="QodotMap" type="Node3D" parent="layout"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8316, 243.943, 235.08)
+script = ExtResource("16_05obc")
+map_file = "C:/Users/Frank/Desktop/godot 4/Godot4SourceEngineMovement/levels/level1/coollevel.map"
+entity_fgd = ExtResource("17_g47ns")
+base_texture_dir = "res://levels/level1/textures"
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_7aw4l")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="layout/QodotMap"]
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="layout/QodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_pujx1")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="layout/QodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_2fcbx")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="layout/QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_qvhwy")
+
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="layout/QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_t4iqv")
+
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="layout/QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_dief0")
+
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="layout/QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_8qv8i")
+
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="layout/QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_ruwba")
+
+[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="layout/QodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_61afx")
+
 [node name="testStuff" type="Node3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="testStuff"]
@@ -306,90 +432,14 @@ collector_path = NodePath("../player")
 [node name="CoinPath" parent="coins" instance=ExtResource("17_0j72w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 curve = SubResource("Curve3D_mi5f8")
-_distance = 20.0
-followPath = Object(PathFollow3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(0.999953, 2.60091e-07, -1.47647e-06, 1.42825e-06, 0.134172, 0.990889, 4.55847e-07, -0.990921, 0.134167, 63, 224.957, 217.362),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"progress":240.0,"h_offset":0.0,"v_offset":0.0,"rotation_mode":3,"use_model_front":false,"cubic_interp":true,"loop":true,"tilt_enabled":true,"script":null)
-
 
 [node name="Coin3" parent="coins" instance=ExtResource("16_socfp")]
 
 [node name="CoinPath2" parent="coins" instance=ExtResource("17_0j72w")]
 curve = SubResource("Curve3D_xjgmt")
-_distance = 20.0
-followPath = Object(PathFollow3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(-0.00390873, 0.999947, -0.00432104, -0.922844, -0.00527123, -0.385008, -0.385033, 0.00248292, 0.922829, 57.1078, 156.703, -172.94),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"progress":140.0,"h_offset":0.0,"v_offset":0.0,"rotation_mode":3,"use_model_front":false,"cubic_interp":true,"loop":true,"tilt_enabled":true,"script":null)
-
 
 [node name="CoinPath3" parent="coins" instance=ExtResource("17_0j72w")]
 curve = SubResource("Curve3D_iugia")
-_distance = 20.0
-followPath = Object(PathFollow3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(-0.0103384, 0.141127, -0.989868, -3.1142e-06, 0.989953, 0.14113, 0.9999, 0.00146225, -0.0102342, 276.693, 37.8156, -726.153),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"progress":280.0,"h_offset":0.0,"v_offset":0.0,"rotation_mode":3,"use_model_front":false,"cubic_interp":true,"loop":true,"tilt_enabled":true,"script":null)
-
 
 [node name="Coin" parent="coins" instance=ExtResource("16_socfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5102, 245.501, 233.202)
-
-[connection signal="body_entered" from="coins/CoinPath/Coin" to="coins/CoinPath/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17538" to="coins/CoinPath/@Area3D@17538" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17539" to="coins/CoinPath/@Area3D@17539" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17540" to="coins/CoinPath/@Area3D@17540" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17541" to="coins/CoinPath/@Area3D@17541" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17542" to="coins/CoinPath/@Area3D@17542" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17543" to="coins/CoinPath/@Area3D@17543" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17544" to="coins/CoinPath/@Area3D@17544" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17545" to="coins/CoinPath/@Area3D@17545" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17546" to="coins/CoinPath/@Area3D@17546" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17547" to="coins/CoinPath/@Area3D@17547" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17548" to="coins/CoinPath/@Area3D@17548" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25621" to="coins/CoinPath/@Area3D@25621" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25622" to="coins/CoinPath/@Area3D@25622" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25623" to="coins/CoinPath/@Area3D@25623" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25624" to="coins/CoinPath/@Area3D@25624" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25625" to="coins/CoinPath/@Area3D@25625" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25626" to="coins/CoinPath/@Area3D@25626" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25627" to="coins/CoinPath/@Area3D@25627" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25628" to="coins/CoinPath/@Area3D@25628" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25629" to="coins/CoinPath/@Area3D@25629" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25630" to="coins/CoinPath/@Area3D@25630" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25631" to="coins/CoinPath/@Area3D@25631" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@25632" to="coins/CoinPath/@Area3D@25632" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/Coin" to="coins/CoinPath2/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17549" to="coins/CoinPath2/@Area3D@17549" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17550" to="coins/CoinPath2/@Area3D@17550" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17551" to="coins/CoinPath2/@Area3D@17551" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17552" to="coins/CoinPath2/@Area3D@17552" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17553" to="coins/CoinPath2/@Area3D@17553" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17554" to="coins/CoinPath2/@Area3D@17554" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25633" to="coins/CoinPath2/@Area3D@25633" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25634" to="coins/CoinPath2/@Area3D@25634" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25635" to="coins/CoinPath2/@Area3D@25635" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25636" to="coins/CoinPath2/@Area3D@25636" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25637" to="coins/CoinPath2/@Area3D@25637" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25638" to="coins/CoinPath2/@Area3D@25638" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@25639" to="coins/CoinPath2/@Area3D@25639" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/Coin" to="coins/CoinPath3/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17555" to="coins/CoinPath3/@Area3D@17555" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17556" to="coins/CoinPath3/@Area3D@17556" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17557" to="coins/CoinPath3/@Area3D@17557" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17558" to="coins/CoinPath3/@Area3D@17558" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17559" to="coins/CoinPath3/@Area3D@17559" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17560" to="coins/CoinPath3/@Area3D@17560" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17561" to="coins/CoinPath3/@Area3D@17561" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17562" to="coins/CoinPath3/@Area3D@17562" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17563" to="coins/CoinPath3/@Area3D@17563" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17564" to="coins/CoinPath3/@Area3D@17564" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17565" to="coins/CoinPath3/@Area3D@17565" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17566" to="coins/CoinPath3/@Area3D@17566" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17567" to="coins/CoinPath3/@Area3D@17567" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25640" to="coins/CoinPath3/@Area3D@25640" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25641" to="coins/CoinPath3/@Area3D@25641" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25642" to="coins/CoinPath3/@Area3D@25642" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25643" to="coins/CoinPath3/@Area3D@25643" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25644" to="coins/CoinPath3/@Area3D@25644" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25645" to="coins/CoinPath3/@Area3D@25645" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25646" to="coins/CoinPath3/@Area3D@25646" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25647" to="coins/CoinPath3/@Area3D@25647" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25648" to="coins/CoinPath3/@Area3D@25648" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25649" to="coins/CoinPath3/@Area3D@25649" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25650" to="coins/CoinPath3/@Area3D@25650" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25651" to="coins/CoinPath3/@Area3D@25651" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25652" to="coins/CoinPath3/@Area3D@25652" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@25653" to="coins/CoinPath3/@Area3D@25653" method="_on_body_entered"]
