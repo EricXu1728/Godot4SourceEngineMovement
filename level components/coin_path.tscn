@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c86iyry2o2kvd"]
 
-[ext_resource type="Script" path="res://Scripts/Coin behavior/coin_path.cs" id="1_nqdc6"]
+[ext_resource type="Script" path="res://Scripts/item_path.cs" id="1_jdvko"]
 
 [sub_resource type="Curve3D" id="Curve3D_5tte8"]
 
 [node name="CoinPath" type="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_5tte8")
-script = ExtResource("1_nqdc6")
+script = ExtResource("1_jdvko")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
 transform = Transform3D(-0.00390547, 0.999947, -0.00432053, -0.922844, -0.00526805, -0.385009, -0.385033, 0.00248372, 0.922828, 57.1078, 156.703, -172.94)

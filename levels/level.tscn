@@ -432,14 +432,48 @@ collector_path = NodePath("../player")
 [node name="CoinPath" parent="coins" instance=ExtResource("17_0j72w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 curve = SubResource("Curve3D_mi5f8")
+file_path = "res://level components/coin.tscn"
+distance = 30.0
 
 [node name="Coin3" parent="coins" instance=ExtResource("16_socfp")]
 
 [node name="CoinPath2" parent="coins" instance=ExtResource("17_0j72w")]
 curve = SubResource("Curve3D_xjgmt")
+file_path = "res://level components/coin.tscn"
 
 [node name="CoinPath3" parent="coins" instance=ExtResource("17_0j72w")]
 curve = SubResource("Curve3D_iugia")
+file_path = "res://level components/coin.tscn"
 
 [node name="Coin" parent="coins" instance=ExtResource("16_socfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5102, 245.501, 233.202)
+
+[connection signal="body_entered" from="coins/CoinPath/Coin" to="coins/CoinPath/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19300" to="coins/CoinPath/@Area3D@19300" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19301" to="coins/CoinPath/@Area3D@19301" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19302" to="coins/CoinPath/@Area3D@19302" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19303" to="coins/CoinPath/@Area3D@19303" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19304" to="coins/CoinPath/@Area3D@19304" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19305" to="coins/CoinPath/@Area3D@19305" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@19306" to="coins/CoinPath/@Area3D@19306" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/Coin" to="coins/CoinPath2/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@19307" to="coins/CoinPath2/@Area3D@19307" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@19308" to="coins/CoinPath2/@Area3D@19308" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@19309" to="coins/CoinPath2/@Area3D@19309" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@19310" to="coins/CoinPath2/@Area3D@19310" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@19311" to="coins/CoinPath2/@Area3D@19311" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@19312" to="coins/CoinPath2/@Area3D@19312" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/Coin" to="coins/CoinPath3/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19313" to="coins/CoinPath3/@Area3D@19313" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19314" to="coins/CoinPath3/@Area3D@19314" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19315" to="coins/CoinPath3/@Area3D@19315" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19316" to="coins/CoinPath3/@Area3D@19316" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19317" to="coins/CoinPath3/@Area3D@19317" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19318" to="coins/CoinPath3/@Area3D@19318" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19319" to="coins/CoinPath3/@Area3D@19319" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19320" to="coins/CoinPath3/@Area3D@19320" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19321" to="coins/CoinPath3/@Area3D@19321" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19322" to="coins/CoinPath3/@Area3D@19322" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19323" to="coins/CoinPath3/@Area3D@19323" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19324" to="coins/CoinPath3/@Area3D@19324" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@19325" to="coins/CoinPath3/@Area3D@19325" method="_on_body_entered"]

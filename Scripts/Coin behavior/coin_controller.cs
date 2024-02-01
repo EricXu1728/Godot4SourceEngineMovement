@@ -36,7 +36,7 @@ public partial class coin_controller : Node3D
 				//GD.Print("yay1");
 				break;
 
-				case "coin_path":
+				case "item_path":
 				foreach(Node k in n.GetChildren()){
 					if(k is coin){
 						((coin)k).CoinCollected += _on_coin_coin_collected;
