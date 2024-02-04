@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtulpf7dxivqd"]
+
+[ext_resource type="Script" path="res://Scripts/interateNode.cs" id="1_rux4o"]
+
+[node name="Iterator" type="Node3D"]
+script = ExtResource("1_rux4o")
+file_path = "res://level components/breakable.tscn"
