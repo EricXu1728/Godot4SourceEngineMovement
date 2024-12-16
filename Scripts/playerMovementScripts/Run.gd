@@ -17,11 +17,14 @@ func Move(delta):
 
 		state_machine.transition_to("Air")
 
-	if Input.is_action_pressed("jump") && (not stats.crouched) && stats.shouldJump:
-		CheckJumpButton()
+	if Input.is_action_pressed("jump") && stats.shouldJump:
+		if stats.canJumpWhileCrouched or not stats.crouched:
+			PerformJump()
+			
+			stats.on_floor = false
+			state_machine.transition_to("Air", {do_jump = true})
 		
-		stats.on_floor = false
-		state_machine.transition_to("Air", {do_jump = true})
+		
 
 	player.CheckVelocity()
 
@@ -78,6 +81,7 @@ func Accelerate(wishdir, wishspeed, accel, delta):
 	var accelspeed = accel * wishspeed * delta
 
 	# Cap at addspeed
+	stats.vel.y -= stats.ply_gravity * delta
 
 	for i in range(3):
 		# Adjust velocity.
@@ -125,7 +129,7 @@ func Friction(delta):
 
 
 
-func CheckJumpButton():
+func PerformJump():
 	
 	stats.snap = Vector3.ZERO
 
@@ -139,10 +143,11 @@ func CheckJumpButton():
 	
 	var flMul : float
 	
-	if stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate
-		flMul = sqrt(2 * (stats.ply_gravity*1.1) * stats.ply_jumpheight)
+	if stats.crouching: #trying to emulate that crouch jumping is slightly higher than jump crouching but not completely accurate. Reasion why you jump higher mid crouch is because the game forgets to apply gravity for the first frame. This attempts to recreate it by removing one frame of gravity to make up for it
+		flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight) + ((1./60.) * stats.ply_gravity)
 		
-		player.move_and_collide(Vector3(0, 2-player.myShape.scale.y, 0))
+		if !stats.crouched:
+			player.move_and_collide(Vector3(0, 2-player.myShape.scale.y, 0))
 		
 		
 		
@@ -150,7 +155,7 @@ func CheckJumpButton():
 		flMul = sqrt(2 * stats.ply_gravity * stats.ply_jumpheight)
 	
 	
-	var jumpvel =  flGroundFactor * flMul  + max(0, stats.vel.y)# 2 * gravity * height
+	var jumpvel =  flGroundFactor * flMul  + max(0, stats.vel.y)
 	
 	stats.vel.y = max(jumpvel, jumpvel + stats.vel.y)
 	print("nomral jump: ",stats.vel.y)

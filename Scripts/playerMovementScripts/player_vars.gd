@@ -37,6 +37,8 @@ class_name playerVariables
 @export var ply_crouchspeed = 10
 var speed = ply_maxspeed
 
+@export var canJumpWhileCrouched = true
+
 # Bools
 @export var noclip = false
 @export var crouching : bool

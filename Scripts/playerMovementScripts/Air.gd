@@ -8,7 +8,7 @@ func enter(msg := {}) -> void:
 	stats.on_floor = false
 	if msg.has("do_jump"):
 		#player.clearCoyote()
-		CheckJumpButton()
+		PerformJump()
 
 func physics_update(delta: float) -> void:
 	AirMove(delta)
@@ -20,8 +20,8 @@ func physics_update(delta: float) -> void:
 		
 		state_machine.transition_to("Run")
 	else:
-		if(Input.is_action_pressed("jump")):
-			CheckJumpButton()
+		if(Input.is_action_pressed("jump")) and (stats.canJumpWhileCrouched or not stats.crouched):
+				PerformJump()
 
 
 func AirMove(delta):
@@ -87,12 +87,12 @@ func AirAccelerate(wishdir, wishspeed, accel, delta):
 
 
 
-func CheckJumpButton():
+func PerformJump():
 	
 	
 	stats.snap = Vector3.ZERO
 
-	if not (stats.shouldJump) :#||  player.velocity.y>15:
+	if not (stats.shouldJump): #||  player.velocity.y>15:
 		return
 
 	player.clearCoyote()

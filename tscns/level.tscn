@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://tscns/player.tscn" id="1_rsegt"]
-[ext_resource type="Texture2D" uid="uid://cpe3gv52gbqwg" path="res://textures/2.PNG" id="4_fbpvl"]
+[ext_resource type="Texture2D" uid="uid://o4xlwbin0ji8" path="res://textures/2.PNG" id="4_fbpvl"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
-[ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
-[ext_resource type="PackedScene" uid="uid://c805ovgtm67o6" path="res://tscns/block.tscn" id="16_rjewc"]
+[ext_resource type="Texture2D" path="res://images/texture_01.png" id="15_dw3x1"]
+[ext_resource type="PackedScene" uid="uid://bf1ktdfkkpjfd" path="res://tscns/block.tscn" id="16_rjewc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -102,8 +102,8 @@ script = ExtResource("4_ivjvi")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="layout/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3957, 240.663, 237.768)
-size = Vector3(26.3467, 4.00183, 27.0368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.603, 240.663, 263.103)
+size = Vector3(45.5171, 4.00183, 77.7068)
 material = SubResource("StandardMaterial3D_dimrh")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="layout/CSGCombiner3D"]
@@ -207,3 +207,15 @@ transform = Transform3D(-6.55671e-07, 2.0876, -14.854, 0, 14.854, 2.0876, 15, 9.
 polygon = PackedVector2Array(-0.5, 0, 0.5, 1.3, 1.5, 0)
 depth = 30.0
 material = SubResource("StandardMaterial3D_sqhox")
+
+[node name="Block" parent="." instance=ExtResource("16_rjewc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.9156, 242.912, 265)
+
+[node name="Block2" parent="." instance=ExtResource("16_rjewc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5877, 243.327, 265.031)
+
+[node name="Block3" parent="." instance=ExtResource("16_rjewc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.377, 243.72, 265.262)
+
+[node name="Block4" parent="." instance=ExtResource("16_rjewc")]
+transform = Transform3D(3.05815, -0.0522642, 0, 0.321425, 0.497261, 0, 0, 0, 0.5, 53.5877, 248.555, 282.78)

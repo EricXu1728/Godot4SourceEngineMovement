@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://hynsll4jq3n2"]
 
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/player.gd" id="1_a7j60"]
-[ext_resource type="Resource" uid="uid://blcrcljlra16c" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
+[ext_resource type="Resource" uid="uid://dljcnxkua4rf" path="res://Scripts/playerMovementScripts/player_vars.tres" id="2_graem"]
 [ext_resource type="Texture2D" uid="uid://da72e4jxersy2" path="res://images/icon.svg" id="3_imbja"]
 [ext_resource type="Script" path="res://Scripts/stateMachine.gd" id="4_oxk7l"]
 [ext_resource type="Script" path="res://Scripts/playerMovementScripts/Run.gd" id="5_mty1n"]
@@ -76,5 +76,5 @@ shape = SubResource("BoxShape3D_4pade")
 target_position = Vector3(0, -1.3, 0)
 
 [node name="CoyoteTime" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.15
 one_shot = true
