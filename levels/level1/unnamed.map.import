@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cv7anlasnya1p"
+path="res://.godot/imported/unnamed.map-cc739cc11fc76008d09c3d8099928e69.tres"
+
+[deps]
+
+source_file="res://levels/level1/unnamed.map"
+dest_files=["res://.godot/imported/unnamed.map-cc739cc11fc76008d09c3d8099928e69.tres"]
+
+[params]
+
