@@ -42,6 +42,7 @@ public partial class Player : PlayerInputs
 	}
 
 	public Boolean canClimb = false;
+	int attackCount = 0;
 	public Vector3 climbAngle = Vector3.Zero;
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
@@ -108,6 +109,7 @@ public partial class Player : PlayerInputs
 		if(stats.on_floor)
 		{
 			stats.shouldJump = true;
+			attackCount = 0;
 		}
 		else
 		{
@@ -260,4 +262,3 @@ public partial class Player : PlayerInputs
 		}
 	}
 }
-

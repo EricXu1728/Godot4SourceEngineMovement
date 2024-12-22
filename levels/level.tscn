@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c41sndaibm3u2"]
+[gd_scene load_steps=53 format=4 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://level components/player.tscn" id="1_rsegt"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
@@ -99,52 +99,52 @@ albedo_texture = ExtResource("20_6s2ir")
 [sub_resource type="ArrayMesh" id="ArrayMesh_pujx1"]
 _surfaces = [{
 "aabb": AABB(-4, -1, -4, 8, 2.00001, 8),
-"attribute_data": PackedByteArray(0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 194, 0, 0, 128, 65, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 66, 0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 194, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 193, 0, 0, 128, 66, 0, 0, 128, 65, 0, 0, 128, 194, 0, 0, 128, 65),
+"attribute_data": PackedByteArray("AACAwgAAgMEAAIDCAACAQQAAgEIAAIBBAACAQgAAgMEAAIDCAACAwQAAgEIAAIDBAACAQgAAgEEAAIDCAACAQQAAgMIAAIDCAACAwgAAgEIAAIBCAACAQgAAgEIAAIDCAACAwgAAgMIAAIBCAACAwgAAgEIAAIBCAACAwgAAgEIAAIDCAACAwQAAgMIAAIBBAACAQgAAgEEAAIBCAACAwQAAgMIAAIDBAACAQgAAgMEAAIBCAACAQQAAgMIAAIBB"),
 "format": 34359742487,
 "index_count": 36,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
 "material": SubResource("StandardMaterial3D_2wvmk"),
 "name": "__TB_empty",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray(0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 192, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 128, 191, 0, 0, 128, 64, 0, 0, 128, 192, 0, 0, 128, 191, 0, 0, 128, 64, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+"vertex_data": PackedByteArray("AACAwAAAgD8AAIDAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAQAAAgD8AAIDAAACAwAAAgD8AAIDAAACAwAAAgD8AAIBAAACAwAAAgL8AAIBAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAwAAAgL8AAIDAAACAwAAAgL8AAIBAAACAQAAAgL8AAIBAAACAQAAAgD8AAIDAAACAQAAAgD8AAIBAAACAwAAAgD8AAIBAAACAwAAAgD8AAIDAAACAQAAAgD8AAIDAAACAQAAAgL8AAIDAAACAQAAAgL8AAIBAAACAQAAAgD8AAIBAAACAwAAAgD8AAIBAAACAQAAAgD8AAIBAAACAQAAAgL8AAIBAAACAwAAAgL8AAIBA/////////z//////////P/////////8//////////z8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//P////3//f/8/////f/9//z////9//3//P/9//3////+//3//f////7//f/9/////v/9//3////+/")
 }, {
 "aabb": AABB(-23, 1, 1, 22, 1.00001, 28),
-"attribute_data": PackedByteArray(74, 232, 252, 190, 75, 89, 56, 189, 74, 232, 252, 190, 75, 89, 184, 188, 130, 239, 175, 188, 75, 89, 184, 188, 130, 239, 175, 188, 75, 89, 56, 189, 130, 239, 175, 60, 75, 89, 56, 189, 13, 113, 31, 63, 75, 89, 56, 189, 13, 113, 31, 63, 75, 89, 184, 188, 130, 239, 175, 60, 75, 89, 184, 188, 130, 239, 175, 60, 75, 89, 184, 60, 130, 239, 175, 60, 46, 128, 4, 63, 13, 113, 31, 63, 46, 128, 4, 63, 13, 113, 31, 63, 75, 89, 184, 60, 130, 239, 175, 60, 75, 89, 184, 60, 13, 113, 31, 63, 75, 89, 184, 60, 13, 113, 31, 63, 46, 128, 4, 63, 130, 239, 175, 60, 46, 128, 4, 63, 130, 239, 175, 60, 75, 89, 56, 189, 130, 239, 175, 60, 75, 89, 184, 188, 13, 113, 31, 63, 75, 89, 184, 188, 13, 113, 31, 63, 75, 89, 56, 189, 74, 232, 252, 190, 75, 89, 56, 189, 130, 239, 175, 188, 75, 89, 56, 189, 130, 239, 175, 188, 75, 89, 184, 188, 74, 232, 252, 190, 75, 89, 184, 188),
+"attribute_data": PackedByteArray("Suj8vktZOL1K6Py+S1m4vILvr7xLWbi8gu+vvEtZOL2C7688S1k4vQ1xHz9LWTi9DXEfP0tZuLyC7688S1m4vILvrzxLWbg8gu+vPC6ABD8NcR8/LoAEPw1xHz9LWbg8gu+vPEtZuDwNcR8/S1m4PA1xHz8ugAQ/gu+vPC6ABD+C7688S1k4vYLvrzxLWbi8DXEfP0tZuLwNcR8/S1k4vUro/L5LWTi9gu+vvEtZOL2C76+8S1m4vEro/L5LWbi8"),
 "format": 34359742487,
 "index_count": 36,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
 "material": SubResource("StandardMaterial3D_w4xjv"),
 "name": "2",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray(0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 232, 65, 0, 0, 128, 191, 0, 0, 128, 63, 0, 0, 232, 65, 0, 0, 184, 193, 0, 0, 128, 63, 0, 0, 232, 65, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+"vertex_data": PackedByteArray("AAC4wQAAAEAAAIA/AAC4wQAAgD8AAIA/AACAvwAAgD8AAIA/AACAvwAAAEAAAIA/AAC4wQAAAEAAAIA/AAC4wQAAAEAAAOhBAAC4wQAAgD8AAOhBAAC4wQAAgD8AAIA/AACAvwAAgD8AAIA/AAC4wQAAgD8AAIA/AAC4wQAAgD8AAOhBAACAvwAAgD8AAOhBAACAvwAAAEAAAIA/AACAvwAAAEAAAOhBAAC4wQAAAEAAAOhBAAC4wQAAAEAAAIA/AACAvwAAAEAAAIA/AACAvwAAgD8AAIA/AACAvwAAgD8AAOhBAACAvwAAAEAAAOhBAAC4wQAAAEAAAOhBAACAvwAAAEAAAOhBAACAvwAAgD8AAOhBAAC4wQAAgD8AAOhB/////////z//////////P/////////8//////////z8AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//P////3//f/8/////f/9//z////9//3//P/9//3////+//3//f////7//f/9/////v/9//3////+/")
 }, {
 "aabb": AABB(1, 1, -14, 10, 1.00001, 11),
-"attribute_data": PackedByteArray(0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 0, 61, 0, 0, 128, 189, 0, 0, 176, 62, 0, 0, 128, 189, 0, 0, 176, 62, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 208, 190, 0, 0, 128, 189, 0, 0, 208, 190, 0, 0, 176, 190, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 128, 189, 0, 0, 176, 190, 0, 0, 208, 190, 0, 0, 176, 190, 0, 0, 128, 189, 0, 0, 176, 190, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 0, 189, 0, 0, 208, 190, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 128, 189, 0, 0, 0, 189, 0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 176, 62, 0, 0, 0, 189, 0, 0, 176, 62, 0, 0, 128, 189, 0, 0, 0, 61, 0, 0, 128, 189),
+"attribute_data": PackedByteArray("AAAAPQAAAL0AAAA9AACAvQAAsD4AAIC9AACwPgAAAL0AANC+AAAAvQAAgL0AAAC9AACAvQAAgL0AANC+AACAvQAA0L4AALC+AADQvgAAAL0AAIC9AAAAvQAAgL0AALC+AADQvgAAsL4AAIC9AACwvgAAgL0AAAC9AADQvgAAAL0AANC+AAAAvQAA0L4AAIC9AACAvQAAgL0AAIC9AAAAvQAAAD0AAAC9AACwPgAAAL0AALA+AACAvQAAAD0AAIC9"),
 "format": 34359742487,
 "index_count": 36,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
 "material": SubResource("StandardMaterial3D_yem22"),
 "name": "noiseTexture",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 96, 193, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 0, 64, 0, 0, 64, 192, 0, 0, 48, 65, 0, 0, 128, 63, 0, 0, 64, 192, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 64, 192, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63)
+"vertex_data": PackedByteArray("AACAPwAAAEAAAGDBAACAPwAAgD8AAGDBAAAwQQAAgD8AAGDBAAAwQQAAAEAAAGDBAACAPwAAAEAAAGDBAACAPwAAAEAAAEDAAACAPwAAgD8AAEDAAACAPwAAgD8AAGDBAAAwQQAAgD8AAGDBAACAPwAAgD8AAGDBAACAPwAAgD8AAEDAAAAwQQAAgD8AAEDAAAAwQQAAAEAAAGDBAAAwQQAAAEAAAEDAAACAPwAAAEAAAEDAAACAPwAAAEAAAGDBAAAwQQAAAEAAAGDBAAAwQQAAgD8AAGDBAAAwQQAAgD8AAEDAAAAwQQAAAEAAAEDAAACAPwAAAEAAAEDAAAAwQQAAAEAAAEDAAAAwQQAAgD8AAEDAAACAPwAAgD8AAEDA/////////7//////////v/////////+//////////78AAP9//3//PwAA/3//f/8/AAD/f/9//z8AAP9//3//P/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//v////3//f/+/////f/9//7////9//3//v/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }, {
 "aabb": AABB(0, 1, -11, 10, 2.00001, 15),
-"attribute_data": PackedByteArray(0, 0, 192, 61, 0, 0, 0, 189, 0, 0, 192, 61, 0, 0, 64, 189, 0, 0, 0, 62, 0, 0, 64, 189, 0, 0, 0, 62, 0, 0, 0, 189, 0, 0, 32, 190, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 32, 190, 0, 0, 64, 189, 0, 0, 32, 190, 0, 0, 0, 190, 0, 0, 32, 190, 0, 0, 192, 189, 0, 0, 128, 61, 0, 0, 192, 189, 0, 0, 128, 61, 0, 0, 0, 190, 0, 0, 32, 190, 0, 0, 0, 190, 0, 0, 128, 61, 0, 0, 0, 190, 0, 0, 128, 61, 0, 0, 192, 189, 0, 0, 32, 190, 0, 0, 192, 189, 0, 0, 32, 190, 0, 0, 0, 189, 0, 0, 32, 190, 0, 0, 64, 189, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 128, 61, 0, 0, 0, 189, 0, 0, 192, 61, 0, 0, 0, 189, 0, 0, 0, 62, 0, 0, 0, 189, 0, 0, 0, 62, 0, 0, 64, 189, 0, 0, 192, 61, 0, 0, 64, 189, 0, 0, 0, 61, 0, 0, 64, 189, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 128, 188, 0, 0, 0, 189, 0, 0, 64, 61, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 0, 189, 0, 0, 128, 188, 0, 0, 0, 0, 0, 0, 128, 61, 0, 0, 0, 0, 0, 0, 64, 61, 0, 0, 0, 189, 0, 0, 128, 188, 0, 0, 0, 189, 0, 0, 64, 61, 0, 0, 0, 189, 0, 0, 64, 61, 0, 0, 64, 189, 0, 0, 128, 188, 0, 0, 64, 189, 0, 0, 0, 61, 0, 0, 64, 189, 0, 0, 0, 61, 0, 0, 0, 189, 0, 0, 0, 0, 0, 0, 128, 188, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 128, 61, 0, 0, 0, 189, 0, 0, 32, 62, 0, 0, 0, 189, 0, 0, 48, 190, 0, 0, 64, 189, 0, 0, 160, 189, 0, 0, 64, 189, 0, 0, 160, 189, 0, 0, 0, 189, 0, 0, 48, 190, 0, 0, 0, 189, 0, 0, 48, 190, 0, 0, 32, 190, 0, 0, 48, 190, 0, 0, 128, 189, 0, 0, 160, 189, 0, 0, 128, 189, 0, 0, 160, 189, 0, 0, 32, 190, 0, 0, 48, 190, 0, 0, 32, 190, 0, 0, 160, 189, 0, 0, 32, 190, 0, 0, 160, 189, 0, 0, 128, 189, 0, 0, 48, 190, 0, 0, 128, 189, 0, 0, 128, 61, 0, 0, 64, 189, 0, 0, 32, 62, 0, 0, 0, 189, 0, 0, 128, 61, 0, 0, 0, 189),
+"attribute_data": PackedByteArray("AADAPQAAAL0AAMA9AABAvQAAAD4AAEC9AAAAPgAAAL0AACC+AAAAvQAAgD0AAAC9AACAPQAAQL0AACC+AABAvQAAIL4AAAC+AAAgvgAAwL0AAIA9AADAvQAAgD0AAAC+AAAgvgAAAL4AAIA9AAAAvgAAgD0AAMC9AAAgvgAAwL0AACC+AAAAvQAAIL4AAEC9AACAPQAAQL0AAIA9AAAAvQAAwD0AAAC9AAAAPgAAAL0AAAA+AABAvQAAwD0AAEC9AAAAPQAAQL0AAAAAAACAvAAAAD0AAAC9AACAvAAAAL0AAEA9AAAAvQAAgD0AAAAAAACAvAAAAAAAAIC8AAAAvQAAgLwAAAAAAACAPQAAAAAAAEA9AAAAvQAAgLwAAAC9AABAPQAAAL0AAEA9AABAvQAAgLwAAEC9AAAAPQAAQL0AAAA9AAAAvQAAAAAAAIC8AACAPQAAQL0AAIA9AAAAvQAAID4AAAC9AAAwvgAAQL0AAKC9AABAvQAAoL0AAAC9AAAwvgAAAL0AADC+AAAgvgAAML4AAIC9AACgvQAAgL0AAKC9AAAgvgAAML4AACC+AACgvQAAIL4AAKC9AACAvQAAML4AAIC9AACAPQAAQL0AACA+AAAAvQAAgD0AAAC9"),
 "format": 34359742487,
 "index_count": 84,
-"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 27, 0, 29, 0, 30, 0, 31, 0, 32, 0, 33, 0, 31, 0, 33, 0, 34, 0, 35, 0, 36, 0, 37, 0, 35, 0, 37, 0, 38, 0, 39, 0, 40, 0, 41, 0, 42, 0, 43, 0, 44, 0, 45, 0, 46, 0, 47, 0, 45, 0, 47, 0, 48, 0, 49, 0, 50, 0, 51, 0, 49, 0, 51, 0, 52, 0, 53, 0, 54, 0, 55, 0, 53, 0, 55, 0, 56, 0, 57, 0, 58, 0, 59, 0),
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGwAcAB0AGwAdAB4AHwAgACEAHwAhACIAIwAkACUAIwAlACYAJwAoACkAKgArACwALQAuAC8ALQAvADAAMQAyADMAMQAzADQANQA2ADcANQA3ADgAOQA6ADsA"),
 "material": SubResource("StandardMaterial3D_p2k4k"),
 "name": "texture_01",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 60,
-"vertex_data": PackedByteArray(0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 128, 191, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 64, 64, 0, 0, 0, 64, 0, 0, 0, 64, 0, 0, 64, 64, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 64, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 48, 193, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 48, 193, 0, 0, 128, 64, 0, 0, 64, 64, 0, 0, 160, 192, 0, 0, 32, 65, 0, 0, 0, 64, 0, 0, 160, 192, 0, 0, 128, 64, 0, 0, 0, 64, 0, 0, 160, 192, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 191, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 0, 0, 255, 127, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 255, 255, 127, 255, 127, 255, 191, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 127, 255, 127, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 63, 255, 191, 255, 127, 255, 191, 255, 63, 255, 191, 255, 127, 255, 191, 255, 63, 255, 191, 255, 127, 255, 191, 255, 63, 255, 191, 255, 127, 255, 191, 170, 170, 170, 42, 255, 127, 255, 63, 170, 170, 170, 42, 255, 127, 255, 63, 170, 170, 170, 42, 255, 127, 255, 63, 170, 170, 170, 42, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 255, 255, 255, 127, 255, 127, 255, 63, 170, 170, 255, 127, 255, 255, 255, 191, 170, 170, 255, 127, 255, 255, 255, 191, 170, 170, 255, 127, 255, 255, 255, 191, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 255, 255, 255, 255, 255, 255, 255, 63, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 255, 127, 0, 0, 255, 127, 255, 63, 72, 146, 181, 237, 255, 127, 255, 191, 72, 146, 181, 237, 255, 127, 255, 191, 72, 146, 181, 237, 255, 127, 255, 191, 72, 146, 181, 237, 255, 127, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+"vertex_data": PackedByteArray("AAAAQAAAQEAAADDBAAAAQAAAAEAAADDBAACAQAAAAEAAADDBAACAQAAAQEAAADDBAAAAQAAAQEAAADDBAAAAQAAAQEAAAEBAAAAAQAAAAEAAAEBAAAAAQAAAAEAAADDBAACAQAAAAEAAADDBAAAAQAAAAEAAADDBAAAAQAAAAEAAAEBAAACAQAAAAEAAAEBAAACAQAAAQEAAADDBAACAQAAAQEAAAEBAAAAAQAAAQEAAAEBAAAAAQAAAQEAAADDBAACAQAAAQEAAADDBAACAQAAAAEAAADDBAACAQAAAAEAAAEBAAACAQAAAQEAAAEBAAAAAQAAAQEAAAEBAAACAQAAAQEAAAEBAAACAQAAAAEAAAEBAAAAAQAAAAEAAAEBAAAAAQAAAQEAAAIC/AAAAAAAAgD8AAIC/AAAAQAAAAEAAAIC/AAAAQAAAQEAAAIC/AAAAQAAAQEAAAEBAAAAAAAAAgD8AAIBAAAAAAAAAgD8AAIC/AAAAQAAAAEAAAIC/AAAAAAAAgD8AAIC/AAAAAAAAgD8AAIBAAAAAQAAAAEAAAEBAAAAAQAAAAEAAAIC/AAAAQAAAAEAAAEBAAAAAQAAAQEAAAEBAAAAAQAAAQEAAAIC/AAAAQAAAQEAAAEBAAAAAQAAAAEAAAEBAAAAAAAAAgD8AAIBAAACAQAAAQEAAADDBAACAQAAAAEAAADDBAAAgQQAAAEAAADDBAACAQAAAQEAAADDBAACAQAAAQEAAAKDAAACAQAAAAEAAAKDAAACAQAAAAEAAADDBAAAgQQAAAEAAADDBAACAQAAAAEAAADDBAACAQAAAAEAAAKDAAAAgQQAAAEAAAKDAAAAgQQAAAEAAADDBAAAgQQAAAEAAAKDAAACAQAAAQEAAAKDAAACAQAAAQEAAADDBAACAQAAAQEAAAKDAAAAgQQAAAEAAAKDAAACAQAAAAEAAAKDA/////////7//////////v/////////+//////////78AAP9//3//PwAA/3//f/8/AAD/f/9//z8AAP9//3//P/9/AAD/f/8//38AAP9//z//fwAA/3//P/9/AAD/f/8//3////9//7//f////3//v/9/////f/+//3////9//7////9//3//v////3//f/+/////f/9//7////9//3//v/9//3////8//3//f////z//f/9/////P/9//3////8//////////z//////////P/////////8//z//v/9//7//P/+//3//v/8//7//f/+//z//v/9//7+qqqoq/3//P6qqqir/f/8/qqqqKv9//z+qqqoq/3//P////3//f/8/////f/9//z////9//3//P////3//f/8/qqr/f////7+qqv9/////v6qq/3////+//////////z//////////P/////////8/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//fwAA/3//P/9/AAD/f/8//38AAP9//z//fwAA/3//P0iSte3/f/+/SJK17f9//79IkrXt/3//v0iSte3/f/+//3//f////7//f/9/////v/9//3////+/")
 }]
 
 [sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_2fcbx"]
@@ -189,6 +189,13 @@ _data = {
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_clnnx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.3959, 9.87811, -38.7641, 0, 0, 0, 0, 0, 0, 1.60104, 6.96378, 66.0786, 0, 0, 0, 0, 0, 0, 114.173, -5.94074, 145.16),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="Level" type="Node3D"]
 
@@ -367,7 +374,7 @@ shape = SubResource("BoxShape3D_8a2re")
 transform = Transform3D(30, 0, 0, 0, 0.766045, 1.92836, 0, -0.642788, 2.29813, 66.8348, -0.387751, -213.191)
 
 [node name="Breakable2" parent="layout" instance=ExtResource("15_nbswu")]
-transform = Transform3D(100, 0, 0, 0, 60, 0, 0, 0, 5, 58.3146, 177.154, -201.677)
+transform = Transform3D(100, 0, 0, 0, 60, 0, 0, 0, 5, 58.3146, 131.481, -201.677)
 
 [node name="QodotMap" type="Node3D" parent="layout"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8316, 243.943, 235.08)
@@ -442,6 +449,7 @@ distance = 30.0
 
 [node name="CoinPath2" parent="coins" instance=ExtResource("17_0j72w")]
 curve = SubResource("Curve3D_xjgmt")
+distance = 4.0
 
 [node name="CoinPath3" parent="coins" instance=ExtResource("17_0j72w")]
 curve = SubResource("Curve3D_iugia")
@@ -449,32 +457,78 @@ curve = SubResource("Curve3D_iugia")
 [node name="Coin" parent="coins" instance=ExtResource("16_socfp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.5102, 245.501, 233.202)
 
+[node name="CoinPath4" parent="coins" instance=ExtResource("17_0j72w")]
+curve = SubResource("Curve3D_clnnx")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -197, 82, 105)
+
 [connection signal="body_entered" from="coins/CoinPath/Coin" to="coins/CoinPath/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17546" to="coins/CoinPath/@Area3D@17546" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17547" to="coins/CoinPath/@Area3D@17547" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17548" to="coins/CoinPath/@Area3D@17548" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17549" to="coins/CoinPath/@Area3D@17549" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17550" to="coins/CoinPath/@Area3D@17550" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17551" to="coins/CoinPath/@Area3D@17551" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath/@Area3D@17552" to="coins/CoinPath/@Area3D@17552" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31362" to="coins/CoinPath/@Area3D@31362" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31363" to="coins/CoinPath/@Area3D@31363" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31364" to="coins/CoinPath/@Area3D@31364" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31365" to="coins/CoinPath/@Area3D@31365" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31366" to="coins/CoinPath/@Area3D@31366" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31367" to="coins/CoinPath/@Area3D@31367" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath/@Area3D@31368" to="coins/CoinPath/@Area3D@31368" method="_on_body_entered"]
 [connection signal="body_entered" from="coins/CoinPath2/Coin" to="coins/CoinPath2/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17553" to="coins/CoinPath2/@Area3D@17553" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17554" to="coins/CoinPath2/@Area3D@17554" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17555" to="coins/CoinPath2/@Area3D@17555" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17556" to="coins/CoinPath2/@Area3D@17556" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17557" to="coins/CoinPath2/@Area3D@17557" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath2/@Area3D@17558" to="coins/CoinPath2/@Area3D@17558" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31369" to="coins/CoinPath2/@Area3D@31369" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31370" to="coins/CoinPath2/@Area3D@31370" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31371" to="coins/CoinPath2/@Area3D@31371" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31372" to="coins/CoinPath2/@Area3D@31372" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31373" to="coins/CoinPath2/@Area3D@31373" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31374" to="coins/CoinPath2/@Area3D@31374" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31375" to="coins/CoinPath2/@Area3D@31375" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31376" to="coins/CoinPath2/@Area3D@31376" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31377" to="coins/CoinPath2/@Area3D@31377" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31378" to="coins/CoinPath2/@Area3D@31378" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31379" to="coins/CoinPath2/@Area3D@31379" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31380" to="coins/CoinPath2/@Area3D@31380" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31381" to="coins/CoinPath2/@Area3D@31381" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31382" to="coins/CoinPath2/@Area3D@31382" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31383" to="coins/CoinPath2/@Area3D@31383" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31384" to="coins/CoinPath2/@Area3D@31384" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31385" to="coins/CoinPath2/@Area3D@31385" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31386" to="coins/CoinPath2/@Area3D@31386" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31387" to="coins/CoinPath2/@Area3D@31387" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31388" to="coins/CoinPath2/@Area3D@31388" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31389" to="coins/CoinPath2/@Area3D@31389" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31390" to="coins/CoinPath2/@Area3D@31390" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31391" to="coins/CoinPath2/@Area3D@31391" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31392" to="coins/CoinPath2/@Area3D@31392" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31393" to="coins/CoinPath2/@Area3D@31393" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31394" to="coins/CoinPath2/@Area3D@31394" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31395" to="coins/CoinPath2/@Area3D@31395" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31396" to="coins/CoinPath2/@Area3D@31396" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31397" to="coins/CoinPath2/@Area3D@31397" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31398" to="coins/CoinPath2/@Area3D@31398" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31399" to="coins/CoinPath2/@Area3D@31399" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31400" to="coins/CoinPath2/@Area3D@31400" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath2/@Area3D@31401" to="coins/CoinPath2/@Area3D@31401" method="_on_body_entered"]
 [connection signal="body_entered" from="coins/CoinPath3/Coin" to="coins/CoinPath3/Coin" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17559" to="coins/CoinPath3/@Area3D@17559" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17560" to="coins/CoinPath3/@Area3D@17560" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17561" to="coins/CoinPath3/@Area3D@17561" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17562" to="coins/CoinPath3/@Area3D@17562" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17563" to="coins/CoinPath3/@Area3D@17563" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17564" to="coins/CoinPath3/@Area3D@17564" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17565" to="coins/CoinPath3/@Area3D@17565" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17566" to="coins/CoinPath3/@Area3D@17566" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17567" to="coins/CoinPath3/@Area3D@17567" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17568" to="coins/CoinPath3/@Area3D@17568" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17569" to="coins/CoinPath3/@Area3D@17569" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17570" to="coins/CoinPath3/@Area3D@17570" method="_on_body_entered"]
-[connection signal="body_entered" from="coins/CoinPath3/@Area3D@17571" to="coins/CoinPath3/@Area3D@17571" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31402" to="coins/CoinPath3/@Area3D@31402" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31403" to="coins/CoinPath3/@Area3D@31403" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31404" to="coins/CoinPath3/@Area3D@31404" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31405" to="coins/CoinPath3/@Area3D@31405" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31406" to="coins/CoinPath3/@Area3D@31406" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31407" to="coins/CoinPath3/@Area3D@31407" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31408" to="coins/CoinPath3/@Area3D@31408" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31409" to="coins/CoinPath3/@Area3D@31409" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31410" to="coins/CoinPath3/@Area3D@31410" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31411" to="coins/CoinPath3/@Area3D@31411" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31412" to="coins/CoinPath3/@Area3D@31412" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31413" to="coins/CoinPath3/@Area3D@31413" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath3/@Area3D@31414" to="coins/CoinPath3/@Area3D@31414" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/Coin" to="coins/CoinPath4/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31415" to="coins/CoinPath4/@Area3D@31415" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31416" to="coins/CoinPath4/@Area3D@31416" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31417" to="coins/CoinPath4/@Area3D@31417" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31418" to="coins/CoinPath4/@Area3D@31418" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31419" to="coins/CoinPath4/@Area3D@31419" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31420" to="coins/CoinPath4/@Area3D@31420" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31421" to="coins/CoinPath4/@Area3D@31421" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31422" to="coins/CoinPath4/@Area3D@31422" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31423" to="coins/CoinPath4/@Area3D@31423" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31424" to="coins/CoinPath4/@Area3D@31424" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31425" to="coins/CoinPath4/@Area3D@31425" method="_on_body_entered"]
+[connection signal="body_entered" from="coins/CoinPath4/@Area3D@31426" to="coins/CoinPath4/@Area3D@31426" method="_on_body_entered"]

@@ -19,7 +19,7 @@ public partial class Air : playerState
 		if(msg == "do_jump")
 		{
 			//player.ClearCoyote()
-			CheckJumpButton();
+			PerformJump();
 	
 		}
 	}
@@ -45,9 +45,9 @@ public partial class Air : playerState
 		}
 		else
 		{
-			if(Input.IsActionPressed("jump"))
+			if(Input.IsActionPressed("jump") && (stats.canJumpWhileCrouched||  !stats.crouched))
 			{
-				CheckJumpButton();
+				PerformJump();
 	
 	
 			}
@@ -128,9 +128,9 @@ public partial class Air : playerState
 		}
 	}
 	
-	public void CheckJumpButton()
+	public void PerformJump()
 	{  
-		
+	
 		
 		stats.snap = Vector3.Zero;
 	

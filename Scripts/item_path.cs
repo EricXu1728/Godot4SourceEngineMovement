@@ -104,5 +104,3 @@ public partial class item_path : Path3D
 	}
 	
 }
-
-

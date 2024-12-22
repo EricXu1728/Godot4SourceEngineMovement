@@ -59,8 +59,3 @@ public partial class coin : Area3D
 	}
 
 }
-
-
-
-
-

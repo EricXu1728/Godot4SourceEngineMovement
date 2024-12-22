@@ -47,6 +47,7 @@ namespace playerVariables{
 
 		[Export] public int ply_maxspeed {get; set;} = 16;
 		[Export] public int ply_crouchspeed {get; set;} = 10;
+		[Export] public bool canJumpWhileCrouched { get; set; } = true; // Allow jumping while crouched
 		public float speed = 0;
 
 		//  bools
@@ -69,10 +70,6 @@ namespace playerVariables{
 
 		//Camera
 		[Export] public Godot.NodePath camPath  {get; set;}
-
-		
-
-		float a = DegToRad((float)0.1);
 	}
 }
 /*

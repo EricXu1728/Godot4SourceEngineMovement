@@ -3,15 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b66oqrkx56c0p"
-path="res://.godot/imported/2.PNG-b9aa5343f907f426664264fba0ca8519.ctex"
+path.s3tc="res://.godot/imported/2.PNG-b9aa5343f907f426664264fba0ca8519.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://levels/level1/textures/2.PNG"
-dest_files=["res://.godot/imported/2.PNG-b9aa5343f907f426664264fba0ca8519.ctex"]
+dest_files=["res://.godot/imported/2.PNG-b9aa5343f907f426664264fba0ca8519.s3tc.ctex"]
 
 [params]
 

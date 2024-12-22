@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build_godot",
-            "program": "C:/Users/ericx/OneDrive/Desktop/Godot4/Godot_v4.2.1-stable_mono_win64/Godot_v4.2.1-stable_mono_win64.exe", //C:\Users\ericx\OneDrive\Desktop\Godot4\Godot_v4.2.1-stable_mono_win64
+            "program": "C:/Users/ericx/OneDrive/Desktop/Godot4/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64.exe", //C:/Users/ericx/OneDrive/Desktop/Godot4/Godot_v4.2.1-stable_mono_win64
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
             "stopAtEntry": false,
@@ -27,7 +27,7 @@
             "request": "launch",
             "mode": "executable",
             "preLaunchTask": "build",
-            "executable": "C:/Users/Frank/Desktop/godot 4/Godot_v4.2-stable_mono_win64/Godot_v4.2-stable_mono_win64.exe",
+            "executable": "C:/Users/ericx/OneDrive/Desktop/Godot4/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64.exe",
             "executableArguments": [
                 "--path",
                 "${workspaceRoot}"
@@ -39,7 +39,7 @@
             "request": "launch",
             "mode": "executable",
             "preLaunchTask": "build",
-            "executable": "C:/Users/Frank/Desktop/godot 4/Godot_v4.2-stable_mono_win64/Godot_v4.2-stable_mono_win64.exe",
+            "executable": "C:/Users/ericx/OneDrive/Desktop/Godot4/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64.exe",
             "executableArguments": [
                 "--path",
                 "${workspaceRoot}",

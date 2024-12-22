@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_cxytm")
-vel = null
+vel = Vector3(0, 0, 0)
 lostSpeed = Vector3(0, 0, 0)
-snap = null
+snap = Vector3(0, -1, 0)
 ply_mousesensitivity = 1.5
 ply_maxlookangle_down = -90
 ply_maxlookangle_up = 90
@@ -31,6 +31,7 @@ ply_jumpheight = 4
 ply_stepsize = 8
 ply_maxspeed = 16
 ply_crouchspeed = 10
+canJumpWhileCrouched = true
 noclip = false
 crouching = false
 crouched = false

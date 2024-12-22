@@ -1,17 +1,66 @@
-[gd_scene load_steps=3 format=3 uid="uid://c86iyry2o2kvd"]
+[gd_scene load_steps=4 format=3 uid="uid://c86iyry2o2kvd"]
 
 [ext_resource type="Script" path="res://Scripts/item_path.cs" id="1_jdvko"]
 
-[sub_resource type="Curve3D" id="Curve3D_5tte8"]
+[sub_resource type="Curve3D" id="Curve3D_hr4vs"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -95.6531, 70.3921, -341.604, 0, 0, 0, 0, 0, 0, 160.981, 11.8601, 335.726),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_hnjvp"]
 
 [node name="CoinPath" type="Path3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-curve = SubResource("Curve3D_5tte8")
+curve = SubResource("Curve3D_hr4vs")
 script = ExtResource("1_jdvko")
 file_path = "res://level components/coin.tscn"
 
 [node name="PathFollow3D" type="PathFollow3D" parent="."]
-transform = Transform3D(-0.00390547, 0.999947, -0.00432053, -0.922844, -0.00526805, -0.385009, -0.385033, 0.00248372, 0.922828, 57.1078, 156.703, -172.94)
-progress = 7.97884
+transform = Transform3D(-0.935084, 0.0285357, -0.353135, -1.95196e-06, 0.996705, 0.0805416, 0.354295, 0.0753191, -0.932024, -90.9488, 69.3192, -329.188)
+progress = 13.3209
+
+[node name="Node3D" type="Node3D" parent="PathFollow3D"]
+
+[node name="CollisionShape3D" type="MeshInstance3D" parent="PathFollow3D/Node3D"]
+mesh = SubResource("BoxMesh_hnjvp")
 
 [connection signal="curve_changed" from="." to="." method="_on_curve_changed"]
+[connection signal="body_entered" from="Coin" to="Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17434" to="@Area3D@17434" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17435" to="@Area3D@17435" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17436" to="@Area3D@17436" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17437" to="@Area3D@17437" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17438" to="@Area3D@17438" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17439" to="@Area3D@17439" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17440" to="@Area3D@17440" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17441" to="@Area3D@17441" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17442" to="@Area3D@17442" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17443" to="@Area3D@17443" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17444" to="@Area3D@17444" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17445" to="@Area3D@17445" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17446" to="@Area3D@17446" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17447" to="@Area3D@17447" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17448" to="@Area3D@17448" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17449" to="@Area3D@17449" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17450" to="@Area3D@17450" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17451" to="@Area3D@17451" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17452" to="@Area3D@17452" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17453" to="@Area3D@17453" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17454" to="@Area3D@17454" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17455" to="@Area3D@17455" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17456" to="@Area3D@17456" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17457" to="@Area3D@17457" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17458" to="@Area3D@17458" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17459" to="@Area3D@17459" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17460" to="@Area3D@17460" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17461" to="@Area3D@17461" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17462" to="@Area3D@17462" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17463" to="@Area3D@17463" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17464" to="@Area3D@17464" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17465" to="@Area3D@17465" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17466" to="@Area3D@17466" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17467" to="@Area3D@17467" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17468" to="@Area3D@17468" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area3D@17469" to="@Area3D@17469" method="_on_body_entered"]
