@@ -6,7 +6,10 @@ func enter(msg := {}) -> void:
 	print("crouched")
 	stats.crouched = true
 	stats.speed = stats.ply_crouchspeed 
-	try_uncrouch = false
+	if msg.get("try_uncrouch") == true:
+		try_uncrouch = true;
+	else:
+		try_uncrouch = false
 	
 	
 func physics_update(delta: float) -> void:

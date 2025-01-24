@@ -28,4 +28,4 @@ func physics_update(delta: float) -> void:
 		player.move_and_collide(Vector3(0,0.1, 0))
 	
 	if(player.myShape.scale.y <=0.5 ):
-		state_machine.transition_to("Crouched")
+		state_machine.transition_to("Crouched", {try_uncrouch=try_uncrouch})
