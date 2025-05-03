@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://c41sndaibm3u2"]
 
 [ext_resource type="PackedScene" uid="uid://hynsll4jq3n2" path="res://tscns/player.tscn" id="1_rsegt"]
-[ext_resource type="Texture2D" uid="uid://o4xlwbin0ji8" path="res://textures/2.PNG" id="4_fbpvl"]
+[ext_resource type="Texture2D" uid="uid://cpe3gv52gbqwg" path="res://textures/2.PNG" id="4_fbpvl"]
 [ext_resource type="Script" path="res://Scripts/Sprite3D.gd" id="4_ivjvi"]
 [ext_resource type="PackedScene" uid="uid://dbuxl77ae86f4" path="res://tscns/world_setup.tscn" id="5_1fjn0"]
-[ext_resource type="Texture2D" path="res://images/texture_01.png" id="15_dw3x1"]
+[ext_resource type="Texture2D" uid="uid://cn4arohk8e0gf" path="res://images/texture_01.png" id="15_dw3x1"]
 [ext_resource type="PackedScene" uid="uid://bf1ktdfkkpjfd" path="res://tscns/block.tscn" id="16_rjewc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jym6u"]

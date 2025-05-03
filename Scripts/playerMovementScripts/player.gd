@@ -67,10 +67,10 @@ func CheckVelocity():
 	# bound velocity
 	# Bound it.
 	if stats.vel.length() > stats.ply_maxvelocity:
-		stats.vel = stats.ply_maxvelocity
+		stats.vel = stats.vel.normalized() * stats.ply_maxvelocity
 
 	elif stats.vel.length() < -stats.ply_maxvelocity:
-		stats.vel = -stats.ply_maxvelocity
+		stats.vel = stats.vel.normalized() * stats.ply_maxvelocity
 
 
 
